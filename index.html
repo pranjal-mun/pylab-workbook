@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="PyLab is a small, browser-based Python coding environment for the classroom.">
+    <title>PyLab</title>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.65.16/lib/codemirror.css" onerror="this.onerror=null;this.href='./vendor/codemirror/lib/codemirror.css'">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.65.16/theme/material-darker.css" onerror="this.onerror=null;this.href='./vendor/codemirror/theme/material-darker.css'">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <main class="workspace">
+      <section class="project-panel" aria-label="Project files">
+        <a class="brand" href="./" aria-label="PyLab home">
+          <span class="brand-mark" aria-hidden="true">&gt;_</span>
+          <span>PyLab</span>
+        </a>
+
+        <div class="file-panel-heading">
+          <span>Files</span>
+          <button id="new-file" class="icon-button" type="button" title="Create file" aria-label="Create a new file">+</button>
+        </div>
+
+        <nav aria-label="Project files">
+          <ul id="file-list" class="file-list"></ul>
+        </nav>
+
+        <div class="file-actions">
+          <button id="rename-file" class="text-button" type="button">Rename</button>
+          <button id="delete-file" class="text-button danger" type="button">Delete</button>
+        </div>
+
+        <button id="reset-project" class="reset-button" type="button">Reset project</button>
+      </section>
+
+      <section class="editor-panel" aria-label="Code editor">
+        <button id="copy-file" class="copy-code-button" type="button" title="Copy the active file">Copy code</button>
+        <label class="visually-hidden" for="code-editor">Python code</label>
+        <textarea id="code-editor" spellcheck="false"></textarea>
+      </section>
+
+      <section class="io-panel" aria-label="Program input and output">
+        <div class="input-section">
+          <div class="section-heading">
+            <div>
+              <p class="eyebrow">Standard input</p>
+              <h2>Input for <code>input()</code></h2>
+            </div>
+            <span class="optional-label">optional</span>
+          </div>
+          <label class="visually-hidden" for="stdin-input">Program input, one value per line</label>
+          <textarea id="stdin-input" placeholder="One input value per line…" spellcheck="false"></textarea>
+        </div>
+
+        <div class="run-controls">
+          <button id="run-code" class="run-button" type="button" disabled>
+            <span aria-hidden="true">▶</span>
+            Run
+          </button>
+          <button id="stop-code" class="stop-button" type="button" disabled>
+            <span aria-hidden="true">■</span>
+            Stop
+          </button>
+          <span class="timeout-note">Stops automatically after 5 seconds</span>
+        </div>
+
+        <div class="output-section">
+          <div class="section-heading output-heading">
+            <div>
+              <p class="eyebrow">Console</p>
+              <h2>Output</h2>
+            </div>
+            <button id="clear-output" class="text-button" type="button">Clear</button>
+          </div>
+          <pre id="output" class="output" tabindex="0" aria-live="polite"><span class="output-placeholder">Run your code to see its output here.</span></pre>
+        </div>
+      </section>
+    </main>
+
+    <footer class="status-bar">
+      <div id="runtime-status" class="runtime-status is-loading" role="status" aria-live="polite">
+        <span class="status-dot" aria-hidden="true"></span>
+        <span>Loading Python…</span>
+      </div>
+      <p>PyLab runs Python locally in your browser. Your files never leave this device.</p>
+      <div class="document-status">
+        <span id="file-size">0 B</span>
+        <span class="status-separator" aria-hidden="true">·</span>
+        <span id="save-status">Saved in this browser</span>
+      </div>
+    </footer>
+
+    <script src="./bootstrap.js"></script>
+  </body>
+</html>
