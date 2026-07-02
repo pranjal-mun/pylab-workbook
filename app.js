@@ -1,6 +1,7 @@
 "use strict";
 
 const STORAGE_KEY = "pylab-project-v1";
+const SESSION_COOKIE = "pylab_browser_session_v1";
 const RUN_TIMEOUT_MS = 5_000;
 const LIMITS = Object.freeze({
   maxFiles: 20,
@@ -57,6 +58,8 @@ const editor = CodeMirror.fromTextArea(document.querySelector("#code-editor"), {
   },
 });
 
+initializeBrowserSession();
+
 let project = loadProject();
 let worker = null;
 let workerReady = false;
@@ -97,6 +100,29 @@ function cloneDefaultProject() {
   return JSON.parse(JSON.stringify(DEFAULT_PROJECT));
 }
 
+function initializeBrowserSession() {
+  if (hasSessionCookie()) return;
+
+  const secure = window.location.protocol === "https:" ? "; Secure" : "";
+  document.cookie = `${SESSION_COOKIE}=active; Path=/; SameSite=Lax${secure}`;
+
+  // Only clear the autosave if cookies are available. Otherwise, clearing on
+  // every page load would make PyLab unusable in browsers that block cookies.
+  if (hasSessionCookie()) {
+    try {
+      localStorage.removeItem(STORAGE_KEY);
+    } catch {
+      // Storage may also be unavailable in a restricted browser context.
+    }
+  }
+}
+
+function hasSessionCookie() {
+  return document.cookie
+    .split(";")
+    .some((cookie) => cookie.trim().startsWith(`${SESSION_COOKIE}=`));
+}
+
 function loadProject() {
   try {
     const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
@@ -128,7 +154,7 @@ function saveProject() {
   saveTimer = null;
   try {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(project));
-    elements.saveStatus.textContent = "Saved in this browser";
+    elements.saveStatus.textContent = "Saved for this browser session";
   } catch {
     elements.saveStatus.textContent = "Could not save — storage is full";
   }

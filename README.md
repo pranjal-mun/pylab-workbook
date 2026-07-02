@@ -2,7 +2,8 @@
 
 PyLab is a small, browser-based Python coding environment intended for
 classroom use. It supports multiple files, standard input, captured output and
-errors, a five-second execution limit, browser autosave, and local reset.
+errors, a five-second execution limit, browser-session autosave, and local
+reset. Autosaved work is cleared when a new browser session begins.
 
 Python runs entirely in the browser through Pyodide. No backend, account, or
 server-side code execution is required.

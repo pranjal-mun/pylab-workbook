@@ -109,7 +109,14 @@ Files should live in the same virtual working directory during execution.
 ## Saving
 
 Autosave the current project to `localStorage` when files change. Restore it
-when the page is reopened.
+when the page is refreshed or reopened in the same browser session.
+
+Use a session cookie as a best-effort browser-session marker. When PyLab opens
+without this cookie, clear the previous `localStorage` autosave before loading
+the editor and create a new session cookie. This normally preserves work after
+a tab is closed and reopened but clears it after the browser is fully closed
+and reopened. Browser session-restore settings may preserve session cookies,
+so this is convenience cleanup rather than an exam-security boundary.
 
 Provide a Reset button that restores the initial starter project after a
 confirmation prompt. Reset should also replace the autosaved project.
@@ -202,7 +209,8 @@ The first version is complete when a student can:
 * provide text consumed by Python's `input()` function
 * see output and tracebacks after execution finishes
 * stop execution manually or have it stop after 5 seconds
-* reload the page without losing the autosaved project
+* reload or reopen the page in the same browser session without losing the autosaved project
+* begin with an empty project when a new browser session has no PyLab session cookie
 * reset the project to its initial state
 
 The site must work as static files under a hosting subdirectory and must not
