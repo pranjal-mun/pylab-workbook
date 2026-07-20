@@ -1,0 +1,628 @@
+{
+  "version": 1,
+  "problems": [
+    {
+      "id": "dictionaries-reverse-lookup",
+      "number": "6.1",
+      "title": "Find Keys by Value",
+      "category": "Dictionaries",
+      "difficulty": "Beginner",
+      "prompt": "A normal dictionary lookup starts with a key and finds its value. Here you will perform the opposite search. Write reverse_lookup(mapping, target), which examines every key-value pair and returns a list of every key whose value equals target. Several keys may share the same value, so the result can contain multiple keys; if nothing matches, return an empty list. Preserve dictionary iteration order and do not modify the input.",
+      "signature": "def reverse_lookup(mapping: dict[object, object], target: object) -> list[object]:",
+      "concepts": [
+        "dictionaries",
+        "iteration",
+        "key-value pairs",
+        "lists"
+      ],
+      "examples": [
+        {
+          "input": "reverse_lookup({'a': 1, 'b': 2, 'c': 1}, 1)",
+          "output": "['a', 'c']"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def reverse_lookup(mapping: dict[object, object], target: object) -> list[object]:\n    \"\"\"Return every dictionary key associated with a target value.\n    \n    Args:\n        mapping (dict[object, object]): The dictionary whose key-value pairs will be\n                                        searched.\n        target (object): The value that dictionary entries must equal.\n    \n    Returns:\n        list[object]: A new list of matching keys in dictionary iteration order.\n    \"\"\"\n    # Return every key whose value equals target.\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "finds multiple matches",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "data = {'red': 1, 'blue': 2, 'green': 1}\nassert reverse_lookup(data, 1) == ['red', 'green']"
+        },
+        {
+          "name": "handles one or no matches",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "data = {'a': 10, 'b': 20}\nassert reverse_lookup(data, 20) == ['b']\nassert reverse_lookup(data, 99) == []"
+        },
+        {
+          "name": "does not alter its input",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "data = {'x': [1], 'y': [2], 'z': [1]}\nbefore = dict(data)\nassert reverse_lookup(data, [1]) == ['x', 'z']\nassert data == before"
+        }
+      ]
+    },
+    {
+      "id": "dictionaries-dice-simulation",
+      "number": "6.2",
+      "title": "Two-Dice Experiment",
+      "category": "Dictionaries",
+      "difficulty": "Intermediate",
+      "prompt": "When two ordinary six-sided dice are rolled, totals near 7 occur more often than totals near 2 or 12. Write dice_totals(rolls, seed=None) to simulate this experiment. Perform exactly rolls trials; each trial generates two independent integers from 1 through 6 and adds them. Return a dictionary containing every total from 2 through 12 and its observed count, including totals that occurred zero times. Use a local random.Random(seed) generator so a seed reproduces the same experiment. Raise ValueError for a negative roll count.",
+      "signature": "def dice_totals(rolls: int, seed: int | None = None) -> dict[int, int]:",
+      "concepts": [
+        "dictionaries",
+        "frequency tables",
+        "random simulation",
+        "probability"
+      ],
+      "examples": [
+        {
+          "input": "dice_totals(0, seed=7)",
+          "output": "{2: 0, 3: 0, ..., 12: 0}"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "import random\n\ndef dice_totals(rolls: int, seed: int | None = None) -> dict[int, int]:\n    \"\"\"Simulate repeated rolls of two six-sided dice.\n    \n    Args:\n        rolls (int): The non-negative number of dice trials to simulate.\n        seed (int | None): Optional random seed used to make results reproducible.\n    \n    Returns:\n        dict[int, int]: Counts for every possible total from 2 through 12.\n    \n    Raises:\n        ValueError: If rolls is negative.\n    \"\"\"\n    # Count the totals from rolling two six-sided dice.\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "builds a complete frequency table",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "result = dice_totals(500, seed=12)\nassert set(result) == set(range(2, 13))\nassert sum(result.values()) == 500\nassert all(isinstance(v, int) and v >= 0 for v in result.values())"
+        },
+        {
+          "name": "supports deterministic and empty runs",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert dice_totals(40, seed=9) == dice_totals(40, seed=9)\nassert dice_totals(0, seed=1) == {n: 0 for n in range(2, 13)}"
+        },
+        {
+          "name": "rejects negative trials",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "try:\n    dice_totals(-1)\n    assert False, 'Expected ValueError.'\nexcept ValueError:\n    pass"
+        }
+      ]
+    },
+    {
+      "id": "dictionaries-text-messaging",
+      "number": "6.3",
+      "title": "Old-School Keypad Encoder",
+      "category": "Dictionaries",
+      "difficulty": "Intermediate",
+      "prompt": "Older mobile phones entered letters by pressing a number key repeatedly. The keys contain these symbols in order: 1='.,?!:', 2='ABC', 3='DEF', 4='GHI', 5='JKL', 6='MNO', 7='PQRS', 8='TUV', 9='WXYZ', and 0=' ' (space). The first symbol takes one press, the second takes two, and so on. Write keypad_presses(message) to return the complete digit sequence. Treat lowercase and uppercase letters alike, and ignore characters not listed on the keypad.",
+      "signature": "def keypad_presses(message: str) -> str:",
+      "concepts": [
+        "dictionaries",
+        "string processing",
+        "lookup tables",
+        "normalization"
+      ],
+      "examples": [
+        {
+          "input": "keypad_presses('Hi!')",
+          "output": "'4441111'"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def keypad_presses(message: str) -> str:\n    \"\"\"Encode a message as presses on a multi-tap numeric keypad.\n    \n    Args:\n        message (str): The text to encode with the supported keypad symbols.\n    \n    Returns:\n        str: The concatenated sequence of keypad digits.\n    \"\"\"\n    # Build a character-to-presses dictionary and encode the message.\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "encodes a complete message",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert keypad_presses('Hello, World!') == '4433555555666110966677755531111'"
+        },
+        {
+          "name": "handles either case",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert keypad_presses('abc XYZ') == keypad_presses('ABC xyz')\nassert keypad_presses('ABC') == '222222'"
+        },
+        {
+          "name": "ignores unsupported characters",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert keypad_presses('A;[B]') == '222'\nassert keypad_presses('') == ''"
+        }
+      ]
+    },
+    {
+      "id": "dictionaries-morse-code",
+      "number": "6.4",
+      "title": "Morse Message Encoder",
+      "category": "Dictionaries",
+      "difficulty": "Intermediate",
+      "prompt": "Morse code represents letters and digits with patterns of dots and dashes. Write to_morse(message) using a dictionary containing the standard International Morse mappings for A-Z and 0-9. Translate each supported character and place one ordinary space between encoded characters. Matching is case-insensitive. Skip punctuation, whitespace, and unsupported characters; skipped characters must not create extra spaces in the returned string.",
+      "signature": "def to_morse(message: str) -> str:",
+      "concepts": [
+        "dictionaries",
+        "encoding",
+        "filtering",
+        "join"
+      ],
+      "examples": [
+        {
+          "input": "to_morse('SOS 2')",
+          "output": "'... --- ... ..---'"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def to_morse(message: str) -> str:\n    \"\"\"Encode the supported letters and digits in a message as Morse code.\n    \n    Args:\n        message (str): The text whose supported letters and digits should be encoded.\n    \n    Returns:\n        str: Space-separated Morse symbols for each supported character.\n    \"\"\"\n    # Map A-Z and 0-9 to standard Morse code.\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "encodes letters",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert to_morse('Hello, World!') == '.... . .-.. .-.. --- .-- --- .-. .-.. -..'"
+        },
+        {
+          "name": "encodes digits",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert to_morse('0123456789') == '----- .---- ..--- ...-- ....- ..... -.... --... ---.. ----.'"
+        },
+        {
+          "name": "skips unsupported characters cleanly",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert to_morse(' A--b ') == '.- -...'\nassert to_morse('!?') == ''"
+        }
+      ]
+    },
+    {
+      "id": "dictionaries-postal-codes",
+      "number": "6.5",
+      "title": "Canadian Postal Code Guide",
+      "category": "Dictionaries",
+      "difficulty": "Intermediate",
+      "prompt": "Canadian postal codes alternate letters and digits in the form A1A 1A1. Write describe_postal_code(code) and return (region, address_type). Map the first letter as follows: A Newfoundland and Labrador; B Nova Scotia; C Prince Edward Island; E New Brunswick; G/H/J Quebec; K/L/M/N/P Ontario; R Manitoba; S Saskatchewan; T Alberta; V British Columbia; X Nunavut or Northwest Territories; Y Yukon. The second character is 0 for a rural address and any other digit for urban. Accept either case and an optional space. Raise ValueError for a malformed code or invalid first letter.",
+      "signature": "def describe_postal_code(code: str) -> tuple[str, str]:",
+      "concepts": [
+        "dictionaries",
+        "validation",
+        "postal codes",
+        "tuples"
+      ],
+      "examples": [
+        {
+          "input": "describe_postal_code('T2N 1N4')",
+          "output": "('Alberta', 'urban')"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def describe_postal_code(code: str) -> tuple[str, str]:\n    \"\"\"Identify the region and address type represented by a Canadian postal code.\n    \n    Args:\n        code (str): A six-character Canadian postal code, with an optional space.\n    \n    Returns:\n        tuple[str, str]: A pair containing the region name and either 'urban' or 'rural'.\n    \n    Raises:\n        ValueError: If code is malformed or begins with an unsupported letter.\n    \"\"\"\n    # Validate the code, then identify its region and address type.\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "identifies urban and rural codes",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert describe_postal_code('T2N 1N4') == ('Alberta', 'urban')\nassert describe_postal_code('X0A1B2') == ('Nunavut or Northwest Territories', 'rural')"
+        },
+        {
+          "name": "accepts lowercase and optional spacing",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert describe_postal_code('a1a 1a1') == ('Newfoundland and Labrador', 'urban')\nassert describe_postal_code('H0H0H0') == ('Quebec', 'rural')"
+        },
+        {
+          "name": "rejects invalid codes",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "for code in ['D1A 1A1', 'A12 3B4', 'A1A 1A', '']:\n    try:\n        describe_postal_code(code)\n        assert False, f'Expected ValueError for {code!r}.'\n    except ValueError:\n        pass"
+        }
+      ]
+    },
+    {
+      "id": "dictionaries-number-words",
+      "number": "6.6",
+      "title": "Numbers in English",
+      "category": "Dictionaries",
+      "difficulty": "Intermediate",
+      "prompt": "Amounts on cheques are often written as both digits and words. Write number_to_words(number) to convert any integer from 0 through 999 into lowercase English words. For example, 142 becomes 'one hundred forty two'. Do not include 'and', commas, hyphens, doubled spaces, or trailing spaces. Use dictionaries for ones, teens, and tens instead of a long chain of special cases. Raise ValueError when the argument is outside the range or is not an integer.",
+      "signature": "def number_to_words(number: int) -> str:",
+      "concepts": [
+        "dictionaries",
+        "place value",
+        "decomposition",
+        "string building"
+      ],
+      "examples": [
+        {
+          "input": "number_to_words(142)",
+          "output": "'one hundred forty two'"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def number_to_words(number: int) -> str:\n    \"\"\"Convert an integer from 0 through 999 to English words.\n    \n    Args:\n        number (int): An integer from 0 through 999.\n    \n    Returns:\n        str: The lowercase English representation of number.\n    \n    Raises:\n        ValueError: If number is not an integer from 0 through 999.\n    \"\"\"\n    # Convert an integer from 0 through 999 to English words.\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "handles values below one hundred",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert number_to_words(0) == 'zero'\nassert number_to_words(7) == 'seven'\nassert number_to_words(16) == 'sixteen'\nassert number_to_words(40) == 'forty'\nassert number_to_words(58) == 'fifty eight'"
+        },
+        {
+          "name": "handles hundreds",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert number_to_words(100) == 'one hundred'\nassert number_to_words(142) == 'one hundred forty two'\nassert number_to_words(999) == 'nine hundred ninety nine'"
+        },
+        {
+          "name": "rejects unsupported values",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "for value in [-1, 1000, 4.2, '12']:\n    try:\n        number_to_words(value)\n        assert False, 'Expected ValueError.'\n    except ValueError:\n        pass"
+        }
+      ]
+    },
+    {
+      "id": "dictionaries-unique-characters",
+      "number": "6.7",
+      "title": "Count Distinct Characters",
+      "category": "Dictionaries",
+      "difficulty": "Beginner",
+      "prompt": "Write unique_character_count(text) to report how many different characters appear in text. Compare characters exactly: uppercase and lowercase letters are different, and spaces and punctuation count when present. Repeating a character any number of times still contributes only one. Solve the problem with dictionary keys or a set rather than repeatedly scanning the entire string.",
+      "signature": "def unique_character_count(text: str) -> int:",
+      "concepts": [
+        "sets",
+        "dictionary keys",
+        "unique values",
+        "strings"
+      ],
+      "examples": [
+        {
+          "input": "unique_character_count('Hello, World!')",
+          "output": "10"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def unique_character_count(text: str) -> int:\n    \"\"\"Count the distinct characters in a string.\n    \n    Args:\n        text (str): The case-sensitive string whose characters should be counted.\n    \n    Returns:\n        int: The number of unique, case-sensitive characters in text.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "counts distinct characters",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert unique_character_count('Hello, World!') == 10\nassert unique_character_count('zzz') == 1"
+        },
+        {
+          "name": "compares exact characters",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert unique_character_count('Aa! ') == 4\nassert unique_character_count('a a') == 2"
+        },
+        {
+          "name": "handles empty text",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert unique_character_count('') == 0"
+        }
+      ]
+    },
+    {
+      "id": "dictionaries-anagrams",
+      "number": "6.8",
+      "title": "Word Anagram Check",
+      "category": "Dictionaries",
+      "difficulty": "Beginner",
+      "prompt": "Two words are anagrams when they contain exactly the same characters with exactly the same frequencies, possibly in a different order. For example, 'evil' and 'live' each contain one e, i, l, and v. Write are_anagrams(first, second) using character-frequency dictionaries. This word-level version compares characters exactly and is case-sensitive. Identical strings count as anagrams because their character collections match.",
+      "signature": "def are_anagrams(first: str, second: str) -> bool:",
+      "concepts": [
+        "dictionaries",
+        "frequency counting",
+        "strings",
+        "comparison"
+      ],
+      "examples": [
+        {
+          "input": "are_anagrams('evil', 'live')",
+          "output": "True"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def are_anagrams(first: str, second: str) -> bool:\n    \"\"\"Determine whether two strings contain identical character frequencies.\n    \n    Args:\n        first (str): The first case-sensitive string to compare.\n        second (str): The second case-sensitive string to compare.\n    \n    Returns:\n        bool: True when the strings are exact character anagrams; otherwise False.\n    \"\"\"\n    # Compare the frequency of every character.\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "recognizes anagrams",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert are_anagrams('evil', 'live') is True\nassert are_anagrams('silent', 'listen') is True"
+        },
+        {
+          "name": "checks repeated letter counts",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert are_anagrams('aab', 'aba') is True\nassert are_anagrams('aab', 'abb') is False"
+        },
+        {
+          "name": "uses exact characters",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert are_anagrams('Tea', 'eat') is False\nassert are_anagrams('', '') is True"
+        }
+      ]
+    },
+    {
+      "id": "dictionaries-phrase-anagrams",
+      "number": "6.9",
+      "title": "Phrase Anagram Check",
+      "category": "Dictionaries",
+      "difficulty": "Intermediate",
+      "prompt": "Anagrams can span several words. For example, 'William Shakespeare' and 'I am a weakish speller' contain the same letters when spacing and capitalization are ignored. Write are_phrase_anagrams(first, second). Normalize each phrase by keeping only alphabetic characters and converting them to lowercase; punctuation, digits, and whitespace do not participate. Compare the frequency of every remaining letter and return True when they match, including when both phrases contain no letters.",
+      "signature": "def are_phrase_anagrams(first: str, second: str) -> bool:",
+      "concepts": [
+        "dictionaries",
+        "normalization",
+        "anagrams",
+        "isalpha"
+      ],
+      "examples": [
+        {
+          "input": "are_phrase_anagrams('Dormitory', 'Dirty room!!')",
+          "output": "True"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def are_phrase_anagrams(first: str, second: str) -> bool:\n    \"\"\"Determine whether two phrases are anagrams after normalization.\n    \n    Args:\n        first (str): The first phrase; case and nonletters are ignored.\n        second (str): The second phrase; case and nonletters are ignored.\n    \n    Returns:\n        bool: True when the phrases contain the same letters after normalization.\n    \"\"\"\n    # Ignore case and every non-letter character.\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "recognizes phrase anagrams",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert are_phrase_anagrams('William Shakespeare', 'I am a weakish speller') is True\nassert are_phrase_anagrams('Dormitory', 'Dirty room!!') is True"
+        },
+        {
+          "name": "ignores nonletters and case",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert are_phrase_anagrams('A decimal point', \"I'm a dot in place\") is True\nassert are_phrase_anagrams('123!', '---') is True"
+        },
+        {
+          "name": "detects different letter counts",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert are_phrase_anagrams('the eyes', 'they see it') is False"
+        }
+      ]
+    },
+    {
+      "id": "dictionaries-scrabble-score",
+      "number": "6.10",
+      "title": "Word Tile Score",
+      "category": "Dictionaries",
+      "difficulty": "Beginner",
+      "prompt": "In a word-tile game, common letters are worth fewer points. Score A,E,I,L,N,O,R,S,T,U as 1 point; D,G as 2; B,C,M,P as 3; F,H,V,W,Y as 4; K as 5; J,X as 8; and Q,Z as 10. Write word_score(text) to total every letter in text. Treat uppercase and lowercase alike and ignore spaces, punctuation, digits, and other unsupported characters. Store the letter values in a dictionary.",
+      "signature": "def word_score(text: str) -> int:",
+      "concepts": [
+        "dictionaries",
+        "accumulation",
+        "letter values",
+        "case normalization"
+      ],
+      "examples": [
+        {
+          "input": "word_score('quiz')",
+          "output": "22"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def word_score(text: str) -> int:\n    \"\"\"Calculate the word-tile score of the letters in text.\n    \n    Args:\n        text (str): Text containing the letters to score; unsupported characters are\n                    ignored.\n    \n    Returns:\n        int: The sum of the configured point values for supported letters.\n    \"\"\"\n    # Add the dictionary value of every supported letter.\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "scores ordinary words",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert word_score('hello') == 8\nassert word_score('quiz') == 22"
+        },
+        {
+          "name": "is case insensitive",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert word_score('Python') == word_score('PYTHON') == 14"
+        },
+        {
+          "name": "ignores unsupported characters",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert word_score('a-b c! 123') == 6\nassert word_score('') == 0"
+        }
+      ]
+    },
+    {
+      "id": "dictionaries-bingo-card",
+      "number": "6.11",
+      "title": "Build a Bingo Card",
+      "category": "Dictionaries",
+      "difficulty": "Intermediate",
+      "prompt": "A Bingo card has columns B, I, N, G, and O. Each contains five different numbers from its own range: B uses 1-15, I uses 16-30, N uses 31-45, G uses 46-60, and O uses 61-75. Write create_bingo_card(seed=None) and return a dictionary whose keys appear in BINGO order and whose values are five-number lists. Use a local random.Random(seed) generator so the same seed reproduces the same card. Do not use a free centre square in this version.",
+      "signature": "def create_bingo_card(seed: int | None = None) -> dict[str, list[int]]:",
+      "concepts": [
+        "dictionaries",
+        "random sampling",
+        "ranges",
+        "data modelling"
+      ],
+      "examples": [
+        {
+          "input": "create_bingo_card(seed=1)",
+          "output": "A BINGO dictionary with five valid numbers in each column"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "import random\n\ndef create_bingo_card(seed: int | None = None) -> dict[str, list[int]]:\n    \"\"\"Create a reproducible five-column Bingo card.\n    \n    Args:\n        seed (int | None): Optional random seed used to make results reproducible.\n    \n    Returns:\n        dict[str, list[int]]: A BINGO-keyed dictionary containing five valid numbers per\n                              column.\n    \"\"\"\n    # Sample five distinct numbers for each BINGO column.\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "builds valid columns",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "card = create_bingo_card(seed=4)\nassert list(card) == list('BINGO')\nfor i, letter in enumerate('BINGO'):\n    values = card[letter]; low = i * 15 + 1\n    assert len(values) == len(set(values)) == 5\n    assert all(low <= value <= low + 14 for value in values)"
+        },
+        {
+          "name": "is reproducible",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert create_bingo_card(seed=22) == create_bingo_card(seed=22)"
+        },
+        {
+          "name": "returns independent cards",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "first = create_bingo_card(seed=2); second = create_bingo_card(seed=2)\nfirst['B'][0] = 999\nassert second['B'][0] != 999"
+        }
+      ]
+    },
+    {
+      "id": "dictionaries-bingo-win",
+      "number": "6.12",
+      "title": "Detect a Bingo Win",
+      "category": "Dictionaries",
+      "difficulty": "Advanced",
+      "prompt": "A called number on a Bingo card is represented by replacing it with 0. Write is_winning_card(card), where card is a dictionary containing the five BINGO columns as five-item lists. Return True when there are five zeros in any complete horizontal row, vertical column, or either corner-to-corner diagonal. Return False when no complete line is marked. Inspect the card without modifying it. You may assume the dictionary has the required keys and correctly sized lists.",
+      "signature": "def is_winning_card(card: dict[str, list[int]]) -> bool:",
+      "concepts": [
+        "dictionaries",
+        "two-dimensional data",
+        "rows",
+        "diagonals"
+      ],
+      "examples": [
+        {
+          "input": "A card whose first horizontal row is all zero",
+          "output": "True"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def is_winning_card(card: dict[str, list[int]]) -> bool:\n    \"\"\"Check whether a marked Bingo card contains a winning line.\n    \n    Args:\n        card (dict[str, list[int]]): A Bingo-card dictionary with B, I, N, G, and O columns.\n    \n    Returns:\n        bool: True for a complete horizontal, vertical, or diagonal line of zeros.\n    \"\"\"\n    # Check vertical, horizontal, and diagonal lines of zeros.\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "finds horizontal and vertical wins",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "base = {letter: [1, 2, 3, 4, 5] for letter in 'BINGO'}\nh = {k: list(v) for k, v in base.items()}\nfor letter in 'BINGO': h[letter][2] = 0\nassert is_winning_card(h) is True\nv = {k: list(v) for k, v in base.items()}; v['N'] = [0] * 5\nassert is_winning_card(v) is True"
+        },
+        {
+          "name": "finds both diagonals",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "for positions in [range(5), reversed(range(5))]:\n    card = {letter: [1, 2, 3, 4, 5] for letter in 'BINGO'}\n    for letter, row in zip('BINGO', positions): card[letter][row] = 0\n    assert is_winning_card(card) is True"
+        },
+        {
+          "name": "rejects incomplete lines without mutation",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "card = {letter: [0, 2, 3, 4, 5] for letter in 'BINGO'}; card['O'][0] = 9\nbefore = {k: list(v) for k, v in card.items()}\nassert is_winning_card(card) is False\nassert card == before"
+        },
+        {
+          "name": "unmarked card does not win",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "card = {letter: [1, 2, 3, 4, 5] for letter in 'BINGO'}\nassert is_winning_card(card) is False"
+        }
+      ]
+    },
+    {
+      "id": "dictionaries-bingo-simulation",
+      "number": "6.13",
+      "title": "Bingo Simulation",
+      "category": "Dictionaries",
+      "difficulty": "Advanced",
+      "prompt": "Estimate how many calls a single Bingo card needs before it wins. Write simulate_bingo(games=1000, seed=None). For each game, create a fresh valid card, shuffle all 75 numbers, call them one at a time, replace matching card numbers with 0, and stop at the first horizontal, vertical, or diagonal line. Return (minimum_calls, maximum_calls, arithmetic_mean) across all games. Use one local random.Random(seed) stream for the complete simulation so results are reproducible. Raise ValueError unless games is a positive integer.",
+      "signature": "def simulate_bingo(games: int = 1000, seed: int | None = None) -> tuple[int, int, float]:",
+      "concepts": [
+        "dictionaries",
+        "simulation",
+        "statistics",
+        "Bingo rules"
+      ],
+      "examples": [
+        {
+          "input": "simulate_bingo(20, seed=5)",
+          "output": "(minimum_calls, maximum_calls, average_calls)"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "import random\n\ndef simulate_bingo(games: int = 1000, seed: int | None = None) -> tuple[int, int, float]:\n    \"\"\"Simulate Bingo games and summarize the calls required to win.\n    \n    Args:\n        games (int): The positive number of complete simulations to perform.\n        seed (int | None): Optional random seed used to make results reproducible.\n    \n    Returns:\n        tuple[int, int, float]: The minimum, maximum, and mean call counts across all games.\n    \n    Raises:\n        ValueError: If games is not a positive integer.\n    \"\"\"\n    # Simulate games and summarize calls required to win.\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "returns plausible statistics",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "low, high, average = simulate_bingo(30, seed=8)\nassert isinstance(low, int) and isinstance(high, int)\nassert 5 <= low <= average <= high <= 75"
+        },
+        {
+          "name": "is reproducible",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert simulate_bingo(12, seed=3) == simulate_bingo(12, seed=3)"
+        },
+        {
+          "name": "rejects invalid game counts",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "for games in [0, -2, 1.5]:\n    try:\n        simulate_bingo(games)\n        assert False, 'Expected ValueError.'\n    except ValueError:\n        pass"
+        },
+        {
+          "name": "supports one complete game",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "low, high, average = simulate_bingo(1, seed=11)\nassert low == high == average\nassert 5 <= low <= 75"
+        }
+      ]
+    }
+  ]
+}

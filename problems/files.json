@@ -1,0 +1,1110 @@
+{
+  "version": 1,
+  "problems": [
+    {
+      "id": "files-head",
+      "number": "7.1",
+      "title": "File Preview",
+      "category": "Files & Exceptions",
+      "difficulty": "Beginner",
+      "prompt": "Write read_head(path, count=10). Open the text file and return its first count lines as a list with newline characters removed. Return every available line when the file is shorter. Let FileNotFoundError propagate for a missing path and reject a negative count with ValueError.",
+      "signature": "def read_head(path: str, count: int = 10) -> list[str]:",
+      "concepts": [
+        "files",
+        "reading lines",
+        "exceptions",
+        "early stopping"
+      ],
+      "examples": [
+        {
+          "input": "read_head('notes.txt', 2)",
+          "output": "['first line', 'second line']"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def read_head(path: str, count: int = 10) -> list[str]:\n    \"\"\"Read a requested number of lines from the beginning of a text file.\n    \n    Args:\n        path (str): Path to the input file that will be opened and processed.\n        count (int): The maximum number of leading lines to return.\n    \n    Returns:\n        list[str]: The first available lines without trailing newline characters.\n    \n    Raises:\n        FileNotFoundError: If path does not exist.\n        ValueError: If count is negative.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "returns only requested lines",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "path = '/tmp/head_many.txt'\nwith open(path, 'w') as file:\n    file.write('one\\ntwo\\nthree\\nfour\\n')\nassert read_head(path, 3) == ['one', 'two', 'three']"
+        },
+        {
+          "name": "handles a short file",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "path = '/tmp/head_short.txt'\nwith open(path, 'w') as file:\n    file.write('alpha\\nbeta')\nassert read_head(path) == ['alpha', 'beta']"
+        },
+        {
+          "name": "reports invalid requests",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "try:\n    read_head('/tmp/does-not-exist.txt')\n    assert False, 'Expected FileNotFoundError.'\nexcept FileNotFoundError:\n    pass\ntry:\n    read_head('/tmp/does-not-exist.txt', -1)\n    assert False, 'Expected ValueError for a negative count.'\nexcept ValueError:\n    pass"
+        }
+      ]
+    },
+    {
+      "id": "files-tail",
+      "number": "7.2",
+      "title": "Rolling File Tail",
+      "category": "Files & Exceptions",
+      "difficulty": "Intermediate",
+      "prompt": "Write read_tail(path, count=10). Read the file once and retain at most count lines while processing it, then return the final lines without newline characters. This must remain memory-efficient for very large files. A zero count returns []; a negative count raises ValueError.",
+      "signature": "def read_tail(path: str, count: int = 10) -> list[str]:",
+      "concepts": [
+        "files",
+        "bounded buffers",
+        "deque",
+        "large-file processing"
+      ],
+      "examples": [
+        {
+          "input": "read_tail('log.txt', 2)",
+          "output": "['next-to-last', 'last']"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def read_tail(path: str, count: int = 10) -> list[str]:\n    \"\"\"Read a requested number of lines from the end of a text file.\n    \n    Args:\n        path (str): Path to the input file that will be opened and processed.\n        count (int): The maximum number of trailing lines to return.\n    \n    Returns:\n        list[str]: The final available lines without trailing newline characters.\n    \n    Raises:\n        ValueError: If count is negative.\n    \"\"\"\n    # Read once and keep no more than count lines.\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "returns final lines",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "path = '/tmp/tail_many.txt'\nwith open(path, 'w') as file:\n    file.write('1\\n2\\n3\\n4\\n5\\n')\nassert read_tail(path, 3) == ['3', '4', '5']"
+        },
+        {
+          "name": "handles short and zero requests",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "path = '/tmp/tail_short.txt'\nwith open(path, 'w') as file:\n    file.write('a\\nb')\nassert read_tail(path, 10) == ['a', 'b']\nassert read_tail(path, 0) == []"
+        },
+        {
+          "name": "rejects a negative count",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "path = '/tmp/tail_negative.txt'\nopen(path, 'w').close()\ntry:\n    read_tail(path, -1)\n    assert False, 'Expected ValueError.'\nexcept ValueError:\n    pass"
+        }
+      ]
+    },
+    {
+      "id": "files-concatenate",
+      "number": "7.3",
+      "title": "Concatenate Safely",
+      "category": "Files & Exceptions",
+      "difficulty": "Beginner",
+      "prompt": "Write concatenate_files(paths). Read each text file in the supplied order and combine the readable contents into one string. If a path cannot be opened, skip it and continue. Return (combined_text, failed_paths), preserving the order of both successful content and failures.",
+      "signature": "def concatenate_files(paths: list[str]) -> tuple[str, list[str]]:",
+      "concepts": [
+        "multiple files",
+        "exception recovery",
+        "ordered processing",
+        "tuples"
+      ],
+      "examples": [
+        {
+          "input": "concatenate_files(['a.txt', 'b.txt'])",
+          "output": "('contents of a then b', [])"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def concatenate_files(paths: list[str]) -> tuple[str, list[str]]:\n    \"\"\"Combine readable text files while recording failed paths.\n    \n    Args:\n        paths (list[str]): Text-file paths to read and combine in order.\n    \n    Returns:\n        tuple[str, list[str]]: The combined text and an ordered list of paths that could not\n                               be read.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "combines files in order",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "a, b = '/tmp/cat_a.txt', '/tmp/cat_b.txt'\nwith open(a, 'w') as file: file.write('Alpha\\n')\nwith open(b, 'w') as file: file.write('Beta')\nassert concatenate_files([a, b]) == ('Alpha\\nBeta', [])"
+        },
+        {
+          "name": "continues after a missing file",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "a, b, missing = '/tmp/cat_c.txt', '/tmp/cat_d.txt', '/tmp/cat_missing.txt'\nwith open(a, 'w') as file: file.write('A')\nwith open(b, 'w') as file: file.write('B')\nassert concatenate_files([a, missing, b]) == ('AB', [missing])"
+        },
+        {
+          "name": "handles no paths",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert concatenate_files([]) == ('', [])"
+        }
+      ]
+    },
+    {
+      "id": "files-number-lines",
+      "number": "7.4",
+      "title": "Number Every Line",
+      "category": "Files & Exceptions",
+      "difficulty": "Beginner",
+      "prompt": "Write number_file(input_path, output_path). Copy the input file to a new file while prefixing each line with its 1-based line number, a colon, and a space. Preserve line breaks and return the number of lines written. File access errors should propagate.",
+      "signature": "def number_file(input_path: str, output_path: str) -> int:",
+      "concepts": [
+        "reading files",
+        "writing files",
+        "enumerate",
+        "line preservation"
+      ],
+      "examples": [
+        {
+          "input": "file containing apple then pear",
+          "output": "1: apple\n2: pear"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def number_file(input_path: str, output_path: str) -> int:\n    \"\"\"Copy a text file while prefixing each line with its line number.\n    \n    Args:\n        input_path (str): Path to the source text whose lines should be numbered.\n        output_path (str): Path where the numbered copy should be written.\n    \n    Returns:\n        int: The number of lines written to output_path.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "numbers every line",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "source, target = '/tmp/number_in.txt', '/tmp/number_out.txt'\nwith open(source, 'w') as file: file.write('apple\\npear\\nplum\\n')\nassert number_file(source, target) == 3\nwith open(target) as file: result = file.read()\nassert result == '1: apple\\n2: pear\\n3: plum\\n'"
+        },
+        {
+          "name": "preserves a final line without newline",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "source, target = '/tmp/number_final_in.txt', '/tmp/number_final_out.txt'\nwith open(source, 'w') as file: file.write('one\\ntwo')\nassert number_file(source, target) == 2\nwith open(target) as file: result = file.read()\nassert result == '1: one\\n2: two'"
+        },
+        {
+          "name": "handles an empty file",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "source, target = '/tmp/number_empty_in.txt', '/tmp/number_empty_out.txt'\nopen(source, 'w').close()\nassert number_file(source, target) == 0\nwith open(target) as file: assert file.read() == ''"
+        }
+      ]
+    },
+    {
+      "id": "files-longest-words",
+      "number": "7.5",
+      "title": "Longest Tokens",
+      "category": "Files & Exceptions",
+      "difficulty": "Beginner",
+      "prompt": "Write longest_words(path). Treat every whitespace-separated token as a word, including any attached punctuation or digits. Return (maximum_length, words) where words contains every occurrence having that length in encounter order. An empty file returns (0, []).",
+      "signature": "def longest_words(path: str) -> tuple[int, list[str]]:",
+      "concepts": [
+        "files",
+        "whitespace splitting",
+        "maximum tracking",
+        "lists"
+      ],
+      "examples": [
+        {
+          "input": "file containing 'red elephant blue'",
+          "output": "(8, ['elephant'])"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def longest_words(path: str) -> tuple[int, list[str]]:\n    \"\"\"Find the longest whitespace-separated tokens in a text file.\n    \n    Args:\n        path (str): Path to the input file that will be opened and processed.\n    \n    Returns:\n        tuple[int, list[str]]: The maximum token length and every longest token in encounter\n                               order.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "finds all longest occurrences",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "path = '/tmp/longest.txt'\nwith open(path, 'w') as file: file.write('cat elephant dog telescope elephant')\nassert longest_words(path) == (9, ['telescope'])"
+        },
+        {
+          "name": "counts punctuation as part of tokens",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "path = '/tmp/longest_punctuation.txt'\nwith open(path, 'w') as file: file.write('hello! world? tiny hello!')\nassert longest_words(path) == (6, ['hello!', 'world?', 'hello!'])"
+        },
+        {
+          "name": "handles empty files",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "path = '/tmp/longest_empty.txt'\nopen(path, 'w').close()\nassert longest_words(path) == (0, [])"
+        }
+      ]
+    },
+    {
+      "id": "files-letter-frequency",
+      "number": "7.6",
+      "title": "Letter Frequency Report",
+      "category": "Files & Exceptions",
+      "difficulty": "Intermediate",
+      "prompt": "Write letter_frequencies(path). Count ASCII letters case-insensitively while ignoring digits, whitespace, and punctuation. Return a dictionary containing every lowercase letter a through z, including zero counts, so the result can be used directly for frequency analysis.",
+      "signature": "def letter_frequencies(path: str) -> dict[str, int]:",
+      "concepts": [
+        "files",
+        "dictionaries",
+        "case normalization",
+        "frequency analysis"
+      ],
+      "examples": [
+        {
+          "input": "file containing 'A cab!'",
+          "output": "a: 2, b: 1, c: 1; all others 0"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def letter_frequencies(path: str) -> dict[str, int]:\n    \"\"\"Count ASCII letter occurrences in a text file.\n    \n    Args:\n        path (str): Path to the input file that will be opened and processed.\n    \n    Returns:\n        dict[str, int]: Counts for every lowercase letter from a through z.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "counts letters without case",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "path = '/tmp/letters.txt'\nwith open(path, 'w') as file: file.write('A cab! BETA 123')\nresult = letter_frequencies(path)\nassert result['a'] == 3 and result['b'] == 2 and result['e'] == 1 and result['t'] == 1"
+        },
+        {
+          "name": "contains all alphabet keys",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "path = '/tmp/letters_keys.txt'\nwith open(path, 'w') as file: file.write('z')\nresult = letter_frequencies(path)\nassert set(result) == set('abcdefghijklmnopqrstuvwxyz')\nassert result['z'] == 1 and result['a'] == 0"
+        },
+        {
+          "name": "ignores nonletters",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "path = '/tmp/letters_none.txt'\nwith open(path, 'w') as file: file.write('123 !?')\nassert all(value == 0 for value in letter_frequencies(path).values())"
+        }
+      ]
+    },
+    {
+      "id": "files-common-words",
+      "number": "7.7",
+      "title": "Most Common Words",
+      "category": "Files & Exceptions",
+      "difficulty": "Intermediate",
+      "prompt": "Write most_common_words(path). Split text on whitespace, strip leading and trailing punctuation, and compare words case-insensitively. Return (frequency, words), with tied words sorted alphabetically. Ignore tokens that contain no word after cleaning; an empty result returns (0, []).",
+      "signature": "def most_common_words(path: str) -> tuple[int, list[str]]:",
+      "concepts": [
+        "files",
+        "word cleaning",
+        "dictionaries",
+        "ties"
+      ],
+      "examples": [
+        {
+          "input": "file containing 'Apple apple! PEAR'",
+          "output": "(2, ['apple'])"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def most_common_words(path: str) -> tuple[int, list[str]]:\n    \"\"\"Find the most frequent normalized words in a text file.\n    \n    Args:\n        path (str): Path to the input file that will be opened and processed.\n    \n    Returns:\n        tuple[int, list[str]]: The highest frequency and the alphabetically sorted words\n                               tied at that frequency.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "normalizes punctuation and case",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "path = '/tmp/common.txt'\nwith open(path, 'w') as file: file.write('Apple apple! PEAR, pear apple.')\nassert most_common_words(path) == (3, ['apple'])"
+        },
+        {
+          "name": "returns alphabetical ties",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "path = '/tmp/common_tie.txt'\nwith open(path, 'w') as file: file.write('Cat dog cat DOG bird')\nassert most_common_words(path) == (2, ['cat', 'dog'])"
+        },
+        {
+          "name": "handles punctuation-only content",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "path = '/tmp/common_empty.txt'\nwith open(path, 'w') as file: file.write('... !!!')\nassert most_common_words(path) == (0, [])"
+        }
+      ]
+    },
+    {
+      "id": "files-valid-number-sum",
+      "number": "7.8",
+      "title": "Resilient Running Total",
+      "category": "Files & Exceptions",
+      "difficulty": "Beginner",
+      "prompt": "Write sum_valid_numbers(lines). Process string inputs in order until the first blank string. Convert valid integers or decimals with float(), catch conversion errors, and continue. Return (running_totals, invalid_lines), recording the updated total after each valid value and every rejected nonblank input.",
+      "signature": "def sum_valid_numbers(lines: list[str]) -> tuple[list[float], list[str]]:",
+      "concepts": [
+        "exceptions",
+        "float conversion",
+        "running totals",
+        "error recovery"
+      ],
+      "examples": [
+        {
+          "input": "sum_valid_numbers(['2', 'oops', '3.5', ''])",
+          "output": "([2.0, 5.5], ['oops'])"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def sum_valid_numbers(lines: list[str]) -> tuple[list[float], list[str]]:\n    \"\"\"Accumulate valid numeric strings while recording invalid input.\n    \n    Args:\n        lines (list[str]): Numeric text entries ending at the first blank string.\n    \n    Returns:\n        tuple[list[float], list[str]]: Running totals and rejected nonblank input lines.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "continues after invalid input",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert sum_valid_numbers(['2', 'oops', '3.5', '']) == ([2.0, 5.5], ['oops'])"
+        },
+        {
+          "name": "stops at the first blank",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert sum_valid_numbers(['1', '', '99']) == ([1.0], [])"
+        },
+        {
+          "name": "handles several errors and no values",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert sum_valid_numbers(['bad', 'also bad', '']) == ([], ['bad', 'also bad'])\nassert sum_valid_numbers(['']) == ([], [])"
+        }
+      ]
+    },
+    {
+      "id": "files-grade-converter",
+      "number": "7.9",
+      "title": "Grade Translator",
+      "category": "Files & Exceptions",
+      "difficulty": "Intermediate",
+      "prompt": "Write convert_grade(value), where value is text. First attempt float conversion: exact points 4.0, 3.7, 3.3, 3.0, 2.7, 2.3, 2.0, 1.7, 1.3, 1.0, and 0.0 map to A, A-, B+, B, B-, C+, C, C-, D+, D, and F. If numeric conversion fails, convert those letter grades (plus A+ as 4.0) to points. Raise ValueError for unsupported input.",
+      "signature": "def convert_grade(value: str) -> str | float:",
+      "concepts": [
+        "exceptions",
+        "two-way conversion",
+        "dictionaries",
+        "validation"
+      ],
+      "examples": [
+        {
+          "input": "convert_grade('B+')",
+          "output": "3.3"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def convert_grade(value: str) -> str | float:\n    \"\"\"Convert between a supported letter grade and numeric grade points.\n    \n    Args:\n        value (str): A supported letter grade or numeric point value represented as text.\n    \n    Returns:\n        str | float: A letter grade for numeric input, or grade points for letter input.\n    \n    Raises:\n        ValueError: If value is not a supported letter grade or point value.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "letter to points",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert convert_grade('B+') == 3.3\nassert convert_grade('f') == 0.0\nassert convert_grade('A+') == 4.0"
+        },
+        {
+          "name": "points to letter",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert convert_grade('4.0') == 'A'\nassert convert_grade('2.7') == 'B-'\nassert convert_grade('0') == 'F'"
+        },
+        {
+          "name": "rejects unsupported values",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "for value in ['excellent', '3.5', 'Z']:\n    try:\n        convert_grade(value)\n        assert False, 'Expected ValueError.'\n    except ValueError:\n        pass"
+        }
+      ]
+    },
+    {
+      "id": "files-remove-comments",
+      "number": "7.10",
+      "title": "Strip Python Comments",
+      "category": "Files & Exceptions",
+      "difficulty": "Intermediate",
+      "prompt": "Write remove_comments(input_path, output_path). For each source line, remove the first # and everything after it, then write the remaining text to the output file while preserving line boundaries. As in the original exercise, you may treat # inside a string as a comment marker. Return the number of input lines processed.",
+      "signature": "def remove_comments(input_path: str, output_path: str) -> int:",
+      "concepts": [
+        "files",
+        "reading and writing",
+        "string splitting",
+        "error propagation"
+      ],
+      "examples": [
+        {
+          "input": "x = 1  # initial value",
+          "output": "x = 1  "
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def remove_comments(input_path: str, output_path: str) -> int:\n    \"\"\"Copy Python-like source text while removing comment fragments.\n    \n    Args:\n        input_path (str): Path to the existing source file that will be read.\n        output_path (str): Path where the newly produced file must be written.\n    \n    Returns:\n        int: The number of source lines processed and written.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "removes full and trailing comments",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "source, target = '/tmp/comments_in.py', '/tmp/comments_out.py'\nwith open(source, 'w') as file: file.write('# heading\\nx = 1  # value\\nprint(x)\\n')\nassert remove_comments(source, target) == 3\nwith open(target) as file: result = file.read()\nassert result == '\\nx = 1  \\nprint(x)\\n'"
+        },
+        {
+          "name": "handles lines without comments",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "source, target = '/tmp/comments_plain.py', '/tmp/comments_plain_out.py'\nwith open(source, 'w') as file: file.write('a = 1\\nb = 2')\nassert remove_comments(source, target) == 2\nwith open(target) as file: assert file.read() == 'a = 1\\nb = 2'"
+        },
+        {
+          "name": "propagates missing input",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "try:\n    remove_comments('/tmp/no_source.py', '/tmp/no_output.py')\n    assert False, 'Expected FileNotFoundError.'\nexcept FileNotFoundError:\n    pass"
+        }
+      ]
+    },
+    {
+      "id": "files-random-password",
+      "number": "7.11",
+      "title": "Memorable Two-Word Password",
+      "category": "Files & Exceptions",
+      "difficulty": "Intermediate",
+      "prompt": "Write make_password(word_path). Read candidate words from the file, discard words shorter than three letters, and randomly choose two different entries whose combined length is 8 to 10 characters. Capitalize each chosen word and concatenate them. Raise ValueError when the file contains no valid pair.",
+      "signature": "def make_password(word_path: str) -> str:",
+      "concepts": [
+        "files",
+        "random selection",
+        "filtering",
+        "exceptions"
+      ],
+      "examples": [
+        {
+          "input": "words such as river and stone",
+          "output": "RiverStone"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "import random\n\ndef make_password(word_path: str) -> str:\n    \"\"\"Create a random password from two compatible dictionary words.\n    \n    Args:\n        word_path (str): Path to a file containing one candidate word per line.\n    \n    Returns:\n        str: Two distinct capitalized words concatenated into an 8-to-10-character password.\n    \n    Raises:\n        ValueError: If the word file contains no valid pair.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "creates a valid memorable password",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "import random\npath = '/tmp/password_words.txt'\nwith open(path, 'w') as file: file.write('cat\\nriver\\nstone\\nplanet\\nsun\\n')\nrandom.seed(4)\npassword = make_password(path)\nassert 8 <= len(password) <= 10\nassert password[0].isupper()\nassert password.lower() in {'catriver','rivercat','catstone','stonecat','catsun','suncat','riverstone','stoneriver','riversun','sunriver','stonesun','sunstone'}"
+        },
+        {
+          "name": "ignores short words",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "path = '/tmp/password_short.txt'\nwith open(path, 'w') as file: file.write('a\\nto\\nblue\\nberry\\n')\nassert make_password(path) in {'BlueBerry', 'BerryBlue'}"
+        },
+        {
+          "name": "rejects files without a valid pair",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "path = '/tmp/password_invalid.txt'\nwith open(path, 'w') as file: file.write('a\\nto\\nextraordinary\\n')\ntry:\n    make_password(path)\n    assert False, 'Expected ValueError.'\nexcept ValueError:\n    pass"
+        }
+      ]
+    },
+    {
+      "id": "files-element-lookup",
+      "number": "7.12",
+      "title": "Element Lookup",
+      "category": "Files & Exceptions",
+      "difficulty": "Intermediate",
+      "prompt": "Implement load_elements(path) for CSV rows atomic_number,symbol,name, returning a list of (number, symbol, name) tuples. Then write lookup_element(query, elements): numeric queries find atomic number, while text queries match symbol or full name case-insensitively. Return the matching tuple or raise LookupError.",
+      "signature": "def load_elements(path: str) -> list[tuple[int, str, str]]:\n\ndef lookup_element(query: str | int, elements: list[tuple[int, str, str]]) -> tuple[int, str, str]:",
+      "concepts": [
+        "CSV-style files",
+        "records",
+        "numeric exceptions",
+        "search"
+      ],
+      "examples": [
+        {
+          "input": "lookup_element('O', elements)",
+          "output": "(8, 'O', 'Oxygen')"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def load_elements(path: str) -> list[tuple[int, str, str]]:\n    \"\"\"Load chemical-element records from a CSV text file.\n    \n    Args:\n        path (str): Path to CSV rows containing atomic number, symbol, and name.\n    \n    Returns:\n        list[tuple[int, str, str]]: Parsed atomic-number, symbol, and name tuples in file\n                                    order.\n    \"\"\"\n    pass\n\ndef lookup_element(query: str | int, elements: list[tuple[int, str, str]]) -> tuple[int, str, str]:\n    \"\"\"Look up a chemical element by number, symbol, or name.\n    \n    Args:\n        query (str | int): The name, symbol, or number to locate.\n        elements (list[tuple[int, str, str]]): Element records returned by load_elements.\n    \n    Returns:\n        tuple[int, str, str]: The matching atomic-number, symbol, and name tuple.\n    \n    Raises:\n        LookupError: If no element matches query.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "loads element records",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "path = '/tmp/elements.csv'\nwith open(path, 'w') as file: file.write('1,H,Hydrogen\\n8,O,Oxygen\\n26,Fe,Iron\\n')\nelements = load_elements(path)\nassert elements == [(1, 'H', 'Hydrogen'), (8, 'O', 'Oxygen'), (26, 'Fe', 'Iron')]"
+        },
+        {
+          "name": "looks up number symbol and name",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "elements = [(1, 'H', 'Hydrogen'), (8, 'O', 'Oxygen'), (26, 'Fe', 'Iron')]\nassert lookup_element('8', elements) == (8, 'O', 'Oxygen')\nassert lookup_element('fe', elements) == (26, 'Fe', 'Iron')\nassert lookup_element('hydrogen', elements) == (1, 'H', 'Hydrogen')"
+        },
+        {
+          "name": "rejects unknown elements",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "try:\n    lookup_element('Unobtainium', [(1, 'H', 'Hydrogen')])\n    assert False, 'Expected LookupError.'\nexcept LookupError:\n    pass"
+        }
+      ]
+    },
+    {
+      "id": "files-letter-coverage",
+      "number": "7.13",
+      "title": "Letter Coverage by Word",
+      "category": "Files & Exceptions",
+      "difficulty": "Intermediate",
+      "prompt": "Write letter_coverage(path). Treat each nonblank line as one word, ignore case and nonletters, and compute for every a-z letter the proportion of words containing that letter at least once. Return (proportions, least_letters), where tied least-used letters are sorted. For an empty file, every proportion is 0.0.",
+      "signature": "def letter_coverage(path: str) -> tuple[dict[str, float], list[str]]:",
+      "concepts": [
+        "files",
+        "sets",
+        "proportions",
+        "minimum ties"
+      ],
+      "examples": [
+        {
+          "input": "words: apple, pear",
+          "output": "a appears in 100% of words; l appears in 50%"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def letter_coverage(path: str) -> tuple[dict[str, float], list[str]]:\n    \"\"\"Measure how often each letter appears across words in a file.\n    \n    Args:\n        path (str): Path to a file containing one candidate word per nonblank line.\n    \n    Returns:\n        tuple[dict[str, float], list[str]]: Per-letter word proportions and the\n                                            alphabetically sorted least-used letters.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "uses word presence not character count",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "path = '/tmp/coverage.txt'\nwith open(path, 'w') as file: file.write('apple\\npear\\nzzz\\n')\nproportions, least = letter_coverage(path)\nassert abs(proportions['a'] - 2/3) < 1e-12\nassert abs(proportions['p'] - 2/3) < 1e-12\nassert abs(proportions['z'] - 1/3) < 1e-12\nassert 'b' in least"
+        },
+        {
+          "name": "normalizes case and punctuation",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "path = '/tmp/coverage_case.txt'\nwith open(path, 'w') as file: file.write('Apple!\\nAREA\\n')\nproportions, least = letter_coverage(path)\nassert proportions['a'] == 1.0 and proportions['e'] == 1.0"
+        },
+        {
+          "name": "handles empty files",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "path = '/tmp/coverage_empty.txt'\nopen(path, 'w').close()\nproportions, least = letter_coverage(path)\nassert all(value == 0.0 for value in proportions.values())\nassert least == list('abcdefghijklmnopqrstuvwxyz')"
+        }
+      ]
+    },
+    {
+      "id": "files-top-names",
+      "number": "7.14",
+      "title": "Annual Top Names",
+      "category": "Files & Exceptions",
+      "difficulty": "Advanced",
+      "prompt": "Baby-name files are named YEAR_boys.txt and YEAR_girls.txt; each line contains name and count separated by whitespace. Write annual_top_names(directory) to inspect every matching file and collect each file's highest-count name or tied names. Return (boys, girls) as sorted lists without duplicates, and ignore unrelated files.",
+      "signature": "def annual_top_names(directory: str) -> tuple[list[str], list[str]]:",
+      "concepts": [
+        "directories",
+        "multiple files",
+        "sets",
+        "maximum ties"
+      ],
+      "examples": [
+        {
+          "input": "several annual name files",
+          "output": "sorted unique top boy and girl names"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def annual_top_names(directory: str) -> tuple[list[str], list[str]]:\n    \"\"\"Collect the most popular boy and girl names from annual data files.\n    \n    Args:\n        directory (str): Directory containing YEAR_boys.txt and YEAR_girls.txt files.\n    \n    Returns:\n        tuple[list[str], list[str]]: Sorted unique lists of annual top boy names and girl\n                                     names.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "collects annual winners",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "import os\ndirectory = '/tmp/top_names'\nos.makedirs(directory, exist_ok=True)\nwith open(directory + '/2000_boys.txt', 'w') as file: file.write('Liam 10\\nNoah 8\\n')\nwith open(directory + '/2001_boys.txt', 'w') as file: file.write('Noah 12\\nLiam 9\\n')\nwith open(directory + '/2000_girls.txt', 'w') as file: file.write('Emma 11\\nAva 7\\n')\nassert annual_top_names(directory) == (['Liam', 'Noah'], ['Emma'])"
+        },
+        {
+          "name": "keeps ties and removes duplicates",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "import os\ndirectory = '/tmp/top_ties'\nos.makedirs(directory, exist_ok=True)\nwith open(directory + '/2010_girls.txt', 'w') as file: file.write('Ava 10\\nMia 10\\n')\nwith open(directory + '/2011_girls.txt', 'w') as file: file.write('Ava 12\\n')\nassert annual_top_names(directory) == ([], ['Ava', 'Mia'])"
+        },
+        {
+          "name": "ignores unrelated files",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "import os\ndirectory = '/tmp/top_unrelated'\nos.makedirs(directory, exist_ok=True)\nwith open(directory + '/notes.txt', 'w') as file: file.write('Ignore 99')\nassert annual_top_names(directory) == ([], [])"
+        },
+        {
+          "name": "handles an archive with no matching files",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "import os\ndirectory = '/tmp/top_names_empty'\nos.makedirs(directory, exist_ok=True)\nassert annual_top_names(directory) == ([], [])"
+        }
+      ]
+    },
+    {
+      "id": "files-neutral-names",
+      "number": "7.15",
+      "title": "Shared Baby Names",
+      "category": "Files & Exceptions",
+      "difficulty": "Intermediate",
+      "prompt": "Using YEAR_boys.txt and YEAR_girls.txt files containing name/count pairs, write gender_neutral_names(directory, year). Return an alphabetically sorted list of names appearing in both files for that year. Return [] when there is no overlap and let FileNotFoundError report unavailable year data.",
+      "signature": "def gender_neutral_names(directory: str, year: int) -> list[str]:",
+      "concepts": [
+        "files",
+        "set intersection",
+        "dataset naming",
+        "missing-file errors"
+      ],
+      "examples": [
+        {
+          "input": "boy names Alex, Ben; girl names Alex, Maya",
+          "output": "['Alex']"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def gender_neutral_names(directory: str, year: int) -> list[str]:\n    \"\"\"Find names present in both annual boy and girl name files.\n    \n    Args:\n        directory (str): Directory containing the two annual name files.\n        year (int): The four-digit year whose records should be examined.\n    \n    Returns:\n        list[str]: Shared names for year in alphabetical order.\n    \n    Raises:\n        FileNotFoundError: If either name file for year is unavailable.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "finds shared names",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "import os\ndirectory = '/tmp/neutral'\nos.makedirs(directory, exist_ok=True)\nwith open(directory + '/2005_boys.txt', 'w') as file: file.write('Alex 10\\nBen 8\\nChris 4\\n')\nwith open(directory + '/2005_girls.txt', 'w') as file: file.write('Chris 9\\nMaya 7\\nAlex 3\\n')\nassert gender_neutral_names(directory, 2005) == ['Alex', 'Chris']"
+        },
+        {
+          "name": "returns empty when no names overlap",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "import os\ndirectory = '/tmp/neutral_none'\nos.makedirs(directory, exist_ok=True)\nwith open(directory + '/2006_boys.txt', 'w') as file: file.write('Ben 1\\n')\nwith open(directory + '/2006_girls.txt', 'w') as file: file.write('Maya 1\\n')\nassert gender_neutral_names(directory, 2006) == []"
+        },
+        {
+          "name": "reports missing year data",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "import os\ndirectory = '/tmp/neutral_missing'\nos.makedirs(directory, exist_ok=True)\ntry:\n    gender_neutral_names(directory, 1999)\n    assert False, 'Expected FileNotFoundError.'\nexcept FileNotFoundError:\n    pass"
+        }
+      ]
+    },
+    {
+      "id": "files-popular-range",
+      "number": "7.16",
+      "title": "Most Popular Across Years",
+      "category": "Files & Exceptions",
+      "difficulty": "Advanced",
+      "prompt": "Write most_popular_names(directory, start_year, end_year). Read every boys and girls name/count file in the inclusive range, add each name's counts across years, and return (boy_names, girl_names), with alphabetically sorted lists for any overall ties. Raise ValueError for a reversed range and let missing files raise FileNotFoundError.",
+      "signature": "def most_popular_names(directory: str, start_year: int, end_year: int) -> tuple[list[str], list[str]]:",
+      "concepts": [
+        "multiple files",
+        "aggregation",
+        "dictionaries",
+        "range validation"
+      ],
+      "examples": [
+        {
+          "input": "name files from 2000 through 2002",
+          "output": "names with the greatest cumulative counts"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def most_popular_names(directory: str, start_year: int, end_year: int) -> tuple[list[str], list[str]]:\n    \"\"\"Find names with the greatest cumulative counts across a year range.\n    \n    Args:\n        directory (str): Directory containing annual boy and girl name files.\n        start_year (int): The first year to include, inclusive.\n        end_year (int): The final year to include, inclusive.\n    \n    Returns:\n        tuple[list[str], list[str]]: Alphabetically sorted boy-name and girl-name winners,\n                                     including ties.\n    \n    Raises:\n        ValueError: If start_year is later than end_year.\n        FileNotFoundError: If a required annual name file is unavailable.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "aggregates across years",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "import os\ndirectory = '/tmp/popular_range'\nos.makedirs(directory, exist_ok=True)\nfor year, boys, girls in [(2000, 'Liam 5\\nNoah 8\\n', 'Ava 9\\nMia 2\\n'), (2001, 'Liam 10\\nNoah 3\\n', 'Ava 1\\nMia 12\\n')]:\n    with open(f'{directory}/{year}_boys.txt', 'w') as file: file.write(boys)\n    with open(f'{directory}/{year}_girls.txt', 'w') as file: file.write(girls)\nassert most_popular_names(directory, 2000, 2001) == (['Liam'], ['Mia'])"
+        },
+        {
+          "name": "returns tied winners",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "import os\ndirectory = '/tmp/popular_tie'\nos.makedirs(directory, exist_ok=True)\nwith open(directory + '/2010_boys.txt', 'w') as file: file.write('A 5\\nB 5\\n')\nwith open(directory + '/2010_girls.txt', 'w') as file: file.write('C 4\\nD 4\\n')\nassert most_popular_names(directory, 2010, 2010) == (['A', 'B'], ['C', 'D'])"
+        },
+        {
+          "name": "rejects a reversed range",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "try:\n    most_popular_names('/tmp', 2020, 2019)\n    assert False, 'Expected ValueError.'\nexcept ValueError:\n    pass"
+        },
+        {
+          "name": "reports missing annual data",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "import os\ndirectory = '/tmp/popular_missing'\nos.makedirs(directory, exist_ok=True)\ntry:\n    most_popular_names(directory, 2000, 2000)\n    assert False, 'Expected FileNotFoundError.'\nexcept FileNotFoundError:\n    pass"
+        }
+      ]
+    },
+    {
+      "id": "files-distinct-names",
+      "number": "7.17",
+      "title": "Distinct Names Archive",
+      "category": "Files & Exceptions",
+      "difficulty": "Intermediate",
+      "prompt": "Write distinct_names(directory). Scan every YEAR_boys.txt and YEAR_girls.txt file, where each line is name followed by count. Return (boys, girls) as alphabetically sorted lists containing every distinct name ever used for each group. Ignore unrelated files and never repeat a name.",
+      "signature": "def distinct_names(directory: str) -> tuple[list[str], list[str]]:",
+      "concepts": [
+        "directories",
+        "multiple files",
+        "sets",
+        "deduplication"
+      ],
+      "examples": [
+        {
+          "input": "an archive containing several years",
+          "output": "two sorted lists of all unique names"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def distinct_names(directory: str) -> tuple[list[str], list[str]]:\n    \"\"\"Collect every distinct boy and girl name in an archive.\n    \n    Args:\n        directory (str): Directory containing the annual name archive.\n    \n    Returns:\n        tuple[list[str], list[str]]: Alphabetically sorted unique boy-name and girl-name\n                                     lists.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "collects names across years",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "import os\ndirectory = '/tmp/distinct'\nos.makedirs(directory, exist_ok=True)\nwith open(directory + '/2000_boys.txt', 'w') as file: file.write('Liam 5\\nNoah 3\\n')\nwith open(directory + '/2001_boys.txt', 'w') as file: file.write('Noah 8\\nEli 2\\n')\nwith open(directory + '/2000_girls.txt', 'w') as file: file.write('Ava 4\\nMia 2\\n')\nassert distinct_names(directory) == (['Eli', 'Liam', 'Noah'], ['Ava', 'Mia'])"
+        },
+        {
+          "name": "keeps groups separate",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "import os\ndirectory = '/tmp/distinct_groups'\nos.makedirs(directory, exist_ok=True)\nwith open(directory + '/2010_boys.txt', 'w') as file: file.write('Alex 5\\n')\nwith open(directory + '/2010_girls.txt', 'w') as file: file.write('Alex 4\\nMaya 2\\n')\nassert distinct_names(directory) == (['Alex'], ['Alex', 'Maya'])"
+        },
+        {
+          "name": "handles an empty directory",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "import os\ndirectory = '/tmp/distinct_empty'\nos.makedirs(directory, exist_ok=True)\nassert distinct_names(directory) == ([], [])"
+        }
+      ]
+    },
+    {
+      "id": "files-spell-checker",
+      "number": "7.18",
+      "title": "File Spell Checker",
+      "category": "Files & Exceptions",
+      "difficulty": "Intermediate",
+      "prompt": "Write misspelled_words(text_path, dictionary_path). Load known words from the dictionary file into a set, then read the document, split on whitespace, strip punctuation from word edges, and compare case-insensitively. Return misspellings once each in first-seen lowercase order. File errors should propagate.",
+      "signature": "def misspelled_words(text_path: str, dictionary_path: str) -> list[str]:",
+      "concepts": [
+        "files",
+        "sets",
+        "word cleaning",
+        "case normalization"
+      ],
+      "examples": [
+        {
+          "input": "document: 'The quik fox'; dictionary includes the and fox",
+          "output": "['quik']"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def misspelled_words(text_path: str, dictionary_path: str) -> list[str]:\n    \"\"\"Find document words that are absent from a dictionary file.\n    \n    Args:\n        text_path (str): Path to the document whose words should be checked.\n        dictionary_path (str): Path to a file containing recognized words.\n    \n    Returns:\n        list[str]: Unique misspellings in lowercase first-seen order.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "finds cleaned misspellings",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "text, words = '/tmp/spell_text.txt', '/tmp/spell_words.txt'\nwith open(text, 'w') as file: file.write('The quik, brown fox jumps. Quik!')\nwith open(words, 'w') as file: file.write('the\\nbrown\\nfox\\njumps\\n')\nassert misspelled_words(text, words) == ['quik']"
+        },
+        {
+          "name": "ignores capitalization",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "text, words = '/tmp/spell_case.txt', '/tmp/spell_case_words.txt'\nwith open(text, 'w') as file: file.write('Python PYTHON python')\nwith open(words, 'w') as file: file.write('python\\n')\nassert misspelled_words(text, words) == []"
+        },
+        {
+          "name": "reports several words in first-seen order",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "text, words = '/tmp/spell_many.txt', '/tmp/spell_many_words.txt'\nwith open(text, 'w') as file: file.write('zeta alpha zeta beta')\nopen(words, 'w').close()\nassert misspelled_words(text, words) == ['zeta', 'alpha', 'beta']"
+        }
+      ]
+    },
+    {
+      "id": "files-repeated-words",
+      "number": "7.19",
+      "title": "Repeated Word Detector",
+      "category": "Files & Exceptions",
+      "difficulty": "Intermediate",
+      "prompt": "Write repeated_words(path). Scan words case-insensitively after removing edge punctuation and detect consecutive duplicates, including when the first word of a line repeats the final word of the previous line. Return a list of (line_number, word) for each repeated occurrence, using the second occurrence's 1-based line number.",
+      "signature": "def repeated_words(path: str) -> list[tuple[int, str]]:",
+      "concepts": [
+        "files",
+        "state across lines",
+        "word cleaning",
+        "line numbers"
+      ],
+      "examples": [
+        {
+          "input": "'must be entered' followed by 'entered again'",
+          "output": "[(2, 'entered')]"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def repeated_words(path: str) -> list[tuple[int, str]]:\n    \"\"\"Locate consecutive repeated words in a text file.\n    \n    Args:\n        path (str): Path to the input file that will be opened and processed.\n    \n    Returns:\n        list[tuple[int, str]]: The line number and normalized word for each repeated\n                               occurrence.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "detects repeats within a line",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "path = '/tmp/repeated_same_line.txt'\nwith open(path, 'w') as file: file.write('This is is a test test.\\n')\nassert repeated_words(path) == [(1, 'is'), (1, 'test')]"
+        },
+        {
+          "name": "detects repeats across lines",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "path = '/tmp/repeated_lines.txt'\nwith open(path, 'w') as file: file.write('At least one value must be entered\\nentered in order.\\n')\nassert repeated_words(path) == [(2, 'entered')]"
+        },
+        {
+          "name": "normalizes punctuation and case",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "path = '/tmp/repeated_case.txt'\nwith open(path, 'w') as file: file.write('Hello, HELLO! world\\n')\nassert repeated_words(path) == [(1, 'hello')]"
+        }
+      ]
+    },
+    {
+      "id": "files-redaction",
+      "number": "7.20",
+      "title": "Case-Insensitive Redaction",
+      "category": "Files & Exceptions",
+      "difficulty": "Advanced",
+      "prompt": "Write redact_file(input_path, sensitive_path, output_path). Read one sensitive term per nonblank line, then replace every case-insensitive occurrence in the source with the same number of asterisks—even when it appears inside a larger word. Write the result and return the total number of replacements. Preserve all nonredacted text and line breaks.",
+      "signature": "def redact_file(input_path: str, sensitive_path: str, output_path: str) -> int:",
+      "concepts": [
+        "multiple files",
+        "case-insensitive replacement",
+        "regular expressions",
+        "writing output"
+      ],
+      "examples": [
+        {
+          "input": "term 'exam' in 'Example EXAM'",
+          "output": "****ple ****"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def redact_file(input_path: str, sensitive_path: str, output_path: str) -> int:\n    \"\"\"Write a copy of a text file with sensitive terms replaced by asterisks.\n    \n    Args:\n        input_path (str): Path to the source text that may contain sensitive terms.\n        sensitive_path (str): Path to one sensitive term per nonblank line.\n        output_path (str): Path where the redacted copy should be written.\n    \n    Returns:\n        int: The total number of case-insensitive replacements written.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "redacts substrings without case",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "source, terms, target = '/tmp/redact_in.txt', '/tmp/redact_terms.txt', '/tmp/redact_out.txt'\nwith open(source, 'w') as file: file.write('Example exam EXAMple')\nwith open(terms, 'w') as file: file.write('exam\\n')\nassert redact_file(source, terms, target) == 3\nwith open(target) as file: assert file.read() == '****ple **** ****ple'"
+        },
+        {
+          "name": "handles several sensitive terms",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "source, terms, target = '/tmp/redact_multi.txt', '/tmp/redact_multi_terms.txt', '/tmp/redact_multi_out.txt'\nwith open(source, 'w') as file: file.write('Alpha beta ALPHA')\nwith open(terms, 'w') as file: file.write('alpha\\nbeta\\n')\nassert redact_file(source, terms, target) == 3\nwith open(target) as file: assert file.read() == '***** **** *****'"
+        },
+        {
+          "name": "preserves content with no matches",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "source, terms, target = '/tmp/redact_none.txt', '/tmp/redact_none_terms.txt', '/tmp/redact_none_out.txt'\nwith open(source, 'w') as file: file.write('safe text\\n')\nwith open(terms, 'w') as file: file.write('secret\\n')\nassert redact_file(source, terms, target) == 0\nwith open(target) as file: assert file.read() == 'safe text\\n'"
+        },
+        {
+          "name": "supports an empty sensitive-word list",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "source = '/tmp/redact_plain.txt'\nsensitive = '/tmp/redact_empty.txt'\nout = '/tmp/redact_plain_out.txt'\nopen(source, 'w').write('Nothing changes.\\n')\nopen(sensitive, 'w').close()\nassert redact_file(source, sensitive, out) == 0\nassert open(out).read() == 'Nothing changes.\\n'"
+        }
+      ]
+    },
+    {
+      "id": "files-missing-comments",
+      "number": "7.21",
+      "title": "Missing Function Comments",
+      "category": "Files & Exceptions",
+      "difficulty": "Intermediate",
+      "prompt": "Write missing_function_comments(paths). A top-level function begins on a line starting exactly with 'def '. It is documented only when the immediately preceding line begins with '#'. Return (findings, failed_paths), where each finding is (path, line_number, function_name). Continue after unreadable files and preserve input-file order.",
+      "signature": "def missing_function_comments(paths: list[str]) -> tuple[list[tuple[str, int, str]], list[str]]:",
+      "concepts": [
+        "multiple files",
+        "source analysis",
+        "line tracking",
+        "exception recovery"
+      ],
+      "examples": [
+        {
+          "input": "a def line without a preceding # comment",
+          "output": "(path, line number, function name)"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def missing_function_comments(paths: list[str]) -> tuple[list[tuple[str, int, str]], list[str]]:\n    \"\"\"Find top-level functions without an immediately preceding comment.\n    \n    Args:\n        paths (list[str]): Python-source paths to inspect in the supplied order.\n    \n    Returns:\n        tuple[list[tuple[str, int, str]], list[str]]: Documentation findings and paths that\n                                                      could not be read.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "reports undocumented functions",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "path = '/tmp/functions.py'\nwith open(path, 'w') as file: file.write('# documented\\ndef good():\\n    pass\\n\\ndef missing(x):\\n    return x\\n')\nassert missing_function_comments([path]) == ([(path, 5, 'missing')], [])"
+        },
+        {
+          "name": "requires the immediately previous line",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "path = '/tmp/functions_gap.py'\nwith open(path, 'w') as file: file.write('# old comment\\n\\ndef gap():\\n    pass\\n')\nassert missing_function_comments([path]) == ([(path, 3, 'gap')], [])"
+        },
+        {
+          "name": "continues after missing files",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "good, missing = '/tmp/functions_ok.py', '/tmp/functions_missing.py'\nwith open(good, 'w') as file: file.write('def lone():\\n    pass\\n')\nassert missing_function_comments([missing, good]) == ([(good, 1, 'lone')], [missing])"
+        }
+      ]
+    },
+    {
+      "id": "files-reflow",
+      "number": "7.22",
+      "title": "Paragraph Reflow",
+      "category": "Files & Exceptions",
+      "difficulty": "Advanced",
+      "prompt": "Write reflow_file(path, width=50). Join wrapped source lines within each paragraph, then repack words so every output line is as full as possible without exceeding width (unless one word itself is longer). Preserve paragraph boundaries as one blank line. Return the formatted text without adding an extra trailing newline.",
+      "signature": "def reflow_file(path: str, width: int = 50) -> str:",
+      "concepts": [
+        "files",
+        "paragraph detection",
+        "greedy line wrapping",
+        "constants"
+      ],
+      "examples": [
+        {
+          "input": "short source lines with width 12",
+          "output": "repacked lines no longer than 12"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def reflow_file(path: str, width: int = 50) -> str:\n    \"\"\"Reflow paragraphs from a text file to a target line width.\n    \n    Args:\n        path (str): Path to the input file that will be opened and processed.\n        width (int): Maximum output width, except for an individual longer word.\n    \n    Returns:\n        str: The reformatted text without an extra trailing newline.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "fills lines greedily",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "path = '/tmp/reflow.txt'\nwith open(path, 'w') as file: file.write('Alice was\\nbeginning to get very tired\\nof sitting nearby')\nassert reflow_file(path, 20) == 'Alice was beginning\\nto get very tired of\\nsitting nearby'"
+        },
+        {
+          "name": "preserves paragraph breaks",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "path = '/tmp/reflow_paragraphs.txt'\nwith open(path, 'w') as file: file.write('one two three\\n\\nfour five six')\nassert reflow_file(path, 8) == 'one two\\nthree\\n\\nfour\\nfive six'"
+        },
+        {
+          "name": "handles empty and long-word files",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "empty, long = '/tmp/reflow_empty.txt', '/tmp/reflow_long.txt'\nopen(empty, 'w').close()\nwith open(long, 'w') as file: file.write('extraordinary tiny')\nassert reflow_file(empty, 10) == ''\nassert reflow_file(long, 5) == 'extraordinary\\ntiny'"
+        },
+        {
+          "name": "keeps words that exactly fit the width",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "path = '/tmp/reflow_exact.txt'\nopen(path, 'w').write('abcd efgh')\nassert reflow_file(path, 9) == 'abcd efgh'"
+        }
+      ]
+    },
+    {
+      "id": "files-six-vowels",
+      "number": "7.23",
+      "title": "Ordered Six Vowels",
+      "category": "Files & Exceptions",
+      "difficulty": "Intermediate",
+      "prompt": "Write six_vowel_words(path). Read one candidate word per line and return those whose vowel sequence is exactly a, e, i, o, u, y—each appearing once and in that order. Compare case-insensitively, ignore surrounding whitespace, preserve matching words in encounter order, and let file errors propagate.",
+      "signature": "def six_vowel_words(path: str) -> list[str]:",
+      "concepts": [
+        "files",
+        "ordered filtering",
+        "character sequences",
+        "validation"
+      ],
+      "examples": [
+        {
+          "input": "facetiously",
+          "output": "match: vowels are a, e, i, o, u, y"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def six_vowel_words(path: str) -> list[str]:\n    \"\"\"Find words whose vowels are exactly a, e, i, o, u, and y in order.\n    \n    Args:\n        path (str): Path to the input file that will be opened and processed.\n    \n    Returns:\n        list[str]: Matching words in their original file order.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "finds valid words",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "path = '/tmp/six_vowels.txt'\nwith open(path, 'w') as file: file.write('facetiously\\nabstemiously\\neducation\\n')\nassert six_vowel_words(path) == ['facetiously', 'abstemiously']"
+        },
+        {
+          "name": "rejects missing extra or reordered vowels",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "path = '/tmp/six_vowels_invalid.txt'\nwith open(path, 'w') as file: file.write('facetious\\naeiouya\\neducationy\\n')\nassert six_vowel_words(path) == []"
+        },
+        {
+          "name": "ignores case and blank lines",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "path = '/tmp/six_vowels_case.txt'\nwith open(path, 'w') as file: file.write('\\nFACETIOUSLY\\n  abstemiously  \\n')\nassert six_vowel_words(path) == ['FACETIOUSLY', 'abstemiously']"
+        }
+      ]
+    }
+  ]
+}

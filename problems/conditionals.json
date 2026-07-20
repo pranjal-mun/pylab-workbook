@@ -1,0 +1,1244 @@
+{
+  "version": 1,
+  "problems": [
+    {
+      "id": "conditionals-even-or-odd",
+      "number": "2.1",
+      "title": "Even or Odd",
+      "category": "Conditionals",
+      "difficulty": "Beginner",
+      "prompt": "Classify an integer by parity.\n\nBackground and required method:\nReturn 'even' when number is divisible by 2 and 'odd' otherwise.\n\nImplement this interface:\ndef even_or_odd(number: int) -> str:\n\nParameters:\n• number (int): Integer to classify.",
+      "signature": "def even_or_odd(number: int) -> str:",
+      "concepts": [
+        "conditionals",
+        "modulo"
+      ],
+      "examples": [
+        {
+          "input": "even_or_odd(17)",
+          "output": "'odd'"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def even_or_odd(number: int) -> str:\n    \"\"\"Classify an integer by parity.\n\n    Args:\n        number (int): Integer to classify.\n\n    Returns:\n        str: Classify an integer by parity.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "odd",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert even_or_odd(17) == 'odd'"
+        },
+        {
+          "name": "even",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert even_or_odd(24) == 'even'"
+        },
+        {
+          "name": "zero",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert even_or_odd(0) == 'even'"
+        }
+      ]
+    },
+    {
+      "id": "conditionals-dog-years",
+      "number": "2.2",
+      "title": "Dog Years",
+      "category": "Conditionals",
+      "difficulty": "Beginner",
+      "prompt": "Convert a dog's age from human years to dog years.\n\nBackground and required method:\nThe first two human years count as 10.5 dog years each; every additional year counts as 4 dog years. Raise ValueError for a negative age.\n\nImplement this interface:\ndef dog_years(human_years: float) -> float:\n\nParameters:\n• human_years (float): Non-negative age in human years.",
+      "signature": "def dog_years(human_years: float) -> float:",
+      "concepts": [
+        "piecewise formulas",
+        "conditionals"
+      ],
+      "examples": [
+        {
+          "input": "dog_years(5)",
+          "output": "33.0"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def dog_years(human_years: float) -> float:\n    \"\"\"Convert a dog's age from human years to dog years.\n\n    Args:\n        human_years (float): Non-negative age in human years.\n\n    Returns:\n        float: Convert a dog's age from human years to dog years.\n\n    Raises:\n        ValueError: If human_years is negative.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "puppy",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert dog_years(1) == 10.5"
+        },
+        {
+          "name": "two years",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert dog_years(2) == 21.0"
+        },
+        {
+          "name": "adult",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert dog_years(5) == 33.0"
+        }
+      ]
+    },
+    {
+      "id": "conditionals-letter-kind",
+      "number": "2.3",
+      "title": "Vowel, Consonant, or Sometimes",
+      "category": "Conditionals",
+      "difficulty": "Beginner",
+      "prompt": "Classify a letter by its vowel behavior.\n\nBackground and required method:\nReturn 'vowel' for a, e, i, o, or u; 'sometimes' for y; and 'consonant' for every other letter. Ignore case.\n\nImplement this interface:\ndef letter_kind(letter: str) -> str:\n\nParameters:\n• letter (str): Single alphabetic character to classify.",
+      "signature": "def letter_kind(letter: str) -> str:",
+      "concepts": [
+        "strings",
+        "membership",
+        "conditionals"
+      ],
+      "examples": [
+        {
+          "input": "letter_kind('Y')",
+          "output": "'sometimes'"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def letter_kind(letter: str) -> str:\n    \"\"\"Classify a letter by its vowel behavior.\n\n    Args:\n        letter (str): Single alphabetic character to classify.\n\n    Returns:\n        str: Classify a letter by its vowel behavior.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "vowel",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert letter_kind('A') == 'vowel'"
+        },
+        {
+          "name": "y",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert letter_kind('y') == 'sometimes'"
+        },
+        {
+          "name": "consonant",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert letter_kind('q') == 'consonant'"
+        }
+      ]
+    },
+    {
+      "id": "conditionals-shape-name",
+      "number": "2.4",
+      "title": "Name a Polygon",
+      "category": "Conditionals",
+      "difficulty": "Beginner",
+      "prompt": "Name a polygon from its number of sides.\n\nBackground and required method:\nRecognize 3 through 10 sides as triangle, quadrilateral, pentagon, hexagon, heptagon, octagon, nonagon, and decagon. Return 'unsupported' otherwise.\n\nImplement this interface:\ndef shape_name(sides: int) -> str:\n\nParameters:\n• sides (int): Number of polygon sides.",
+      "signature": "def shape_name(sides: int) -> str:",
+      "concepts": [
+        "lookup",
+        "conditionals"
+      ],
+      "examples": [
+        {
+          "input": "shape_name(6)",
+          "output": "'hexagon'"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def shape_name(sides: int) -> str:\n    \"\"\"Name a polygon from its number of sides.\n\n    Args:\n        sides (int): Number of polygon sides.\n\n    Returns:\n        str: Name a polygon from its number of sides.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "triangle",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert shape_name(3) == 'triangle'"
+        },
+        {
+          "name": "octagon",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert shape_name(8) == 'octagon'"
+        },
+        {
+          "name": "unsupported",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert shape_name(12) == 'unsupported'"
+        }
+      ]
+    },
+    {
+      "id": "conditionals-month-days",
+      "number": "2.5",
+      "title": "Days in a Month",
+      "category": "Conditionals",
+      "difficulty": "Beginner",
+      "prompt": "Report the possible number of days in a month.\n\nBackground and required method:\nReturn 31 or 30 for fixed-length months. Return (28, 29) for February because no year is supplied. Match month names case-insensitively.\n\nImplement this interface:\ndef month_days(month: str) -> int | tuple[int, int]:\n\nParameters:\n• month (str): English month name.",
+      "signature": "def month_days(month: str) -> int | tuple[int, int]:",
+      "concepts": [
+        "calendar",
+        "conditionals"
+      ],
+      "examples": [
+        {
+          "input": "month_days('February')",
+          "output": "(28, 29)"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def month_days(month: str) -> int | tuple[int, int]:\n    \"\"\"Report the possible number of days in a month.\n\n    Args:\n        month (str): English month name.\n\n    Returns:\n        int | tuple[int, int]: Report the possible number of days in a month.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "long month",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert month_days('January') == 31"
+        },
+        {
+          "name": "short month",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert month_days('September') == 30"
+        },
+        {
+          "name": "February",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert month_days('february') == (28, 29)"
+        }
+      ]
+    },
+    {
+      "id": "conditionals-sound-description",
+      "number": "2.6",
+      "title": "Sound Level",
+      "category": "Conditionals",
+      "difficulty": "Beginner",
+      "prompt": "Compare a sound level with familiar reference noises.\n\nBackground and required method:\nExact levels are quiet room 40, alarm clock 70, gas lawnmower 106, and jackhammer 130. Between references, describe it as 'between X and Y'; below 40 or above 130 returns 'outside range'.\n\nImplement this interface:\ndef sound_description(decibels: float) -> str:\n\nParameters:\n• decibels (float): Sound level in decibels.",
+      "signature": "def sound_description(decibels: float) -> str:",
+      "concepts": [
+        "ranges",
+        "conditionals"
+      ],
+      "examples": [
+        {
+          "input": "sound_description(70)",
+          "output": "'alarm clock'"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def sound_description(decibels: float) -> str:\n    \"\"\"Compare a sound level with familiar reference noises.\n\n    Args:\n        decibels (float): Sound level in decibels.\n\n    Returns:\n        str: Compare a sound level with familiar reference noises.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "exact",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert sound_description(70) == 'alarm clock'"
+        },
+        {
+          "name": "between",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert sound_description(80) == 'between alarm clock and gas lawnmower'"
+        },
+        {
+          "name": "outside",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert sound_description(20) == 'outside range'"
+        }
+      ]
+    },
+    {
+      "id": "conditionals-triangle-kind",
+      "number": "2.7",
+      "title": "Triangle Type",
+      "category": "Conditionals",
+      "difficulty": "Beginner",
+      "prompt": "Classify a triangle from its side lengths.\n\nBackground and required method:\nReturn 'equilateral' for three equal sides, 'isosceles' for exactly two equal sides, and 'scalene' otherwise. Inputs form a valid triangle.\n\nImplement this interface:\ndef triangle_kind(a: float, b: float, c: float) -> str:\n\nParameters:\n• a (float): First side length.\n• b (float): Second side length.\n• c (float): Third side length.",
+      "signature": "def triangle_kind(a: float, b: float, c: float) -> str:",
+      "concepts": [
+        "comparisons",
+        "geometry"
+      ],
+      "examples": [
+        {
+          "input": "triangle_kind(5, 5, 3)",
+          "output": "'isosceles'"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def triangle_kind(a: float, b: float, c: float) -> str:\n    \"\"\"Classify a triangle from its side lengths.\n\n    Args:\n        a (float): First side length.\n        b (float): Second side length.\n        c (float): Third side length.\n\n    Returns:\n        str: Classify a triangle from its side lengths.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "equilateral",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert triangle_kind(4,4,4) == 'equilateral'"
+        },
+        {
+          "name": "isosceles",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert triangle_kind(5,5,3) == 'isosceles'"
+        },
+        {
+          "name": "scalene",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert triangle_kind(3,4,5) == 'scalene'"
+        }
+      ]
+    },
+    {
+      "id": "conditionals-note-frequency",
+      "number": "2.8",
+      "title": "Musical Note Frequency",
+      "category": "Conditionals",
+      "difficulty": "Intermediate",
+      "prompt": "Calculate the frequency of a named musical note.\n\nBackground and required method:\nUse C4=261.63 Hz and fourth-octave offsets D4=293.66, E4=329.63, F4=349.23, G4=392.00, A4=440.00, B4=493.88. Multiply by 2^(octave-4).\n\nImplement this interface:\ndef note_frequency(note: str) -> float:\n\nParameters:\n• note (str): Note name from C0 through B8.",
+      "signature": "def note_frequency(note: str) -> float:",
+      "concepts": [
+        "music",
+        "exponents",
+        "parsing"
+      ],
+      "examples": [
+        {
+          "input": "note_frequency('A4')",
+          "output": "440.0"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def note_frequency(note: str) -> float:\n    \"\"\"Calculate the frequency of a named musical note.\n\n    Args:\n        note (str): Note name from C0 through B8.\n\n    Returns:\n        float: Calculate the frequency of a named musical note.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "concert A",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "actual=note_frequency('A4')\nexpected=440.0\nassert abs(actual-expected)<1e-9"
+        },
+        {
+          "name": "A5",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "actual=note_frequency('A5')\nexpected=880.0\nassert abs(actual-expected)<1e-9"
+        },
+        {
+          "name": "C3",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "actual=note_frequency('C3')\nexpected=130.815\nassert abs(actual-expected)<1e-9"
+        }
+      ]
+    },
+    {
+      "id": "conditionals-frequency-note",
+      "number": "2.9",
+      "title": "Frequency to Note",
+      "category": "Conditionals",
+      "difficulty": "Intermediate",
+      "prompt": "Find the nearest fourth-octave note within a tolerance.\n\nBackground and required method:\nCompare with these frequencies in hertz: C4=261.63, D4=293.66, E4=329.63, F4=349.23, G4=392.00, A4=440.00, and B4=493.88. Return the note name when its absolute difference is at most tolerance; otherwise return None.\n\nImplement this interface:\ndef frequency_note(frequency: float, tolerance: float = 1.0) -> str | None:\n\nParameters:\n• frequency (float): Frequency in hertz.\n• tolerance (float): Maximum accepted difference in hertz.",
+      "signature": "def frequency_note(frequency: float, tolerance: float = 1.0) -> str | None:",
+      "concepts": [
+        "nearest value",
+        "tolerance",
+        "conditionals"
+      ],
+      "examples": [
+        {
+          "input": "frequency_note(439.5)",
+          "output": "'A4'"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def frequency_note(frequency: float, tolerance: float = 1.0) -> str | None:\n    \"\"\"Find the nearest fourth-octave note within a tolerance.\n\n    Args:\n        frequency (float): Frequency in hertz.\n        tolerance (float): Maximum accepted difference in hertz.\n\n    Returns:\n        str | None: Find the nearest fourth-octave note within a tolerance.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "near A",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert frequency_note(439.5) == 'A4'"
+        },
+        {
+          "name": "exact C",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert frequency_note(261.63) == 'C4'"
+        },
+        {
+          "name": "unknown",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert frequency_note(450) == None"
+        }
+      ]
+    },
+    {
+      "id": "conditionals-banknote-person",
+      "number": "2.10",
+      "title": "Faces on U.S. Money",
+      "category": "Conditionals",
+      "difficulty": "Beginner",
+      "prompt": "Identify the historical figure shown on a U.S. banknote.\n\nBackground and required method:\nUse this complete mapping: $1 George Washington, $2 Thomas Jefferson, $5 Abraham Lincoln, $10 Alexander Hamilton, $20 Andrew Jackson, $50 Ulysses S. Grant, and $100 Benjamin Franklin. Return None for unsupported denominations.\n\nImplement this interface:\ndef banknote_person(denomination: int) -> str | None:\n\nParameters:\n• denomination (int): U.S. banknote value in dollars.",
+      "signature": "def banknote_person(denomination: int) -> str | None:",
+      "concepts": [
+        "mapping",
+        "currency"
+      ],
+      "examples": [
+        {
+          "input": "banknote_person(20)",
+          "output": "'Andrew Jackson'"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def banknote_person(denomination: int) -> str | None:\n    \"\"\"Identify the historical figure shown on a U.S. banknote.\n\n    Args:\n        denomination (int): U.S. banknote value in dollars.\n\n    Returns:\n        str | None: Identify the historical figure shown on a U.S. banknote.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "twenty",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert banknote_person(20) == 'Andrew Jackson'"
+        },
+        {
+          "name": "two",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert banknote_person(2) == 'Thomas Jefferson'"
+        },
+        {
+          "name": "unknown",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert banknote_person(25) == None"
+        }
+      ]
+    },
+    {
+      "id": "conditionals-holiday-name",
+      "number": "2.11",
+      "title": "Canadian Holiday",
+      "category": "Conditionals",
+      "difficulty": "Beginner",
+      "prompt": "Identify one of three fixed-date Canadian holidays.\n\nBackground and required method:\nReturn 'New Year’s Day' for January 1, 'Canada Day' for July 1, and 'Christmas Day' for December 25. Return None for other dates.\n\nImplement this interface:\ndef holiday_name(month: int, day: int) -> str | None:\n\nParameters:\n• month (int): Month number from 1 through 12.\n• day (int): Day of month.",
+      "signature": "def holiday_name(month: int, day: int) -> str | None:",
+      "concepts": [
+        "dates",
+        "conditionals"
+      ],
+      "examples": [
+        {
+          "input": "holiday_name(7, 1)",
+          "output": "'Canada Day'"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def holiday_name(month: int, day: int) -> str | None:\n    \"\"\"Identify one of three fixed-date Canadian holidays.\n\n    Args:\n        month (int): Month number from 1 through 12.\n        day (int): Day of month.\n\n    Returns:\n        str | None: Identify one of three fixed-date Canadian holidays.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "new year",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert holiday_name(1,1) == 'New Year’s Day'"
+        },
+        {
+          "name": "Canada Day",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert holiday_name(7,1) == 'Canada Day'"
+        },
+        {
+          "name": "ordinary date",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert holiday_name(3,14) == None"
+        }
+      ]
+    },
+    {
+      "id": "conditionals-chess-square-color",
+      "number": "2.12",
+      "title": "Chessboard Colour",
+      "category": "Conditionals",
+      "difficulty": "Beginner",
+      "prompt": "Determine whether a chessboard square is black or white.\n\nBackground and required method:\nColumns a through h and rows 1 through 8 alternate colours; a1 is black. Match the column case-insensitively.\n\nImplement this interface:\ndef chess_square_color(square: str) -> str:\n\nParameters:\n• square (str): Chess coordinate such as a1 or h8.",
+      "signature": "def chess_square_color(square: str) -> str:",
+      "concepts": [
+        "parity",
+        "coordinates"
+      ],
+      "examples": [
+        {
+          "input": "chess_square_color('d5')",
+          "output": "'white'"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def chess_square_color(square: str) -> str:\n    \"\"\"Determine whether a chessboard square is black or white.\n\n    Args:\n        square (str): Chess coordinate such as a1 or h8.\n\n    Returns:\n        str: Determine whether a chessboard square is black or white.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "origin",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert chess_square_color('a1') == 'black'"
+        },
+        {
+          "name": "neighbor",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert chess_square_color('b1') == 'white'"
+        },
+        {
+          "name": "another square",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert chess_square_color('d5') == 'white'"
+        }
+      ]
+    },
+    {
+      "id": "conditionals-season",
+      "number": "2.13",
+      "title": "Season from Date",
+      "category": "Conditionals",
+      "difficulty": "Beginner",
+      "prompt": "Determine the astronomical season for a date.\n\nBackground and required method:\nFor this exercise, use these fixed boundaries: spring begins March 20, summer June 21, fall September 22, and winter December 21. Dates before March 20 are also winter.\n\nImplement this interface:\ndef season(month: int, day: int) -> str:\n\nParameters:\n• month (int): Month number.\n• day (int): Day of month.",
+      "signature": "def season(month: int, day: int) -> str:",
+      "concepts": [
+        "dates",
+        "ordered boundaries"
+      ],
+      "examples": [
+        {
+          "input": "season(10, 1)",
+          "output": "'fall'"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def season(month: int, day: int) -> str:\n    \"\"\"Determine the astronomical season for a date.\n\n    Args:\n        month (int): Month number.\n        day (int): Day of month.\n\n    Returns:\n        str: Determine the astronomical season for a date.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "spring boundary",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert season(3,20) == 'spring'"
+        },
+        {
+          "name": "summer",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert season(7,1) == 'summer'"
+        },
+        {
+          "name": "fall",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert season(10,1) == 'fall'"
+        },
+        {
+          "name": "winter",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert season(1,15) == 'winter'"
+        }
+      ]
+    },
+    {
+      "id": "conditionals-zodiac-sign",
+      "number": "2.14",
+      "title": "Western Zodiac Sign",
+      "category": "Conditionals",
+      "difficulty": "Intermediate",
+      "prompt": "Determine a Western astrological sign from a birth date.\n\nBackground and required method:\nUse the standard boundaries: Capricorn Dec22-Jan19, Aquarius Jan20-Feb18, Pisces Feb19-Mar20, Aries Mar21-Apr19, Taurus Apr20-May20, Gemini May21-Jun20, Cancer Jun21-Jul22, Leo Jul23-Aug22, Virgo Aug23-Sep22, Libra Sep23-Oct22, Scorpio Oct23-Nov21, Sagittarius Nov22-Dec21.\n\nImplement this interface:\ndef zodiac_sign(month: int, day: int) -> str:\n\nParameters:\n• month (int): Birth month number.\n• day (int): Birth day.",
+      "signature": "def zodiac_sign(month: int, day: int) -> str:",
+      "concepts": [
+        "dates",
+        "ranges"
+      ],
+      "examples": [
+        {
+          "input": "zodiac_sign(8, 1)",
+          "output": "'Leo'"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def zodiac_sign(month: int, day: int) -> str:\n    \"\"\"Determine a Western astrological sign from a birth date.\n\n    Args:\n        month (int): Birth month number.\n        day (int): Birth day.\n\n    Returns:\n        str: Determine a Western astrological sign from a birth date.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "Aries boundary",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert zodiac_sign(3,21) == 'Aries'"
+        },
+        {
+          "name": "Leo",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert zodiac_sign(8,1) == 'Leo'"
+        },
+        {
+          "name": "Capricorn",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert zodiac_sign(1,1) == 'Capricorn'"
+        }
+      ]
+    },
+    {
+      "id": "conditionals-chinese-zodiac",
+      "number": "2.15",
+      "title": "Chinese Zodiac Animal",
+      "category": "Conditionals",
+      "difficulty": "Beginner",
+      "prompt": "Return the Chinese zodiac animal associated with a year.\n\nBackground and required method:\nUse year modulo 12 with the sequence Monkey, Rooster, Dog, Pig, Rat, Ox, Tiger, Hare, Dragon, Snake, Horse, Sheep for remainders 0 through 11.\n\nImplement this interface:\ndef chinese_zodiac(year: int) -> str:\n\nParameters:\n• year (int): Gregorian year.",
+      "signature": "def chinese_zodiac(year: int) -> str:",
+      "concepts": [
+        "modulo",
+        "cycles"
+      ],
+      "examples": [
+        {
+          "input": "chinese_zodiac(2000)",
+          "output": "'Dragon'"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def chinese_zodiac(year: int) -> str:\n    \"\"\"Return the Chinese zodiac animal associated with a year.\n\n    Args:\n        year (int): Gregorian year.\n\n    Returns:\n        str: Return the Chinese zodiac animal associated with a year.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "dragon",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert chinese_zodiac(2000) == 'Dragon'"
+        },
+        {
+          "name": "rat",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert chinese_zodiac(2020) == 'Rat'"
+        },
+        {
+          "name": "tiger",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert chinese_zodiac(2022) == 'Tiger'"
+        }
+      ]
+    },
+    {
+      "id": "conditionals-earthquake-description",
+      "number": "2.16",
+      "title": "Earthquake Magnitude",
+      "category": "Conditionals",
+      "difficulty": "Beginner",
+      "prompt": "Classify an earthquake by Richter magnitude.\n\nBackground and required method:\nUse micro below 2.0, very minor below 3.0, minor below 4.0, light below 5.0, moderate below 6.0, strong below 7.0, major below 8.0, great below 10.0, and meteoric at least 10.0.\n\nImplement this interface:\ndef earthquake_description(magnitude: float) -> str:\n\nParameters:\n• magnitude (float): Richter magnitude.",
+      "signature": "def earthquake_description(magnitude: float) -> str:",
+      "concepts": [
+        "numeric ranges",
+        "conditionals"
+      ],
+      "examples": [
+        {
+          "input": "earthquake_description(6.4)",
+          "output": "'strong'"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def earthquake_description(magnitude: float) -> str:\n    \"\"\"Classify an earthquake by Richter magnitude.\n\n    Args:\n        magnitude (float): Richter magnitude.\n\n    Returns:\n        str: Classify an earthquake by Richter magnitude.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "micro",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert earthquake_description(1.5) == 'micro'"
+        },
+        {
+          "name": "moderate",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert earthquake_description(5.5) == 'moderate'"
+        },
+        {
+          "name": "great",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert earthquake_description(8.2) == 'great'"
+        }
+      ]
+    },
+    {
+      "id": "conditionals-quadratic-roots",
+      "number": "2.17",
+      "title": "Quadratic Roots",
+      "category": "Conditionals",
+      "difficulty": "Intermediate",
+      "prompt": "Calculate the real roots of a quadratic equation.\n\nBackground and required method:\nFor a*x^2+b*x+c=0, use discriminant b^2-4ac. Return (), one repeated root, or two roots in ascending order. a is non-zero.\n\nImplement this interface:\ndef quadratic_roots(a: float, b: float, c: float) -> tuple[float, ...]:\n\nParameters:\n• a (float): Quadratic coefficient.\n• b (float): Linear coefficient.\n• c (float): Constant coefficient.",
+      "signature": "def quadratic_roots(a: float, b: float, c: float) -> tuple[float, ...]:",
+      "concepts": [
+        "quadratics",
+        "discriminant",
+        "square roots"
+      ],
+      "examples": [
+        {
+          "input": "quadratic_roots(1, -3, 2)",
+          "output": "(1.0, 2.0)"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "import math\n\ndef quadratic_roots(a: float, b: float, c: float) -> tuple[float, ...]:\n    \"\"\"Calculate the real roots of a quadratic equation.\n\n    Args:\n        a (float): Quadratic coefficient.\n        b (float): Linear coefficient.\n        c (float): Constant coefficient.\n\n    Returns:\n        tuple[float, ...]: Calculate the real roots of a quadratic equation.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "two roots",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert quadratic_roots(1,-3,2) == (1.0,2.0)"
+        },
+        {
+          "name": "one root",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert quadratic_roots(1,2,1) == (-1.0,)"
+        },
+        {
+          "name": "no real roots",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert quadratic_roots(1,0,1) == ()"
+        }
+      ]
+    },
+    {
+      "id": "conditionals-grade-points",
+      "number": "2.18",
+      "title": "Letter Grade to Points",
+      "category": "Conditionals",
+      "difficulty": "Beginner",
+      "prompt": "Convert a letter grade to grade points.\n\nBackground and required method:\nUse A+=4.0, A=4.0, A-=3.7, B+=3.3, B=3.0, B-=2.7, C+=2.3, C=2.0, C-=1.7, D+=1.3, D=1.0, and F=0.0. Raise ValueError otherwise.\n\nImplement this interface:\ndef grade_points(grade: str) -> float:\n\nParameters:\n• grade (str): Supported letter grade.",
+      "signature": "def grade_points(grade: str) -> float:",
+      "concepts": [
+        "lookup",
+        "grades"
+      ],
+      "examples": [
+        {
+          "input": "grade_points('B+')",
+          "output": "3.3"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def grade_points(grade: str) -> float:\n    \"\"\"Convert a letter grade to grade points.\n\n    Args:\n        grade (str): Supported letter grade.\n\n    Returns:\n        float: Convert a letter grade to grade points.\n\n    Raises:\n        ValueError: If grade is unsupported.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "A",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert grade_points('A') == 4.0"
+        },
+        {
+          "name": "B plus",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert grade_points('B+') == 3.3"
+        },
+        {
+          "name": "F",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert grade_points('F') == 0.0"
+        }
+      ]
+    },
+    {
+      "id": "conditionals-letter-grade",
+      "number": "2.19",
+      "title": "Points to Letter Grade",
+      "category": "Conditionals",
+      "difficulty": "Intermediate",
+      "prompt": "Convert grade points to the nearest letter grade.\n\nBackground and required method:\nUse these complete lower boundaries: 4.0 A+, 3.85 A, 3.50 A-, 3.15 B+, 2.85 B, 2.50 B-, 2.15 C+, 1.85 C, 1.50 C-, 1.15 D+, 0.50 D, and F below 0.50. Values between exact grade points therefore round to the nearest letter grade.\n\nImplement this interface:\ndef letter_grade(points: float) -> str:\n\nParameters:\n• points (float): Numeric grade points.",
+      "signature": "def letter_grade(points: float) -> str:",
+      "concepts": [
+        "ranges",
+        "grades"
+      ],
+      "examples": [
+        {
+          "input": "letter_grade(3.15)",
+          "output": "'B+'"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def letter_grade(points: float) -> str:\n    \"\"\"Convert grade points to the nearest letter grade.\n\n    Args:\n        points (float): Numeric grade points.\n\n    Returns:\n        str: Convert grade points to the nearest letter grade.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "A plus",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert letter_grade(4.0) == 'A+'"
+        },
+        {
+          "name": "B plus",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert letter_grade(3.2) == 'B+'"
+        },
+        {
+          "name": "F",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert letter_grade(0.2) == 'F'"
+        }
+      ]
+    },
+    {
+      "id": "conditionals-employee-rating",
+      "number": "2.20",
+      "title": "Employee Assessment",
+      "category": "Conditionals",
+      "difficulty": "Beginner",
+      "prompt": "Describe an employee rating and calculate the raise.\n\nBackground and required method:\nOnly 0.0, 0.4, and values at least 0.6 are valid. They are unacceptable, acceptable, and meritorious. Raise ValueError for any other rating.\n\nImplement this interface:\ndef employee_rating(rating: float, base_raise: float = 2400.0) -> tuple[str, float]:\n\nParameters:\n• rating (float): Employee performance rating.\n• base_raise (float): Dollar amount multiplied by rating.",
+      "signature": "def employee_rating(rating: float, base_raise: float = 2400.0) -> tuple[str, float]:",
+      "concepts": [
+        "validation",
+        "currency"
+      ],
+      "examples": [
+        {
+          "input": "employee_rating(0.8)",
+          "output": "('meritorious', 1920.0)"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def employee_rating(rating: float, base_raise: float = 2400.0) -> tuple[str, float]:\n    \"\"\"Describe an employee rating and calculate the raise.\n\n    Args:\n        rating (float): Employee performance rating.\n        base_raise (float): Dollar amount multiplied by rating.\n\n    Returns:\n        tuple[str, float]: Describe an employee rating and calculate the raise.\n\n    Raises:\n        ValueError: If rating is not an allowed value.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "unacceptable",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert employee_rating(0.0) == ('unacceptable',0.0)"
+        },
+        {
+          "name": "acceptable",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert employee_rating(0.4) == ('acceptable',960.0)"
+        },
+        {
+          "name": "meritorious",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert employee_rating(0.8) == ('meritorious',1920.0)"
+        }
+      ]
+    },
+    {
+      "id": "conditionals-visible-color",
+      "number": "2.21",
+      "title": "Visible-Light Colour",
+      "category": "Conditionals",
+      "difficulty": "Beginner",
+      "prompt": "Classify a visible-light wavelength by colour.\n\nBackground and required method:\nUse violet 380-450, blue 450-495, green 495-570, yellow 570-590, orange 590-620, and red 620-750 nm. Return None outside the visible range; shared boundaries belong to the later band.\n\nImplement this interface:\ndef visible_color(wavelength_nm: float) -> str | None:\n\nParameters:\n• wavelength_nm (float): Wavelength in nanometres.",
+      "signature": "def visible_color(wavelength_nm: float) -> str | None:",
+      "concepts": [
+        "ranges",
+        "light"
+      ],
+      "examples": [
+        {
+          "input": "visible_color(510)",
+          "output": "'green'"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def visible_color(wavelength_nm: float) -> str | None:\n    \"\"\"Classify a visible-light wavelength by colour.\n\n    Args:\n        wavelength_nm (float): Wavelength in nanometres.\n\n    Returns:\n        str | None: Classify a visible-light wavelength by colour.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "violet",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert visible_color(400) == 'violet'"
+        },
+        {
+          "name": "green",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert visible_color(510) == 'green'"
+        },
+        {
+          "name": "infrared",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert visible_color(800) == None"
+        }
+      ]
+    },
+    {
+      "id": "conditionals-radiation-band",
+      "number": "2.22",
+      "title": "Electromagnetic Frequency Band",
+      "category": "Conditionals",
+      "difficulty": "Beginner",
+      "prompt": "Name an electromagnetic radiation band.\n\nBackground and required method:\nUse radio below 3e9, microwave below 3e12, infrared below 4.3e14, visible below 7.5e14, ultraviolet below 3e17, X-ray below 3e19, and gamma ray otherwise.\n\nImplement this interface:\ndef radiation_band(frequency_hz: float) -> str:\n\nParameters:\n• frequency_hz (float): Frequency in hertz.",
+      "signature": "def radiation_band(frequency_hz: float) -> str:",
+      "concepts": [
+        "scientific notation",
+        "ranges"
+      ],
+      "examples": [
+        {
+          "input": "radiation_band(5e14)",
+          "output": "'visible light'"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def radiation_band(frequency_hz: float) -> str:\n    \"\"\"Name an electromagnetic radiation band.\n\n    Args:\n        frequency_hz (float): Frequency in hertz.\n\n    Returns:\n        str: Name an electromagnetic radiation band.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "radio",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert radiation_band(1e6) == 'radio waves'"
+        },
+        {
+          "name": "visible",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert radiation_band(5e14) == 'visible light'"
+        },
+        {
+          "name": "gamma",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert radiation_band(1e20) == 'gamma rays'"
+        }
+      ]
+    },
+    {
+      "id": "conditionals-phone-bill",
+      "number": "2.23",
+      "title": "Cell Phone Bill",
+      "category": "Conditionals",
+      "difficulty": "Intermediate",
+      "prompt": "Calculate and itemize a monthly mobile-phone bill.\n\nBackground and required method:\nThe base charge is $15 for 50 minutes and 50 texts. Extra minutes cost $0.25 and extra texts cost $0.15. Add a $0.44 emergency fee, then apply 5 percent tax to the entire pre-tax bill. Return base, extra_minutes, extra_texts, emergency_fee, tax, and total, each rounded to cents.\n\nImplement this interface:\ndef phone_bill(minutes: int, texts: int) -> dict[str, float]:\n\nParameters:\n• minutes (int): Monthly call minutes.\n• texts (int): Monthly text messages.",
+      "signature": "def phone_bill(minutes: int, texts: int) -> dict[str, float]:",
+      "concepts": [
+        "billing",
+        "conditionals",
+        "rounding"
+      ],
+      "examples": [
+        {
+          "input": "phone_bill(60, 55)",
+          "output": "an itemized dictionary totalling $19.62"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def phone_bill(minutes: int, texts: int) -> dict[str, float]:\n    \"\"\"Calculate and itemize a monthly mobile-phone bill.\n\n    Args:\n        minutes (int): Monthly call minutes.\n        texts (int): Monthly text messages.\n\n    Returns:\n        dict[str, float]: Calculate and itemize a monthly mobile-phone bill.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "within plan",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert phone_bill(40,40) == {'base':15.0,'extra_minutes':0.0,'extra_texts':0.0,'emergency_fee':0.44,'tax':0.77,'total':16.21}"
+        },
+        {
+          "name": "overages",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert phone_bill(60,55) == {'base':15.0,'extra_minutes':2.5,'extra_texts':0.75,'emergency_fee':0.44,'tax':0.93,'total':19.62}"
+        },
+        {
+          "name": "minutes only",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert phone_bill(52,50) == {'base':15.0,'extra_minutes':0.5,'extra_texts':0.0,'emergency_fee':0.44,'tax':0.8,'total':16.74}"
+        }
+      ]
+    },
+    {
+      "id": "conditionals-is-leap-year",
+      "number": "2.24",
+      "title": "Leap Year",
+      "category": "Conditionals",
+      "difficulty": "Beginner",
+      "prompt": "Determine whether a year is a Gregorian leap year.\n\nBackground and required method:\nA year is a leap year when divisible by 400, or divisible by 4 but not by 100.\n\nImplement this interface:\ndef is_leap_year(year: int) -> bool:\n\nParameters:\n• year (int): Gregorian calendar year.",
+      "signature": "def is_leap_year(year: int) -> bool:",
+      "concepts": [
+        "boolean logic",
+        "calendar"
+      ],
+      "examples": [
+        {
+          "input": "is_leap_year(2000)",
+          "output": "True"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def is_leap_year(year: int) -> bool:\n    \"\"\"Determine whether a year is a Gregorian leap year.\n\n    Args:\n        year (int): Gregorian calendar year.\n\n    Returns:\n        bool: Determine whether a year is a Gregorian leap year.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "divisible by 400",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert is_leap_year(2000) == True"
+        },
+        {
+          "name": "century",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert is_leap_year(1900) == False"
+        },
+        {
+          "name": "ordinary leap year",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert is_leap_year(2024) == True"
+        }
+      ]
+    },
+    {
+      "id": "conditionals-next-date",
+      "number": "2.25",
+      "title": "Next Calendar Date",
+      "category": "Conditionals",
+      "difficulty": "Advanced",
+      "prompt": "Calculate the calendar date following a valid date.\n\nBackground and required method:\nRespect each month's length and February leap years. Roll month and year forward when needed.\n\nImplement this interface:\ndef next_date(year: int, month: int, day: int) -> tuple[int, int, int]:\n\nParameters:\n• year (int): Current year.\n• month (int): Current month.\n• day (int): Current day.",
+      "signature": "def next_date(year: int, month: int, day: int) -> tuple[int, int, int]:",
+      "concepts": [
+        "calendar",
+        "nested conditionals"
+      ],
+      "examples": [
+        {
+          "input": "next_date(2024, 2, 28)",
+          "output": "(2024, 2, 29)"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def next_date(year: int, month: int, day: int) -> tuple[int, int, int]:\n    \"\"\"Calculate the calendar date following a valid date.\n\n    Args:\n        year (int): Current year.\n        month (int): Current month.\n        day (int): Current day.\n\n    Returns:\n        tuple[int, int, int]: Calculate the calendar date following a valid date.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "ordinary day",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert next_date(2023,5,10) == (2023,5,11)"
+        },
+        {
+          "name": "leap February",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert next_date(2024,2,28) == (2024,2,29)"
+        },
+        {
+          "name": "new year",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert next_date(2023,12,31) == (2024,1,1)"
+        },
+        {
+          "name": "crosses an ordinary month boundary",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert next_date(2023, 4, 30) == (2023, 5, 1)\nassert next_date(2023, 2, 28) == (2023, 3, 1)"
+        }
+      ]
+    },
+    {
+      "id": "conditionals-valid-license-plate",
+      "number": "2.26",
+      "title": "License Plate Validator",
+      "category": "Conditionals",
+      "difficulty": "Beginner",
+      "prompt": "Validate an old or new Canadian-style license plate.\n\nBackground and required method:\nAn old plate has exactly three uppercase letters followed by three digits. A new plate has four digits followed by three uppercase letters.\n\nImplement this interface:\ndef valid_license_plate(plate: str) -> bool:\n\nParameters:\n• plate (str): Plate text without spaces.",
+      "signature": "def valid_license_plate(plate: str) -> bool:",
+      "concepts": [
+        "string validation",
+        "patterns"
+      ],
+      "examples": [
+        {
+          "input": "valid_license_plate('ABC123')",
+          "output": "True"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def valid_license_plate(plate: str) -> bool:\n    \"\"\"Validate an old or new Canadian-style license plate.\n\n    Args:\n        plate (str): Plate text without spaces.\n\n    Returns:\n        bool: Validate an old or new Canadian-style license plate.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "old style",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert valid_license_plate('ABC123') == True"
+        },
+        {
+          "name": "new style",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert valid_license_plate('1234ABC') == True"
+        },
+        {
+          "name": "invalid",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert valid_license_plate('AB1234') == False"
+        }
+      ]
+    },
+    {
+      "id": "conditionals-roulette-spin",
+      "number": "2.27",
+      "title": "Roulette Payout Simulation",
+      "category": "Conditionals",
+      "difficulty": "Advanced",
+      "prompt": "Simulate one American roulette spin and list every winning bet category.\n\nBackground and required method:\nUse a local random.Random(seed) to select one of 38 equally likely pockets: 0, 00, and 1 through 36. The payout list always includes the selected pocket. For 1-36 also include red/black, odd/even, and 1-18/19-36. Red numbers are 1,3,5,7,9,12,14,16,18,19,21,23,25,27,30,32,34,36; the remaining numbered pockets are black. Zero pockets have no outside payouts.\n\nImplement this interface:\ndef roulette_spin(seed: int | None = None) -> tuple[str, list[str]]:\n\nParameters:\n• seed (int | None): Optional seed for a reproducible spin.",
+      "signature": "def roulette_spin(seed: int | None = None) -> tuple[str, list[str]]:",
+      "concepts": [
+        "random simulation",
+        "membership",
+        "multiple conditions"
+      ],
+      "examples": [
+        {
+          "input": "roulette_spin(seed=1)",
+          "output": "(selected pocket, all winning categories)"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "import random\n\ndef roulette_spin(seed: int | None = None) -> tuple[str, list[str]]:\n    \"\"\"Simulate one American roulette spin and list every winning bet category.\n\n    Args:\n        seed (int | None): Optional seed for a reproducible spin.\n\n    Returns:\n        tuple[str, list[str]]: Simulate one American roulette spin and list every winning bet category.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "repeatable",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert roulette_spin(4)==roulette_spin(4) == True"
+        },
+        {
+          "name": "valid pocket",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert roulette_spin(2)[0] in ['0','00']+[str(n) for n in range(1,37)] == True"
+        },
+        {
+          "name": "straight bet included",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert (lambda r: r[0] in r[1])(roulette_spin(8)) == True"
+        },
+        {
+          "name": "zero rules",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert all(len(bets)==1 for seed in range(100) for pocket,bets in [roulette_spin(seed)] if pocket in ('0','00')) == True"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1063 @@
+{
+  "version": 1,
+  "problems": [
+    {
+      "id": "functions-hypotenuse",
+      "number": "4.1",
+      "title": "Compute the Hypotenuse",
+      "category": "Functions",
+      "difficulty": "Beginner",
+      "prompt": "Calculate a right triangle's hypotenuse.\n\nBackground and required method:\nUse sqrt(a^2+b^2) for non-negative side lengths.\n\nImplement this interface:\ndef hypotenuse(a: float, b: float) -> float:\n\nParameters:\n• a (float): First perpendicular side.\n• b (float): Second perpendicular side.",
+      "signature": "def hypotenuse(a: float, b: float) -> float:",
+      "concepts": [
+        "functions",
+        "geometry"
+      ],
+      "examples": [
+        {
+          "input": "hypotenuse(3,4)",
+          "output": "5.0"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "import math\n\ndef hypotenuse(a: float, b: float) -> float:\n    \"\"\"Calculate a right triangle's hypotenuse.\n\n    Args:\n        a (float): First perpendicular side.\n        b (float): Second perpendicular side.\n\n    Returns:\n        float: Calculate a right triangle's hypotenuse.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "3-4-5",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "actual=hypotenuse(3,4)\nexpected=5.0\nassert abs(actual-expected)<1e-9"
+        },
+        {
+          "name": "unit legs",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "actual=hypotenuse(1,1)\nexpected=1.4142135623730951\nassert abs(actual-expected)<1e-9"
+        },
+        {
+          "name": "zero leg",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "actual=hypotenuse(0,5)\nexpected=5.0\nassert abs(actual-expected)<1e-9"
+        }
+      ]
+    },
+    {
+      "id": "functions-taxi-fare",
+      "number": "4.2",
+      "title": "Taxi Fare",
+      "category": "Functions",
+      "difficulty": "Beginner",
+      "prompt": "Calculate a taxi fare from trip distance.\n\nBackground and required method:\nCharge a $4.00 base fare plus $0.25 for each started 140 metres. Round to cents.\n\nImplement this interface:\ndef taxi_fare(distance_km: float) -> float:\n\nParameters:\n• distance_km (float): Trip distance in kilometres.",
+      "signature": "def taxi_fare(distance_km: float) -> float:",
+      "concepts": [
+        "functions",
+        "ceiling",
+        "currency"
+      ],
+      "examples": [
+        {
+          "input": "taxi_fare(1.0)",
+          "output": "6.0"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "import math\n\ndef taxi_fare(distance_km: float) -> float:\n    \"\"\"Calculate a taxi fare from trip distance.\n\n    Args:\n        distance_km (float): Trip distance in kilometres.\n\n    Returns:\n        float: Calculate a taxi fare from trip distance.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "one kilometre",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert taxi_fare(1.0) == 6.0"
+        },
+        {
+          "name": "short ride",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert taxi_fare(0.14) == 4.25"
+        },
+        {
+          "name": "zero",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert taxi_fare(0) == 4.0"
+        }
+      ]
+    },
+    {
+      "id": "functions-shipping-charge",
+      "number": "4.3",
+      "title": "Shipping Calculator",
+      "category": "Functions",
+      "difficulty": "Beginner",
+      "prompt": "Calculate shipping for an order.\n\nBackground and required method:\nThe first item costs $10.95 to ship and each additional item costs $2.95. Round to cents.\n\nImplement this interface:\ndef shipping_charge(items: int) -> float:\n\nParameters:\n• items (int): Positive item count.",
+      "signature": "def shipping_charge(items: int) -> float:",
+      "concepts": [
+        "functions",
+        "piecewise cost"
+      ],
+      "examples": [
+        {
+          "input": "shipping_charge(3)",
+          "output": "16.85"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def shipping_charge(items: int) -> float:\n    \"\"\"Calculate shipping for an order.\n\n    Args:\n        items (int): Positive item count.\n\n    Returns:\n        float: Calculate shipping for an order.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "one",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert shipping_charge(1) == 10.95"
+        },
+        {
+          "name": "three",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert shipping_charge(3) == 16.85"
+        },
+        {
+          "name": "ten",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert shipping_charge(10) == 37.5"
+        }
+      ]
+    },
+    {
+      "id": "functions-median-three",
+      "number": "4.4",
+      "title": "Median of Three",
+      "category": "Functions",
+      "difficulty": "Beginner",
+      "prompt": "Return the middle of three numeric values.\n\nBackground and required method:\nThe median is neither strictly smallest nor strictly largest; preserve duplicates correctly.\n\nImplement this interface:\ndef median_three(a: float, b: float, c: float) -> float:\n\nParameters:\n• a (float): First value.\n• b (float): Second value.\n• c (float): Third value.",
+      "signature": "def median_three(a: float, b: float, c: float) -> float:",
+      "concepts": [
+        "functions",
+        "ordering"
+      ],
+      "examples": [
+        {
+          "input": "median_three(9,2,5)",
+          "output": "5"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def median_three(a: float, b: float, c: float) -> float:\n    \"\"\"Return the middle of three numeric values.\n\n    Args:\n        a (float): First value.\n        b (float): Second value.\n        c (float): Third value.\n\n    Returns:\n        float: Return the middle of three numeric values.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "mixed",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert median_three(9,2,5) == 5"
+        },
+        {
+          "name": "duplicates",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert median_three(4,4,1) == 4"
+        },
+        {
+          "name": "negative",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert median_three(-1,-5,3) == -1"
+        }
+      ]
+    },
+    {
+      "id": "functions-ordinal",
+      "number": "4.5",
+      "title": "Ordinal Number",
+      "category": "Functions",
+      "difficulty": "Beginner",
+      "prompt": "Convert an integer from 1 through 12 to an ordinal word.\n\nBackground and required method:\nReturn first through twelfth for supported values and an empty string otherwise.\n\nImplement this interface:\ndef ordinal(number: int) -> str:\n\nParameters:\n• number (int): Integer to represent.",
+      "signature": "def ordinal(number: int) -> str:",
+      "concepts": [
+        "functions",
+        "lookup"
+      ],
+      "examples": [
+        {
+          "input": "ordinal(3)",
+          "output": "'third'"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def ordinal(number: int) -> str:\n    \"\"\"Convert an integer from 1 through 12 to an ordinal word.\n\n    Args:\n        number (int): Integer to represent.\n\n    Returns:\n        str: Convert an integer from 1 through 12 to an ordinal word.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "first",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert ordinal(1) == 'first'"
+        },
+        {
+          "name": "twelfth",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert ordinal(12) == 'twelfth'"
+        },
+        {
+          "name": "unsupported",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert ordinal(13) == ''"
+        }
+      ]
+    },
+    {
+      "id": "functions-twelve-days-verse",
+      "number": "4.6",
+      "title": "Twelve Days Verse",
+      "category": "Functions",
+      "difficulty": "Intermediate",
+      "prompt": "Build one verse of The Twelve Days of Christmas.\n\nBackground and required method:\nBegin with 'On the {ordinal} day of Christmas my true love sent to me:' and include gifts from day down to first, joining lines with newline characters. Use 'and a Partridge in a Pear Tree.' when day is greater than one.\n\nImplement this interface:\ndef twelve_days_verse(day: int) -> str:\n\nParameters:\n• day (int): Verse number from 1 through 12.",
+      "signature": "def twelve_days_verse(day: int) -> str:",
+      "concepts": [
+        "functions",
+        "lists",
+        "formatting"
+      ],
+      "examples": [
+        {
+          "input": "twelve_days_verse(1)",
+          "output": "first verse text"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def twelve_days_verse(day: int) -> str:\n    \"\"\"Build one verse of The Twelve Days of Christmas.\n\n    Args:\n        day (int): Verse number from 1 through 12.\n\n    Returns:\n        str: Build one verse of The Twelve Days of Christmas.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "first heading",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert twelve_days_verse(1).startswith('On the first day') == True"
+        },
+        {
+          "name": "third gifts",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert 'Three French Hens' in twelve_days_verse(3) == True"
+        },
+        {
+          "name": "cumulative",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert 'Two Turtle Doves' in twelve_days_verse(12) == True"
+        }
+      ]
+    },
+    {
+      "id": "functions-center-text",
+      "number": "4.7",
+      "title": "Center Text",
+      "category": "Functions",
+      "difficulty": "Beginner",
+      "prompt": "Center text within a fixed-width terminal line.\n\nBackground and required method:\nAdd floor((width-len(text))/2) leading spaces. If text is at least width characters, return it unchanged.\n\nImplement this interface:\ndef center_text(text: str, width: int = 80) -> str:\n\nParameters:\n• text (str): Text to center.\n• width (int): Total terminal width.",
+      "signature": "def center_text(text: str, width: int = 80) -> str:",
+      "concepts": [
+        "functions",
+        "string formatting"
+      ],
+      "examples": [
+        {
+          "input": "center_text('hello', 11)",
+          "output": "'   hello'"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def center_text(text: str, width: int = 80) -> str:\n    \"\"\"Center text within a fixed-width terminal line.\n\n    Args:\n        text (str): Text to center.\n        width (int): Total terminal width.\n\n    Returns:\n        str: Center text within a fixed-width terminal line.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "odd padding",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert center_text('hello',11) == '   hello'"
+        },
+        {
+          "name": "even padding",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert center_text('test',10) == '   test'"
+        },
+        {
+          "name": "too long",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert center_text('long text',4) == 'long text'"
+        }
+      ]
+    },
+    {
+      "id": "functions-valid-triangle",
+      "number": "4.8",
+      "title": "Valid Triangle",
+      "category": "Functions",
+      "difficulty": "Beginner",
+      "prompt": "Check whether three lengths can form a triangle.\n\nBackground and required method:\nAll lengths must be positive and each side must be shorter than the sum of the other two.\n\nImplement this interface:\ndef valid_triangle(a: float, b: float, c: float) -> bool:\n\nParameters:\n• a (float): First side length.\n• b (float): Second side length.\n• c (float): Third side length.",
+      "signature": "def valid_triangle(a: float, b: float, c: float) -> bool:",
+      "concepts": [
+        "functions",
+        "geometry",
+        "validation"
+      ],
+      "examples": [
+        {
+          "input": "valid_triangle(3,4,5)",
+          "output": "True"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def valid_triangle(a: float, b: float, c: float) -> bool:\n    \"\"\"Check whether three lengths can form a triangle.\n\n    Args:\n        a (float): First side length.\n        b (float): Second side length.\n        c (float): Third side length.\n\n    Returns:\n        bool: Check whether three lengths can form a triangle.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "valid",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert valid_triangle(3,4,5) == True"
+        },
+        {
+          "name": "degenerate",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert valid_triangle(1,2,3) == False"
+        },
+        {
+          "name": "negative",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert valid_triangle(-1,4,4) == False"
+        }
+      ]
+    },
+    {
+      "id": "functions-capitalize-sentences",
+      "number": "4.9",
+      "title": "Capitalize It",
+      "category": "Functions",
+      "difficulty": "Beginner",
+      "prompt": "Apply basic sentence capitalization to text.\n\nBackground and required method:\nCapitalize the first alphabetic character, the first alphabetic character after '.', '!', or '?', and standalone lowercase i. Preserve all other characters.\n\nImplement this interface:\ndef capitalize_sentences(text: str) -> str:\n\nParameters:\n• text (str): Text to correct.",
+      "signature": "def capitalize_sentences(text: str) -> str:",
+      "concepts": [
+        "functions",
+        "text processing",
+        "state"
+      ],
+      "examples": [
+        {
+          "input": "capitalize_sentences('hello. i am here!')",
+          "output": "'Hello. I am here!'"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def capitalize_sentences(text: str) -> str:\n    \"\"\"Apply basic sentence capitalization to text.\n\n    Args:\n        text (str): Text to correct.\n\n    Returns:\n        str: Apply basic sentence capitalization to text.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "sentences",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert capitalize_sentences('hello. i am here!') == 'Hello. I am here!'"
+        },
+        {
+          "name": "question",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert capitalize_sentences('why? because.') == 'Why? Because.'"
+        },
+        {
+          "name": "empty",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert capitalize_sentences('') == ''"
+        }
+      ]
+    },
+    {
+      "id": "functions-represents-integer",
+      "number": "4.10",
+      "title": "Integer String",
+      "category": "Functions",
+      "difficulty": "Beginner",
+      "prompt": "Check whether text represents a base-10 integer.\n\nBackground and required method:\nIgnore leading and trailing whitespace first. The remaining text is valid when it contains one or more digits, optionally preceded by exactly one + or - sign. Reject a sign without digits, decimal points, internal spaces, and other characters.\n\nImplement this interface:\ndef represents_integer(text: str) -> bool:\n\nParameters:\n• text (str): Candidate integer text, possibly surrounded by whitespace.",
+      "signature": "def represents_integer(text: str) -> bool:",
+      "concepts": [
+        "functions",
+        "validation",
+        "strings"
+      ],
+      "examples": [
+        {
+          "input": "represents_integer('  -42  ')",
+          "output": "True"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def represents_integer(text: str) -> bool:\n    \"\"\"Check whether text represents a base-10 integer.\n\n    Args:\n        text (str): Candidate integer text, possibly surrounded by whitespace.\n\n    Returns:\n        bool: Check whether text represents a base-10 integer.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "negative with whitespace",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert represents_integer('  -42  ') == True"
+        },
+        {
+          "name": "positive sign",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert represents_integer('+7') == True"
+        },
+        {
+          "name": "decimal",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert represents_integer('3.5') == False"
+        }
+      ]
+    },
+    {
+      "id": "functions-operator-precedence",
+      "number": "4.11",
+      "title": "Operator Precedence",
+      "category": "Functions",
+      "difficulty": "Beginner",
+      "prompt": "Return a precedence level for a mathematical operator.\n\nBackground and required method:\nReturn 1 for + and -, 2 for * and /, 3 for ^, and -1 for unrecognized operators.\n\nImplement this interface:\ndef operator_precedence(operator: str) -> int:\n\nParameters:\n• operator (str): Operator token.",
+      "signature": "def operator_precedence(operator: str) -> int:",
+      "concepts": [
+        "functions",
+        "operators"
+      ],
+      "examples": [
+        {
+          "input": "operator_precedence('*')",
+          "output": "2"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def operator_precedence(operator: str) -> int:\n    \"\"\"Return a precedence level for a mathematical operator.\n\n    Args:\n        operator (str): Operator token.\n\n    Returns:\n        int: Return a precedence level for a mathematical operator.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "addition",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert operator_precedence('+') == 1"
+        },
+        {
+          "name": "power",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert operator_precedence('^') == 3"
+        },
+        {
+          "name": "unknown",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert operator_precedence('%') == -1"
+        }
+      ]
+    },
+    {
+      "id": "functions-is-prime",
+      "number": "4.12",
+      "title": "Prime Number",
+      "category": "Functions",
+      "difficulty": "Beginner",
+      "prompt": "Determine whether an integer is prime.\n\nBackground and required method:\nNumbers below 2 are not prime. Test possible divisors only through the square root of number.\n\nImplement this interface:\ndef is_prime(number: int) -> bool:\n\nParameters:\n• number (int): Integer to test.",
+      "signature": "def is_prime(number: int) -> bool:",
+      "concepts": [
+        "functions",
+        "primes",
+        "optimization"
+      ],
+      "examples": [
+        {
+          "input": "is_prime(29)",
+          "output": "True"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def is_prime(number: int) -> bool:\n    \"\"\"Determine whether an integer is prime.\n\n    Args:\n        number (int): Integer to test.\n\n    Returns:\n        bool: Determine whether an integer is prime.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "prime",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert is_prime(29) == True"
+        },
+        {
+          "name": "composite",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert is_prime(35) == False"
+        },
+        {
+          "name": "below two",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert is_prime(1) == False"
+        }
+      ]
+    },
+    {
+      "id": "functions-next-prime",
+      "number": "4.13",
+      "title": "Next Prime",
+      "category": "Functions",
+      "difficulty": "Beginner",
+      "prompt": "Find the first prime strictly greater than a number.\n\nBackground and required method:\nTest consecutive integers with prime-number logic until one is prime.\n\nImplement this interface:\ndef next_prime(number: int) -> int:\n\nParameters:\n• number (int): Starting integer.",
+      "signature": "def next_prime(number: int) -> int:",
+      "concepts": [
+        "functions",
+        "primes",
+        "loops"
+      ],
+      "examples": [
+        {
+          "input": "next_prime(29)",
+          "output": "31"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def next_prime(number: int) -> int:\n    \"\"\"Find the first prime strictly greater than a number.\n\n    Args:\n        number (int): Starting integer.\n\n    Returns:\n        int: Find the first prime strictly greater than a number.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "after prime",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert next_prime(29) == 31"
+        },
+        {
+          "name": "after composite",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert next_prime(14) == 17"
+        },
+        {
+          "name": "negative start",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert next_prime(-5) == 2"
+        }
+      ]
+    },
+    {
+      "id": "functions-random-password",
+      "number": "4.14",
+      "title": "Random Password",
+      "category": "Functions",
+      "difficulty": "Beginner",
+      "prompt": "Generate a random ASCII password.\n\nBackground and required method:\nUse a local random.Random(seed). Choose a length from 7 through 10 and characters with ASCII codes 33 through 126.\n\nImplement this interface:\ndef random_password(seed: int | None = None) -> str:\n\nParameters:\n• seed (int | None): Optional deterministic seed.",
+      "signature": "def random_password(seed: int | None = None) -> str:",
+      "concepts": [
+        "functions",
+        "randomness",
+        "ASCII"
+      ],
+      "examples": [
+        {
+          "input": "random_password(1)",
+          "output": "deterministic printable password"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "import random\n\ndef random_password(seed: int | None = None) -> str:\n    \"\"\"Generate a random ASCII password.\n\n    Args:\n        seed (int | None): Optional deterministic seed.\n\n    Returns:\n        str: Generate a random ASCII password.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "valid length",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert 7 <= len(random_password(1)) <= 10 == True"
+        },
+        {
+          "name": "printable",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert all(33 <= ord(ch) <= 126 for ch in random_password(2)) == True"
+        },
+        {
+          "name": "repeatable",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert random_password(5) == random_password(5) == True"
+        }
+      ]
+    },
+    {
+      "id": "functions-random-license-plate",
+      "number": "4.15",
+      "title": "Random License Plate",
+      "category": "Functions",
+      "difficulty": "Beginner",
+      "prompt": "Generate a random old- or new-style license plate.\n\nBackground and required method:\nUse a local random.Random(seed). Randomly choose either three uppercase letters plus three digits, or four digits plus three uppercase letters.\n\nImplement this interface:\ndef random_license_plate(seed: int | None = None) -> str:\n\nParameters:\n• seed (int | None): Optional deterministic seed.",
+      "signature": "def random_license_plate(seed: int | None = None) -> str:",
+      "concepts": [
+        "functions",
+        "randomness",
+        "strings"
+      ],
+      "examples": [
+        {
+          "input": "random_license_plate(1)",
+          "output": "a valid deterministic plate"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "import random\n\ndef random_license_plate(seed: int | None = None) -> str:\n    \"\"\"Generate a random old- or new-style license plate.\n\n    Args:\n        seed (int | None): Optional deterministic seed.\n\n    Returns:\n        str: Generate a random old- or new-style license plate.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "valid shape",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert len(random_license_plate(1)) in (6,7) == True"
+        },
+        {
+          "name": "repeatable",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert random_license_plate(3) == random_license_plate(3) == True"
+        },
+        {
+          "name": "pattern",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert (lambda p: (len(p)==6 and p[:3].isalpha() and p[3:].isdigit()) or (len(p)==7 and p[:4].isdigit() and p[4:].isalpha()))(random_license_plate(8)) == True"
+        }
+      ]
+    },
+    {
+      "id": "functions-is-good-password",
+      "number": "4.16",
+      "title": "Password Strength",
+      "category": "Functions",
+      "difficulty": "Beginner",
+      "prompt": "Check whether a password meets basic strength requirements.\n\nBackground and required method:\nA good password contains at least eight characters, at least one uppercase letter, at least one lowercase letter, and at least one digit.\n\nImplement this interface:\ndef is_good_password(password: str) -> bool:\n\nParameters:\n• password (str): Password to assess.",
+      "signature": "def is_good_password(password: str) -> bool:",
+      "concepts": [
+        "functions",
+        "validation",
+        "any"
+      ],
+      "examples": [
+        {
+          "input": "is_good_password('PyLab2026')",
+          "output": "True"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def is_good_password(password: str) -> bool:\n    \"\"\"Check whether a password meets basic strength requirements.\n\n    Args:\n        password (str): Password to assess.\n\n    Returns:\n        bool: Check whether a password meets basic strength requirements.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "good",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert is_good_password('PyLab2026') == True"
+        },
+        {
+          "name": "too short",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert is_good_password('Py1') == False"
+        },
+        {
+          "name": "missing digit",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert is_good_password('LongPassword') == False"
+        }
+      ]
+    },
+    {
+      "id": "functions-random-good-password",
+      "number": "4.17",
+      "title": "Random Good Password",
+      "category": "Functions",
+      "difficulty": "Intermediate",
+      "prompt": "Generate random passwords until one passes the strength checker.\n\nBackground and required method:\nUse one local random.Random(seed) stream. Each attempt creates a 7-10 character password from ASCII positions 33-126. A successful password has at least eight characters, one uppercase letter, one lowercase letter, and one digit. Continue until all four conditions hold, then return both the password and the number of attempts.\n\nImplement this interface:\ndef random_good_password(seed: int | None = None) -> tuple[str, int]:\n\nParameters:\n• seed (int | None): Optional deterministic seed.",
+      "signature": "def random_good_password(seed: int | None = None) -> tuple[str, int]:",
+      "concepts": [
+        "functions",
+        "randomness",
+        "validation"
+      ],
+      "examples": [
+        {
+          "input": "random_good_password(1)",
+          "output": "(a deterministic strong password, attempt_count)"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "import random\n\ndef random_good_password(seed: int | None = None) -> tuple[str, int]:\n    \"\"\"Generate random passwords until one passes the strength checker.\n\n    Args:\n        seed (int | None): Optional deterministic seed.\n\n    Returns:\n        tuple[str, int]: Generate random passwords until one passes the strength checker.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "strong",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert (lambda r: len(r[0])>=8 and any(x.isupper() for x in r[0]) and any(x.islower() for x in r[0]) and any(x.isdigit() for x in r[0]) and r[1]>=1)(random_good_password(1)) == True"
+        },
+        {
+          "name": "repeatable",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert random_good_password(4) == random_good_password(4) == True"
+        },
+        {
+          "name": "printable",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert all(33 <= ord(ch) <= 126 for ch in random_good_password(7)[0]) == True"
+        }
+      ]
+    },
+    {
+      "id": "functions-convert-hex-digit",
+      "number": "4.18",
+      "title": "Hexadecimal and Decimal Digits",
+      "category": "Functions",
+      "difficulty": "Beginner",
+      "prompt": "Convert one digit between hexadecimal and decimal forms.\n\nBackground and required method:\nSupport both conversion directions through one typed interface: a one-character string 0-9 or A-F (case-insensitive) returns its integer value, while an integer 0-15 returns one uppercase hexadecimal digit. Raise ValueError otherwise.\n\nImplement this interface:\ndef convert_hex_digit(value: str | int) -> int | str:\n\nParameters:\n• value (str | int): Single hexadecimal digit or decimal value 0-15.",
+      "signature": "def convert_hex_digit(value: str | int) -> int | str:",
+      "concepts": [
+        "functions",
+        "hexadecimal",
+        "validation"
+      ],
+      "examples": [
+        {
+          "input": "convert_hex_digit('B')",
+          "output": "11"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def convert_hex_digit(value: str | int) -> int | str:\n    \"\"\"Convert one digit between hexadecimal and decimal forms.\n\n    Args:\n        value (str | int): Single hexadecimal digit or decimal value 0-15.\n\n    Returns:\n        int | str: Convert one digit between hexadecimal and decimal forms.\n\n    Raises:\n        ValueError: If value is outside the supported single-digit range.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "hex to int",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert convert_hex_digit('B') == 11"
+        },
+        {
+          "name": "lowercase",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert convert_hex_digit('f') == 15"
+        },
+        {
+          "name": "int to hex",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert convert_hex_digit(12) == 'C'"
+        }
+      ]
+    },
+    {
+      "id": "functions-convert-base",
+      "number": "4.19",
+      "title": "Arbitrary Base Conversion",
+      "category": "Functions",
+      "difficulty": "Advanced",
+      "prompt": "Convert a non-negative integer between bases 2 through 16.\n\nBackground and required method:\nUse digits 0-9 and A-F. Convert through a decimal accumulator without int(text, base) or built-in formatting. Return uppercase digits.\n\nImplement this interface:\ndef convert_base(text: str, source_base: int, target_base: int) -> str:\n\nParameters:\n• text (str): Number text in the source base.\n• source_base (int): Base used by text, from 2 through 16.\n• target_base (int): Desired base, from 2 through 16.",
+      "signature": "def convert_base(text: str, source_base: int, target_base: int) -> str:",
+      "concepts": [
+        "functions",
+        "base conversion",
+        "loops"
+      ],
+      "examples": [
+        {
+          "input": "convert_base('FF',16,2)",
+          "output": "'11111111'"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def convert_base(text: str, source_base: int, target_base: int) -> str:\n    \"\"\"Convert a non-negative integer between bases 2 through 16.\n\n    Args:\n        text (str): Number text in the source base.\n        source_base (int): Base used by text, from 2 through 16.\n        target_base (int): Desired base, from 2 through 16.\n\n    Returns:\n        str: Convert a non-negative integer between bases 2 through 16.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "hex to binary",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert convert_base('FF',16,2) == '11111111'"
+        },
+        {
+          "name": "binary to decimal",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert convert_base('10110',2,10) == '22'"
+        },
+        {
+          "name": "zero",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert convert_base('0',8,16) == '0'"
+        },
+        {
+          "name": "accepts lowercase source digits",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert convert_base('ff', 16, 10) == '255'\nassert convert_base('255', 10, 16) == 'FF'"
+        }
+      ]
+    },
+    {
+      "id": "functions-days-in-month",
+      "number": "4.20",
+      "title": "Days in a Specific Month",
+      "category": "Functions",
+      "difficulty": "Beginner",
+      "prompt": "Return the exact number of days in a month and year.\n\nBackground and required method:\nUse 31- and 30-day month groups and apply Gregorian leap-year rules to February.\n\nImplement this interface:\ndef days_in_month(month: int, year: int) -> int:\n\nParameters:\n• month (int): Month number from 1 through 12.\n• year (int): Gregorian year.",
+      "signature": "def days_in_month(month: int, year: int) -> int:",
+      "concepts": [
+        "functions",
+        "calendar",
+        "leap years"
+      ],
+      "examples": [
+        {
+          "input": "days_in_month(2,2024)",
+          "output": "29"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def days_in_month(month: int, year: int) -> int:\n    \"\"\"Return the exact number of days in a month and year.\n\n    Args:\n        month (int): Month number from 1 through 12.\n        year (int): Gregorian year.\n\n    Returns:\n        int: Return the exact number of days in a month and year.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "leap February",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert days_in_month(2,2024) == 29"
+        },
+        {
+          "name": "ordinary February",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert days_in_month(2,2023) == 28"
+        },
+        {
+          "name": "April",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert days_in_month(4,2024) == 30"
+        }
+      ]
+    },
+    {
+      "id": "functions-reduce-fraction",
+      "number": "4.21",
+      "title": "Reduce a Fraction",
+      "category": "Functions",
+      "difficulty": "Beginner",
+      "prompt": "Reduce a fraction to lowest terms.\n\nBackground and required method:\nDivide numerator and denominator by their greatest common divisor. Keep the denominator positive and preserve a zero numerator as 0/1.\n\nImplement this interface:\ndef reduce_fraction(numerator: int, denominator: int) -> tuple[int, int]:\n\nParameters:\n• numerator (int): Fraction numerator.\n• denominator (int): Non-zero fraction denominator.",
+      "signature": "def reduce_fraction(numerator: int, denominator: int) -> tuple[int, int]:",
+      "concepts": [
+        "functions",
+        "GCD",
+        "fractions"
+      ],
+      "examples": [
+        {
+          "input": "reduce_fraction(42,56)",
+          "output": "(3,4)"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def reduce_fraction(numerator: int, denominator: int) -> tuple[int, int]:\n    \"\"\"Reduce a fraction to lowest terms.\n\n    Args:\n        numerator (int): Fraction numerator.\n        denominator (int): Non-zero fraction denominator.\n\n    Returns:\n        tuple[int, int]: Reduce a fraction to lowest terms.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "common factor",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert reduce_fraction(42,56) == (3,4)"
+        },
+        {
+          "name": "negative denominator",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert reduce_fraction(1,-2) == (-1,2)"
+        },
+        {
+          "name": "zero numerator",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert reduce_fraction(0,5) == (0,1)"
+        }
+      ]
+    },
+    {
+      "id": "functions-reduce-measures",
+      "number": "4.22",
+      "title": "Reduce Recipe Measures",
+      "category": "Functions",
+      "difficulty": "Intermediate",
+      "prompt": "Express an imperial recipe volume using the largest practical units.\n\nBackground and required method:\nConvert amount and unit to teaspoons using 1 tablespoon=3 teaspoons and 1 cup=16 tablespoons. Then convert back to the largest units and return a natural-language string that omits zero-valued units and uses correct singular/plural labels.\n\nImplement this interface:\ndef reduce_measures(amount: int, unit: str) -> str:\n\nParameters:\n• amount (int): Non-negative count of the supplied unit.\n• unit (str): 'cup', 'tablespoon', or 'teaspoon'.",
+      "signature": "def reduce_measures(amount: int, unit: str) -> str:",
+      "concepts": [
+        "functions",
+        "division",
+        "formatting"
+      ],
+      "examples": [
+        {
+          "input": "reduce_measures(59, 'teaspoon')",
+          "output": "'1 cup, 3 tablespoons, 2 teaspoons'"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def reduce_measures(amount: int, unit: str) -> str:\n    \"\"\"Express an imperial recipe volume using the largest practical units.\n\n    Args:\n        amount (int): Non-negative count of the supplied unit.\n        unit (str): 'cup', 'tablespoon', or 'teaspoon'.\n\n    Returns:\n        str: Express an imperial recipe volume using the largest practical units.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "worked example",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert reduce_measures(59,'teaspoon') == '1 cup, 3 tablespoons, 2 teaspoons'"
+        },
+        {
+          "name": "tablespoons",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert reduce_measures(16,'tablespoon') == '1 cup'"
+        },
+        {
+          "name": "small amount",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert reduce_measures(2,'teaspoon') == '2 teaspoons'"
+        }
+      ]
+    },
+    {
+      "id": "functions-is-magic-date",
+      "number": "4.23",
+      "title": "Magic Dates",
+      "category": "Functions",
+      "difficulty": "Beginner",
+      "prompt": "Determine whether a date is mathematically magic.\n\nBackground and required method:\nA date is magic when day multiplied by month equals the final two digits of year; June 10, 1960 qualifies because 6*10=60. Implement this predicate first. A complete program can then combine it with a days-in-month function to examine every valid date from 1901 through 2000 and display all matches.\n\nImplement this interface:\ndef is_magic_date(year: int, month: int, day: int) -> bool:\n\nParameters:\n• year (int): Four-digit year.\n• month (int): Month number.\n• day (int): Day of month.",
+      "signature": "def is_magic_date(year: int, month: int, day: int) -> bool:",
+      "concepts": [
+        "functions",
+        "dates",
+        "modulo"
+      ],
+      "examples": [
+        {
+          "input": "is_magic_date(1960,6,10)",
+          "output": "True"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def is_magic_date(year: int, month: int, day: int) -> bool:\n    \"\"\"Determine whether a date is mathematically magic.\n\n    Args:\n        year (int): Four-digit year.\n        month (int): Month number.\n        day (int): Day of month.\n\n    Returns:\n        bool: Determine whether a date is mathematically magic.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "worked example",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert is_magic_date(1960,6,10) == True"
+        },
+        {
+          "name": "another magic",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert is_magic_date(2024,4,6) == True"
+        },
+        {
+          "name": "ordinary",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert is_magic_date(2023,4,6) == False"
+        }
+      ]
+    }
+  ]
+}

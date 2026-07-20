@@ -1,0 +1,919 @@
+{
+  "version": 1,
+  "problems": [
+    {
+      "id": "loops-average-until-zero",
+      "number": "3.1",
+      "title": "Average Until Zero",
+      "category": "Loops",
+      "difficulty": "Beginner",
+      "prompt": "Average values appearing before a zero sentinel.\n\nBackground and required method:\nIgnore everything after the first zero. Return None when zero is the first value.\n\nImplement this interface:\ndef average_until_zero(values: list[float]) -> float | None:\n\nParameters:\n• values (list[float]): Values ending at the first zero sentinel.",
+      "signature": "def average_until_zero(values: list[float]) -> float | None:",
+      "concepts": [
+        "sentinel",
+        "average",
+        "loops"
+      ],
+      "examples": [
+        {
+          "input": "average_until_zero([4, 6, 0])",
+          "output": "5.0"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def average_until_zero(values: list[float]) -> float | None:\n    \"\"\"Average values appearing before a zero sentinel.\n\n    Args:\n        values (list[float]): Values ending at the first zero sentinel.\n\n    Returns:\n        float | None: Average values appearing before a zero sentinel.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "several",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert average_until_zero([4,6,0]) == 5.0"
+        },
+        {
+          "name": "empty",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert average_until_zero([0]) == None"
+        },
+        {
+          "name": "stops",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert average_until_zero([2,0,100]) == 2.0"
+        }
+      ]
+    },
+    {
+      "id": "loops-discount-table",
+      "number": "3.2",
+      "title": "Discount Table",
+      "category": "Loops",
+      "difficulty": "Beginner",
+      "prompt": "Build rows for a sale-price table.\n\nBackground and required method:\nFor each price return original price, discount, and reduced price, rounded to two decimals.\n\nImplement this interface:\ndef discount_table(prices: list[float], rate: float = 0.60) -> list[tuple[float, float, float]]:\n\nParameters:\n• prices (list[float]): Original prices.\n• rate (float): Discount rate as a decimal.",
+      "signature": "def discount_table(prices: list[float], rate: float = 0.60) -> list[tuple[float, float, float]]:",
+      "concepts": [
+        "loops",
+        "currency"
+      ],
+      "examples": [
+        {
+          "input": "discount_table([4.95])",
+          "output": "[(4.95, 2.97, 1.98)]"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def discount_table(prices: list[float], rate: float = 0.60) -> list[tuple[float, float, float]]:\n    \"\"\"Build rows for a sale-price table.\n\n    Args:\n        prices (list[float]): Original prices.\n        rate (float): Discount rate as a decimal.\n\n    Returns:\n        list[tuple[float, float, float]]: Build rows for a sale-price table.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "one",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert discount_table([4.95]) == [(4.95,2.97,1.98)]"
+        },
+        {
+          "name": "two",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert discount_table([10,20]) == [(10,6.0,4.0),(20,12.0,8.0)]"
+        },
+        {
+          "name": "empty",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert discount_table([]) == []"
+        }
+      ]
+    },
+    {
+      "id": "loops-temperature-table",
+      "number": "3.3",
+      "title": "Temperature Table",
+      "category": "Loops",
+      "difficulty": "Beginner",
+      "prompt": "Create a Celsius-to-Fahrenheit table.\n\nBackground and required method:\nReturn rows for Celsius 0 through 100 in steps of 10 using F=C*9/5+32.\n\nImplement this interface:\ndef temperature_table() -> list[tuple[int, float]]:\n\nParameters:\n• This function does not require arguments.",
+      "signature": "def temperature_table() -> list[tuple[int, float]]:",
+      "concepts": [
+        "range",
+        "loops",
+        "conversion"
+      ],
+      "examples": [
+        {
+          "input": "temperature_table()",
+          "output": "[(0, 32.0), ..., (100, 212.0)]"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def temperature_table() -> list[tuple[int, float]]:\n    \"\"\"Create a Celsius-to-Fahrenheit table.\n\n    Returns:\n        list[tuple[int, float]]: Create a Celsius-to-Fahrenheit table.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "row count",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert len(temperature_table()) == 11"
+        },
+        {
+          "name": "first",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert temperature_table()[0] == (0,32.0)"
+        },
+        {
+          "name": "last",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert temperature_table()[-1] == (100,212.0)"
+        }
+      ]
+    },
+    {
+      "id": "loops-cash-total",
+      "number": "3.4",
+      "title": "Cash Purchase Rounding",
+      "category": "Loops",
+      "difficulty": "Beginner",
+      "prompt": "Calculate electronic and cash totals for purchases.\n\nBackground and required method:\nSum prices, round the electronic total to cents, and round the cash total to the nearest $0.05 because pennies are unavailable.\n\nImplement this interface:\ndef cash_total(prices: list[float]) -> tuple[float, float]:\n\nParameters:\n• prices (list[float]): Individual purchase prices.",
+      "signature": "def cash_total(prices: list[float]) -> tuple[float, float]:",
+      "concepts": [
+        "accumulation",
+        "rounding",
+        "currency"
+      ],
+      "examples": [
+        {
+          "input": "cash_total([1.02, 2.01])",
+          "output": "(3.03, 3.05)"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def cash_total(prices: list[float]) -> tuple[float, float]:\n    \"\"\"Calculate electronic and cash totals for purchases.\n\n    Args:\n        prices (list[float]): Individual purchase prices.\n\n    Returns:\n        tuple[float, float]: Calculate electronic and cash totals for purchases.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "round up",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert cash_total([1.02,2.01]) == (3.03,3.05)"
+        },
+        {
+          "name": "exact nickel",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert cash_total([2.0,3.05]) == (5.05,5.05)"
+        },
+        {
+          "name": "empty",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert cash_total([]) == (0.0,0.0)"
+        }
+      ]
+    },
+    {
+      "id": "loops-polygon-perimeter",
+      "number": "3.5",
+      "title": "Polygon Perimeter",
+      "category": "Loops",
+      "difficulty": "Intermediate",
+      "prompt": "Calculate the perimeter of a polygon.\n\nBackground and required method:\nAdd Euclidean distances between consecutive points and close the polygon from the final point back to the first. At least three points are supplied.\n\nImplement this interface:\ndef polygon_perimeter(points: list[tuple[float, float]]) -> float:\n\nParameters:\n• points (list[tuple[float, float]]): Polygon vertices in boundary order.",
+      "signature": "def polygon_perimeter(points: list[tuple[float, float]]) -> float:",
+      "concepts": [
+        "geometry",
+        "distance",
+        "loops"
+      ],
+      "examples": [
+        {
+          "input": "polygon_perimeter([(0,0),(3,0),(3,4)])",
+          "output": "12.0"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "import math\n\ndef polygon_perimeter(points: list[tuple[float, float]]) -> float:\n    \"\"\"Calculate the perimeter of a polygon.\n\n    Args:\n        points (list[tuple[float, float]]): Polygon vertices in boundary order.\n\n    Returns:\n        float: Calculate the perimeter of a polygon.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "triangle",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "actual=polygon_perimeter([(0,0),(3,0),(3,4)])\nexpected=12.0\nassert abs(actual-expected)<1e-9"
+        },
+        {
+          "name": "unit square",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "actual=polygon_perimeter([(0,0),(1,0),(1,1),(0,1)])\nexpected=4.0\nassert abs(actual-expected)<1e-9"
+        },
+        {
+          "name": "rectangle",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "actual=polygon_perimeter([(0,0),(2,0),(2,1),(0,1)])\nexpected=6.0\nassert abs(actual-expected)<1e-9"
+        }
+      ]
+    },
+    {
+      "id": "loops-grade-point-average",
+      "number": "3.6",
+      "title": "Grade Point Average",
+      "category": "Loops",
+      "difficulty": "Beginner",
+      "prompt": "Calculate the mean grade-point value.\n\nBackground and required method:\nUse the standard mapping from the grade conversion exercise, including A+=4.0 and F=0.0. Return None for an empty list and raise ValueError for unsupported grades.\n\nImplement this interface:\ndef grade_point_average(grades: list[str]) -> float | None:\n\nParameters:\n• grades (list[str]): Letter grades to average.",
+      "signature": "def grade_point_average(grades: list[str]) -> float | None:",
+      "concepts": [
+        "averages",
+        "lookup",
+        "loops"
+      ],
+      "examples": [
+        {
+          "input": "grade_point_average(['A','B+','C'])",
+          "output": "3.1"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def grade_point_average(grades: list[str]) -> float | None:\n    \"\"\"Calculate the mean grade-point value.\n\n    Args:\n        grades (list[str]): Letter grades to average.\n\n    Returns:\n        float | None: Calculate the mean grade-point value.\n\n    Raises:\n        ValueError: If a grade is unsupported.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "mixed",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "actual=grade_point_average(['A','B+','C'])\nexpected=3.1\nassert abs(actual-expected)<1e-9"
+        },
+        {
+          "name": "empty",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert grade_point_average([]) == None"
+        },
+        {
+          "name": "all A",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "actual=grade_point_average(['A','A-'])\nexpected=3.85\nassert abs(actual-expected)<1e-9"
+        }
+      ]
+    },
+    {
+      "id": "loops-admission-total",
+      "number": "3.7",
+      "title": "Admission Price",
+      "category": "Loops",
+      "difficulty": "Beginner",
+      "prompt": "Calculate admission for a group.\n\nBackground and required method:\nGuests age 2 and under are free; ages 3-12 cost $14; ages 65 and over cost $18; everyone else costs $23.\n\nImplement this interface:\ndef admission_total(ages: list[int]) -> float:\n\nParameters:\n• ages (list[int]): Ages of all guests.",
+      "signature": "def admission_total(ages: list[int]) -> float:",
+      "concepts": [
+        "accumulation",
+        "age ranges"
+      ],
+      "examples": [
+        {
+          "input": "admission_total([2,10,30,70])",
+          "output": "55.0"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def admission_total(ages: list[int]) -> float:\n    \"\"\"Calculate admission for a group.\n\n    Args:\n        ages (list[int]): Ages of all guests.\n\n    Returns:\n        float: Calculate admission for a group.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "mixed group",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert admission_total([2,10,30,70]) == 55.0"
+        },
+        {
+          "name": "children",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert admission_total([1,2,3]) == 14.0"
+        },
+        {
+          "name": "empty",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert admission_total([]) == 0.0"
+        }
+      ]
+    },
+    {
+      "id": "loops-append-parity-bits",
+      "number": "3.8",
+      "title": "Even Parity Bits",
+      "category": "Loops",
+      "difficulty": "Beginner",
+      "prompt": "Append an even-parity bit to binary groups.\n\nBackground and required method:\nFor each eight-bit group append 0 when it already contains an even number of 1 bits, otherwise append 1 so the resulting nine bits have even parity.\n\nImplement this interface:\ndef append_parity_bits(groups: list[str]) -> list[str]:\n\nParameters:\n• groups (list[str]): Eight-bit binary strings.",
+      "signature": "def append_parity_bits(groups: list[str]) -> list[str]:",
+      "concepts": [
+        "binary",
+        "counting",
+        "loops"
+      ],
+      "examples": [
+        {
+          "input": "append_parity_bits(['10101010'])",
+          "output": "['101010100']"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def append_parity_bits(groups: list[str]) -> list[str]:\n    \"\"\"Append an even-parity bit to binary groups.\n\n    Args:\n        groups (list[str]): Eight-bit binary strings.\n\n    Returns:\n        list[str]: Append an even-parity bit to binary groups.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "even ones",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert append_parity_bits(['10101010']) == ['101010100']"
+        },
+        {
+          "name": "odd ones",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert append_parity_bits(['10000000']) == ['100000001']"
+        },
+        {
+          "name": "several",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert append_parity_bits(['00000000','11111111']) == ['000000000','111111110']"
+        }
+      ]
+    },
+    {
+      "id": "loops-pi-approximations",
+      "number": "3.9",
+      "title": "Successive Pi Approximations",
+      "category": "Loops",
+      "difficulty": "Beginner",
+      "prompt": "Generate successive approximations of pi from an alternating series.\n\nBackground and required method:\nThe first approximation is 3. For n starting at 1, add or subtract 4 / ((2n)*(2n+1)*(2n+2)), alternating plus then minus. Return count cumulative approximations so each entry includes one more term than the previous entry.\n\nImplement this interface:\ndef pi_approximations(count: int = 15) -> list[float]:\n\nParameters:\n• count (int): Number of approximations to produce.",
+      "signature": "def pi_approximations(count: int = 15) -> list[float]:",
+      "concepts": [
+        "series",
+        "alternating signs",
+        "loops"
+      ],
+      "examples": [
+        {
+          "input": "pi_approximations(3)",
+          "output": "[3.0, 3.166666..., 3.133333...]"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def pi_approximations(count: int = 15) -> list[float]:\n    \"\"\"Generate successive approximations of pi from an alternating series.\n\n    Args:\n        count (int): Number of approximations to produce.\n\n    Returns:\n        list[float]: Generate successive approximations of pi from an alternating series.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "first term",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert pi_approximations(1) == [3.0]"
+        },
+        {
+          "name": "three terms",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert pi_approximations(3) == [3.0,3.1666666666666665,3.1333333333333333]"
+        },
+        {
+          "name": "default count",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert len(pi_approximations()) == 15"
+        }
+      ]
+    },
+    {
+      "id": "loops-caesar-cipher",
+      "number": "3.10",
+      "title": "Caesar Cipher",
+      "category": "Loops",
+      "difficulty": "Beginner",
+      "prompt": "Apply a Caesar rotation to letters in text.\n\nBackground and required method:\nRotate uppercase and lowercase letters independently with wraparound. Preserve spaces, digits, and punctuation unchanged. Negative shifts decode.\n\nImplement this interface:\ndef caesar_cipher(text: str, shift: int) -> str:\n\nParameters:\n• text (str): Text to transform.\n• shift (int): Alphabet rotation amount.",
+      "signature": "def caesar_cipher(text: str, shift: int) -> str:",
+      "concepts": [
+        "strings",
+        "modulo",
+        "loops"
+      ],
+      "examples": [
+        {
+          "input": "caesar_cipher('Hello!', 3)",
+          "output": "'Khoor!'"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def caesar_cipher(text: str, shift: int) -> str:\n    \"\"\"Apply a Caesar rotation to letters in text.\n\n    Args:\n        text (str): Text to transform.\n        shift (int): Alphabet rotation amount.\n\n    Returns:\n        str: Apply a Caesar rotation to letters in text.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "encode",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert caesar_cipher('Hello!',3) == 'Khoor!'"
+        },
+        {
+          "name": "wrap",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert caesar_cipher('xyz',3) == 'abc'"
+        },
+        {
+          "name": "decode",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert caesar_cipher('Khoor',-3) == 'Hello'"
+        }
+      ]
+    },
+    {
+      "id": "loops-newton-sqrt",
+      "number": "3.11",
+      "title": "Square Root with Newton's Method",
+      "category": "Loops",
+      "difficulty": "Beginner",
+      "prompt": "Approximate a square root by repeatedly improving a guess.\n\nBackground and required method:\nFollow Newton's method explicitly: for positive number, initialize guess to number/2. While abs(guess*guess-number) is greater than tolerance, replace guess with the average of guess and number/guess. Return the first guess that is good enough. Handle number=0 directly to avoid division by zero.\n\nImplement this interface:\ndef newton_sqrt(number: float, tolerance: float = 1e-12) -> float:\n\nParameters:\n• number (float): Non-negative value whose square root is required.\n• tolerance (float): Maximum allowed value of abs(guess*guess-number).",
+      "signature": "def newton_sqrt(number: float, tolerance: float = 1e-12) -> float:",
+      "concepts": [
+        "while loops",
+        "Newton's method",
+        "tolerance"
+      ],
+      "examples": [
+        {
+          "input": "newton_sqrt(2)",
+          "output": "approximately 1.41421356237"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def newton_sqrt(number: float, tolerance: float = 1e-12) -> float:\n    \"\"\"Approximate a square root by repeatedly improving a guess.\n\n    Args:\n        number (float): Non-negative value whose square root is required.\n        tolerance (float): Maximum allowed value of abs(guess*guess-number).\n\n    Returns:\n        float: Approximate a square root by repeatedly improving a guess.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "two",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "actual=newton_sqrt(2)\nexpected=1.4142135623730951\nassert abs(actual-expected)<1e-9"
+        },
+        {
+          "name": "perfect square",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "actual=newton_sqrt(81)\nexpected=9.0\nassert abs(actual-expected)<1e-9"
+        },
+        {
+          "name": "zero",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "actual=newton_sqrt(0)\nexpected=0.0\nassert abs(actual-expected)<1e-9"
+        }
+      ]
+    },
+    {
+      "id": "loops-is-palindrome",
+      "number": "3.12",
+      "title": "Palindrome",
+      "category": "Loops",
+      "difficulty": "Beginner",
+      "prompt": "Check whether text reads identically forward and backward.\n\nBackground and required method:\nCompare characters from opposite ends or compare with a reversed copy. This version is case-sensitive and does not remove punctuation.\n\nImplement this interface:\ndef is_palindrome(text: str) -> bool:\n\nParameters:\n• text (str): Case-sensitive text to inspect.",
+      "signature": "def is_palindrome(text: str) -> bool:",
+      "concepts": [
+        "strings",
+        "reversal"
+      ],
+      "examples": [
+        {
+          "input": "is_palindrome('racecar')",
+          "output": "True"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def is_palindrome(text: str) -> bool:\n    \"\"\"Check whether text reads identically forward and backward.\n\n    Args:\n        text (str): Case-sensitive text to inspect.\n\n    Returns:\n        bool: Check whether text reads identically forward and backward.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "palindrome",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert is_palindrome('racecar') == True"
+        },
+        {
+          "name": "not palindrome",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert is_palindrome('python') == False"
+        },
+        {
+          "name": "empty",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert is_palindrome('') == True"
+        }
+      ]
+    },
+    {
+      "id": "loops-is-phrase-palindrome",
+      "number": "3.13",
+      "title": "Phrase Palindrome",
+      "category": "Loops",
+      "difficulty": "Beginner",
+      "prompt": "Check whether a phrase is a palindrome after normalization.\n\nBackground and required method:\nKeep only letters and digits, convert to lowercase, then compare the result with its reversal.\n\nImplement this interface:\ndef is_phrase_palindrome(text: str) -> bool:\n\nParameters:\n• text (str): Phrase to normalize and inspect.",
+      "signature": "def is_phrase_palindrome(text: str) -> bool:",
+      "concepts": [
+        "normalization",
+        "palindromes"
+      ],
+      "examples": [
+        {
+          "input": "is_phrase_palindrome('A man, a plan, a canal: Panama!')",
+          "output": "True"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def is_phrase_palindrome(text: str) -> bool:\n    \"\"\"Check whether a phrase is a palindrome after normalization.\n\n    Args:\n        text (str): Phrase to normalize and inspect.\n\n    Returns:\n        bool: Check whether a phrase is a palindrome after normalization.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "classic phrase",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert is_phrase_palindrome('A man, a plan, a canal: Panama!') == True"
+        },
+        {
+          "name": "ordinary text",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert is_phrase_palindrome('Not one') == False"
+        },
+        {
+          "name": "punctuation only",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert is_phrase_palindrome('!!!') == True"
+        }
+      ]
+    },
+    {
+      "id": "loops-multiplication-table",
+      "number": "3.14",
+      "title": "Multiplication Table",
+      "category": "Loops",
+      "difficulty": "Beginner",
+      "prompt": "Create a square multiplication table.\n\nBackground and required method:\nReturn size rows; row r contains r*c for columns 1 through size, with both indices starting at 1.\n\nImplement this interface:\ndef multiplication_table(size: int = 10) -> list[list[int]]:\n\nParameters:\n• size (int): Largest row and column factor.",
+      "signature": "def multiplication_table(size: int = 10) -> list[list[int]]:",
+      "concepts": [
+        "nested loops",
+        "tables"
+      ],
+      "examples": [
+        {
+          "input": "multiplication_table(3)",
+          "output": "[[1,2,3],[2,4,6],[3,6,9]]"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def multiplication_table(size: int = 10) -> list[list[int]]:\n    \"\"\"Create a square multiplication table.\n\n    Args:\n        size (int): Largest row and column factor.\n\n    Returns:\n        list[list[int]]: Create a square multiplication table.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "three",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert multiplication_table(3) == [[1,2,3],[2,4,6],[3,6,9]]"
+        },
+        {
+          "name": "one",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert multiplication_table(1) == [[1]]"
+        },
+        {
+          "name": "empty",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert multiplication_table(0) == []"
+        }
+      ]
+    },
+    {
+      "id": "loops-iterative-gcd",
+      "number": "3.15",
+      "title": "Greatest Common Divisor",
+      "category": "Loops",
+      "difficulty": "Beginner",
+      "prompt": "Find the largest integer that divides two positive integers evenly.\n\nBackground and required method:\nUse this required search algorithm: initialize candidate to min(a,b), then repeatedly decrease candidate by 1 while it fails to divide either input evenly. Return the first candidate that divides both.\n\nImplement this interface:\ndef iterative_gcd(a: int, b: int) -> int:\n\nParameters:\n• a (int): First positive integer.\n• b (int): Second positive integer.",
+      "signature": "def iterative_gcd(a: int, b: int) -> int:",
+      "concepts": [
+        "while loops",
+        "divisibility",
+        "search"
+      ],
+      "examples": [
+        {
+          "input": "iterative_gcd(48, 18)",
+          "output": "6"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def iterative_gcd(a: int, b: int) -> int:\n    \"\"\"Find the largest integer that divides two positive integers evenly.\n\n    Args:\n        a (int): First positive integer.\n        b (int): Second positive integer.\n\n    Returns:\n        int: Find the largest integer that divides two positive integers evenly.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "common example",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert iterative_gcd(48,18) == 6"
+        },
+        {
+          "name": "coprime",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert iterative_gcd(17,5) == 1"
+        },
+        {
+          "name": "one divides other",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert iterative_gcd(12,36) == 12"
+        }
+      ]
+    },
+    {
+      "id": "loops-prime-factors",
+      "number": "3.16",
+      "title": "Prime Factors",
+      "category": "Loops",
+      "difficulty": "Beginner",
+      "prompt": "Factor an integer into prime factors.\n\nBackground and required method:\nRepeatedly divide by the smallest possible factor, appending it each time, until the remaining value is 1. Preserve repeated factors.\n\nImplement this interface:\ndef prime_factors(number: int) -> list[int]:\n\nParameters:\n• number (int): Integer at least 2.",
+      "signature": "def prime_factors(number: int) -> list[int]:",
+      "concepts": [
+        "factorization",
+        "loops"
+      ],
+      "examples": [
+        {
+          "input": "prime_factors(72)",
+          "output": "[2,2,2,3,3]"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def prime_factors(number: int) -> list[int]:\n    \"\"\"Factor an integer into prime factors.\n\n    Args:\n        number (int): Integer at least 2.\n\n    Returns:\n        list[int]: Factor an integer into prime factors.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "composite",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert prime_factors(72) == [2,2,2,3,3]"
+        },
+        {
+          "name": "prime",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert prime_factors(13) == [13]"
+        },
+        {
+          "name": "power",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert prime_factors(16) == [2,2,2,2]"
+        }
+      ]
+    },
+    {
+      "id": "loops-binary-to-decimal",
+      "number": "3.17",
+      "title": "Binary to Decimal",
+      "category": "Loops",
+      "difficulty": "Beginner",
+      "prompt": "Convert a binary string to a decimal integer.\n\nBackground and required method:\nProcess digits left to right, doubling the accumulated value before adding the next bit. Do not call int(binary, 2).\n\nImplement this interface:\ndef binary_to_decimal(binary: str) -> int:\n\nParameters:\n• binary (str): Non-empty string containing only 0 and 1.",
+      "signature": "def binary_to_decimal(binary: str) -> int:",
+      "concepts": [
+        "binary",
+        "place value",
+        "loops"
+      ],
+      "examples": [
+        {
+          "input": "binary_to_decimal('10110')",
+          "output": "22"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def binary_to_decimal(binary: str) -> int:\n    \"\"\"Convert a binary string to a decimal integer.\n\n    Args:\n        binary (str): Non-empty string containing only 0 and 1.\n\n    Returns:\n        int: Convert a binary string to a decimal integer.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "sample",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert binary_to_decimal('10110') == 22"
+        },
+        {
+          "name": "zero",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert binary_to_decimal('0') == 0"
+        },
+        {
+          "name": "one byte",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert binary_to_decimal('11111111') == 255"
+        }
+      ]
+    },
+    {
+      "id": "loops-decimal-to-binary",
+      "number": "3.18",
+      "title": "Decimal to Binary",
+      "category": "Loops",
+      "difficulty": "Beginner",
+      "prompt": "Convert a decimal integer to binary text.\n\nBackground and required method:\nRepeatedly divide by 2 and collect remainders, then reverse them. Return '0' for zero and do not use bin().\n\nImplement this interface:\ndef decimal_to_binary(number: int) -> str:\n\nParameters:\n• number (int): Non-negative decimal integer.",
+      "signature": "def decimal_to_binary(number: int) -> str:",
+      "concepts": [
+        "binary",
+        "division",
+        "loops"
+      ],
+      "examples": [
+        {
+          "input": "decimal_to_binary(22)",
+          "output": "'10110'"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def decimal_to_binary(number: int) -> str:\n    \"\"\"Convert a decimal integer to binary text.\n\n    Args:\n        number (int): Non-negative decimal integer.\n\n    Returns:\n        str: Convert a decimal integer to binary text.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "sample",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert decimal_to_binary(22) == '10110'"
+        },
+        {
+          "name": "zero",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert decimal_to_binary(0) == '0'"
+        },
+        {
+          "name": "byte maximum",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert decimal_to_binary(255) == '11111111'"
+        }
+      ]
+    },
+    {
+      "id": "loops-maximum-experiment",
+      "number": "3.19",
+      "title": "Maximum Integer Simulation",
+      "category": "Loops",
+      "difficulty": "Intermediate",
+      "prompt": "Simulate the process of discovering new maximum values.\n\nBackground and required method:\nUse a local random.Random(seed) to generate count integers from 1 through 100. Mark the first value as the initial maximum but do not count it as an update. For each later value, mark whether it establishes a strictly larger maximum. Return all (value,is_new_maximum) records, the final maximum, and the number of later updates.\n\nImplement this interface:\ndef maximum_experiment(seed: int | None = None, count: int = 100) -> tuple[list[tuple[int, bool]], int, int]:\n\nParameters:\n• seed (int | None): Optional seed for reproducible random values.\n• count (int): Number of random integers to generate.",
+      "signature": "def maximum_experiment(seed: int | None = None, count: int = 100) -> tuple[list[tuple[int, bool]], int, int]:",
+      "concepts": [
+        "random simulation",
+        "maximum",
+        "state tracking"
+      ],
+      "examples": [
+        {
+          "input": "maximum_experiment(seed=1, count=5)",
+          "output": "five marked values, final maximum, update count"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "import random\n\ndef maximum_experiment(seed: int | None = None, count: int = 100) -> tuple[list[tuple[int, bool]], int, int]:\n    \"\"\"Simulate the process of discovering new maximum values.\n\n    Args:\n        seed (int | None): Optional seed for reproducible random values.\n        count (int): Number of random integers to generate.\n\n    Returns:\n        tuple[list[tuple[int, bool]], int, int]: Simulate the process of discovering new maximum values.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "count and range",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert (lambda r: len(r[0])==100 and all(1<=v<=100 for v,_ in r[0]))(maximum_experiment(1)) == True"
+        },
+        {
+          "name": "repeatable",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert maximum_experiment(7,10)==maximum_experiment(7,10) == True"
+        },
+        {
+          "name": "summary matches records",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert (lambda r: r[1]==max(v for v,_ in r[0]) and r[2]==sum(flag for _,flag in r[0][1:]))(maximum_experiment(3,20)) == True"
+        }
+      ]
+    },
+    {
+      "id": "loops-coin-flip-experiment",
+      "number": "3.20",
+      "title": "Coin-Flip Simulation",
+      "category": "Loops",
+      "difficulty": "Intermediate",
+      "prompt": "Simulate fair coin flips until three equal outcomes occur consecutively.\n\nBackground and required method:\nFor each trial, use a local random.Random(seed) stream to generate H or T with equal probability until HHH or TTT first appears. Record the complete outcome string and its flip count. Return all trial records and the average count. By default, perform 10 independent simulations.\n\nImplement this interface:\ndef coin_flip_experiment(trials: int = 10, seed: int | None = None) -> tuple[list[tuple[str, int]], float]:\n\nParameters:\n• trials (int): Number of independent streak simulations.\n• seed (int | None): Optional seed for reproducible flips.",
+      "signature": "def coin_flip_experiment(trials: int = 10, seed: int | None = None) -> tuple[list[tuple[str, int]], float]:",
+      "concepts": [
+        "random simulation",
+        "runs",
+        "averages"
+      ],
+      "examples": [
+        {
+          "input": "coin_flip_experiment(3, seed=1)",
+          "output": "three outcome/count records and their average"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "import random\n\ndef coin_flip_experiment(trials: int = 10, seed: int | None = None) -> tuple[list[tuple[str, int]], float]:\n    \"\"\"Simulate fair coin flips until three equal outcomes occur consecutively.\n\n    Args:\n        trials (int): Number of independent streak simulations.\n        seed (int | None): Optional seed for reproducible flips.\n\n    Returns:\n        tuple[list[tuple[str, int]], float]: Simulate fair coin flips until three equal outcomes occur consecutively.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "ten trials",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert len(coin_flip_experiment(seed=1)[0]) == 10"
+        },
+        {
+          "name": "valid streak endings",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert all(text.endswith('HHH') or text.endswith('TTT') for text,_ in coin_flip_experiment(5,2)[0]) == True"
+        },
+        {
+          "name": "repeatable",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert coin_flip_experiment(4,7)==coin_flip_experiment(4,7) == True"
+        }
+      ]
+    }
+  ]
+}

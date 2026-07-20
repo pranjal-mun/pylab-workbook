@@ -1,0 +1,2904 @@
+{
+  "version": 2,
+  "sections": [
+    {
+      "id": "basics",
+      "number": 1,
+      "title": "Basics",
+      "problems": [
+        {
+          "number": "1.1",
+          "title": "Mailing Address",
+          "id": "basics-mailing-address"
+        },
+        {
+          "number": "1.2",
+          "title": "Hello",
+          "id": "basics-hello"
+        },
+        {
+          "number": "1.3",
+          "title": "Area of a Room",
+          "id": "basics-area-room"
+        },
+        {
+          "number": "1.4",
+          "title": "Area of a Field",
+          "id": "basics-area-field"
+        },
+        {
+          "number": "1.5",
+          "title": "Container Deposit Refund",
+          "id": "basics-deposit-refund"
+        },
+        {
+          "number": "1.6",
+          "title": "Tax and Tip",
+          "id": "basics-restaurant-total"
+        },
+        {
+          "number": "1.7",
+          "title": "Sum the First n Integers",
+          "id": "basics-sum-to-n"
+        },
+        {
+          "number": "1.8",
+          "title": "Widget Shipment Weight",
+          "id": "basics-shipment-weight"
+        },
+        {
+          "number": "1.9",
+          "title": "Compound Interest Forecast",
+          "id": "basics-account-balances"
+        },
+        {
+          "number": "1.10",
+          "title": "Arithmetic Report",
+          "id": "basics-arithmetic-report"
+        },
+        {
+          "number": "1.11",
+          "title": "Fuel Efficiency Converter",
+          "id": "basics-mpg-to-l-per-100km"
+        },
+        {
+          "number": "1.12",
+          "title": "Distance Across Earth",
+          "id": "basics-earth-distance"
+        },
+        {
+          "number": "1.13",
+          "title": "Make Change",
+          "id": "basics-make-change"
+        },
+        {
+          "number": "1.14",
+          "title": "Height Unit Converter",
+          "id": "basics-height-in-cm"
+        },
+        {
+          "number": "1.15",
+          "title": "Distance Unit Converter",
+          "id": "basics-distance-conversions"
+        },
+        {
+          "number": "1.16",
+          "title": "Circle Area and Sphere Volume",
+          "id": "basics-circle-and-sphere"
+        },
+        {
+          "number": "1.17",
+          "title": "Heating Water",
+          "id": "basics-heating-energy"
+        },
+        {
+          "number": "1.18",
+          "title": "Cylinder Volume",
+          "id": "basics-cylinder-volume"
+        },
+        {
+          "number": "1.19",
+          "title": "Free-Fall Speed",
+          "id": "basics-impact-speed"
+        },
+        {
+          "number": "1.20",
+          "title": "Ideal Gas Amount",
+          "id": "basics-gas-moles"
+        },
+        {
+          "number": "1.21",
+          "title": "Triangle Area",
+          "id": "basics-triangle-area"
+        },
+        {
+          "number": "1.22",
+          "title": "Triangle Area from Three Sides",
+          "id": "basics-heron-area"
+        },
+        {
+          "number": "1.23",
+          "title": "Regular Polygon Area",
+          "id": "basics-regular-polygon-area"
+        },
+        {
+          "number": "1.24",
+          "title": "Duration to Seconds",
+          "id": "basics-duration-seconds"
+        },
+        {
+          "number": "1.25",
+          "title": "Seconds to Duration",
+          "id": "basics-split-seconds"
+        },
+        {
+          "number": "1.26",
+          "title": "Format a Unix Timestamp",
+          "id": "basics-format-unix-time"
+        },
+        {
+          "number": "1.27",
+          "title": "Body Mass Index",
+          "id": "basics-body-mass-index"
+        },
+        {
+          "number": "1.28",
+          "title": "Wind Chill Index",
+          "id": "basics-wind-chill"
+        },
+        {
+          "number": "1.29",
+          "title": "Temperature Converter",
+          "id": "basics-temperature-conversions"
+        },
+        {
+          "number": "1.30",
+          "title": "Pressure Unit Converter",
+          "id": "basics-pressure-conversions"
+        },
+        {
+          "number": "1.31",
+          "title": "Sum an Integer's Digits",
+          "id": "basics-digit-sum"
+        },
+        {
+          "number": "1.32",
+          "title": "Sort Three Values",
+          "id": "basics-sort-three"
+        },
+        {
+          "number": "1.33",
+          "title": "Day-Old Bread Discount",
+          "id": "basics-bread-order"
+        }
+      ]
+    },
+    {
+      "id": "conditionals",
+      "number": 2,
+      "title": "Conditionals",
+      "problems": [
+        {
+          "number": "2.1",
+          "title": "Even or Odd",
+          "id": "conditionals-even-or-odd"
+        },
+        {
+          "number": "2.2",
+          "title": "Dog Years",
+          "id": "conditionals-dog-years"
+        },
+        {
+          "number": "2.3",
+          "title": "Vowel, Consonant, or Sometimes",
+          "id": "conditionals-letter-kind"
+        },
+        {
+          "number": "2.4",
+          "title": "Name a Polygon",
+          "id": "conditionals-shape-name"
+        },
+        {
+          "number": "2.5",
+          "title": "Days in a Month",
+          "id": "conditionals-month-days"
+        },
+        {
+          "number": "2.6",
+          "title": "Sound Level",
+          "id": "conditionals-sound-description"
+        },
+        {
+          "number": "2.7",
+          "title": "Triangle Type",
+          "id": "conditionals-triangle-kind"
+        },
+        {
+          "number": "2.8",
+          "title": "Musical Note Frequency",
+          "id": "conditionals-note-frequency"
+        },
+        {
+          "number": "2.9",
+          "title": "Frequency to Note",
+          "id": "conditionals-frequency-note"
+        },
+        {
+          "number": "2.10",
+          "title": "Faces on U.S. Money",
+          "id": "conditionals-banknote-person"
+        },
+        {
+          "number": "2.11",
+          "title": "Canadian Holiday",
+          "id": "conditionals-holiday-name"
+        },
+        {
+          "number": "2.12",
+          "title": "Chessboard Colour",
+          "id": "conditionals-chess-square-color"
+        },
+        {
+          "number": "2.13",
+          "title": "Season from Date",
+          "id": "conditionals-season"
+        },
+        {
+          "number": "2.14",
+          "title": "Western Zodiac Sign",
+          "id": "conditionals-zodiac-sign"
+        },
+        {
+          "number": "2.15",
+          "title": "Chinese Zodiac Animal",
+          "id": "conditionals-chinese-zodiac"
+        },
+        {
+          "number": "2.16",
+          "title": "Earthquake Magnitude",
+          "id": "conditionals-earthquake-description"
+        },
+        {
+          "number": "2.17",
+          "title": "Quadratic Roots",
+          "id": "conditionals-quadratic-roots"
+        },
+        {
+          "number": "2.18",
+          "title": "Letter Grade to Points",
+          "id": "conditionals-grade-points"
+        },
+        {
+          "number": "2.19",
+          "title": "Points to Letter Grade",
+          "id": "conditionals-letter-grade"
+        },
+        {
+          "number": "2.20",
+          "title": "Employee Assessment",
+          "id": "conditionals-employee-rating"
+        },
+        {
+          "number": "2.21",
+          "title": "Visible-Light Colour",
+          "id": "conditionals-visible-color"
+        },
+        {
+          "number": "2.22",
+          "title": "Electromagnetic Frequency Band",
+          "id": "conditionals-radiation-band"
+        },
+        {
+          "number": "2.23",
+          "title": "Cell Phone Bill",
+          "id": "conditionals-phone-bill"
+        },
+        {
+          "number": "2.24",
+          "title": "Leap Year",
+          "id": "conditionals-is-leap-year"
+        },
+        {
+          "number": "2.25",
+          "title": "Next Calendar Date",
+          "id": "conditionals-next-date"
+        },
+        {
+          "number": "2.26",
+          "title": "License Plate Validator",
+          "id": "conditionals-valid-license-plate"
+        },
+        {
+          "number": "2.27",
+          "title": "Roulette Payout Simulation",
+          "id": "conditionals-roulette-spin"
+        }
+      ]
+    },
+    {
+      "id": "loops",
+      "number": 3,
+      "title": "Loops",
+      "problems": [
+        {
+          "number": "3.1",
+          "title": "Average Until Zero",
+          "id": "loops-average-until-zero"
+        },
+        {
+          "number": "3.2",
+          "title": "Discount Table",
+          "id": "loops-discount-table"
+        },
+        {
+          "number": "3.3",
+          "title": "Temperature Table",
+          "id": "loops-temperature-table"
+        },
+        {
+          "number": "3.4",
+          "title": "Cash Purchase Rounding",
+          "id": "loops-cash-total"
+        },
+        {
+          "number": "3.5",
+          "title": "Polygon Perimeter",
+          "id": "loops-polygon-perimeter"
+        },
+        {
+          "number": "3.6",
+          "title": "Grade Point Average",
+          "id": "loops-grade-point-average"
+        },
+        {
+          "number": "3.7",
+          "title": "Admission Price",
+          "id": "loops-admission-total"
+        },
+        {
+          "number": "3.8",
+          "title": "Even Parity Bits",
+          "id": "loops-append-parity-bits"
+        },
+        {
+          "number": "3.9",
+          "title": "Successive Pi Approximations",
+          "id": "loops-pi-approximations"
+        },
+        {
+          "number": "3.10",
+          "title": "Caesar Cipher",
+          "id": "loops-caesar-cipher"
+        },
+        {
+          "number": "3.11",
+          "title": "Square Root with Newton's Method",
+          "id": "loops-newton-sqrt"
+        },
+        {
+          "number": "3.12",
+          "title": "Palindrome",
+          "id": "loops-is-palindrome"
+        },
+        {
+          "number": "3.13",
+          "title": "Phrase Palindrome",
+          "id": "loops-is-phrase-palindrome"
+        },
+        {
+          "number": "3.14",
+          "title": "Multiplication Table",
+          "id": "loops-multiplication-table"
+        },
+        {
+          "number": "3.15",
+          "title": "Greatest Common Divisor",
+          "id": "loops-iterative-gcd"
+        },
+        {
+          "number": "3.16",
+          "title": "Prime Factors",
+          "id": "loops-prime-factors"
+        },
+        {
+          "number": "3.17",
+          "title": "Binary to Decimal",
+          "id": "loops-binary-to-decimal"
+        },
+        {
+          "number": "3.18",
+          "title": "Decimal to Binary",
+          "id": "loops-decimal-to-binary"
+        },
+        {
+          "number": "3.19",
+          "title": "Maximum Integer Simulation",
+          "id": "loops-maximum-experiment"
+        },
+        {
+          "number": "3.20",
+          "title": "Coin-Flip Simulation",
+          "id": "loops-coin-flip-experiment"
+        }
+      ]
+    },
+    {
+      "id": "functions",
+      "number": 4,
+      "title": "Functions",
+      "problems": [
+        {
+          "number": "4.1",
+          "title": "Compute the Hypotenuse",
+          "id": "functions-hypotenuse"
+        },
+        {
+          "number": "4.2",
+          "title": "Taxi Fare",
+          "id": "functions-taxi-fare"
+        },
+        {
+          "number": "4.3",
+          "title": "Shipping Calculator",
+          "id": "functions-shipping-charge"
+        },
+        {
+          "number": "4.4",
+          "title": "Median of Three",
+          "id": "functions-median-three"
+        },
+        {
+          "number": "4.5",
+          "title": "Ordinal Number",
+          "id": "functions-ordinal"
+        },
+        {
+          "number": "4.6",
+          "title": "Twelve Days Verse",
+          "id": "functions-twelve-days-verse"
+        },
+        {
+          "number": "4.7",
+          "title": "Center Text",
+          "id": "functions-center-text"
+        },
+        {
+          "number": "4.8",
+          "title": "Valid Triangle",
+          "id": "functions-valid-triangle"
+        },
+        {
+          "number": "4.9",
+          "title": "Capitalize It",
+          "id": "functions-capitalize-sentences"
+        },
+        {
+          "number": "4.10",
+          "title": "Integer String",
+          "id": "functions-represents-integer"
+        },
+        {
+          "number": "4.11",
+          "title": "Operator Precedence",
+          "id": "functions-operator-precedence"
+        },
+        {
+          "number": "4.12",
+          "title": "Prime Number",
+          "id": "functions-is-prime"
+        },
+        {
+          "number": "4.13",
+          "title": "Next Prime",
+          "id": "functions-next-prime"
+        },
+        {
+          "number": "4.14",
+          "title": "Random Password",
+          "id": "functions-random-password"
+        },
+        {
+          "number": "4.15",
+          "title": "Random License Plate",
+          "id": "functions-random-license-plate"
+        },
+        {
+          "number": "4.16",
+          "title": "Password Strength",
+          "id": "functions-is-good-password"
+        },
+        {
+          "number": "4.17",
+          "title": "Random Good Password",
+          "id": "functions-random-good-password"
+        },
+        {
+          "number": "4.18",
+          "title": "Hexadecimal and Decimal Digits",
+          "id": "functions-convert-hex-digit"
+        },
+        {
+          "number": "4.19",
+          "title": "Arbitrary Base Conversion",
+          "id": "functions-convert-base"
+        },
+        {
+          "number": "4.20",
+          "title": "Days in a Specific Month",
+          "id": "functions-days-in-month"
+        },
+        {
+          "number": "4.21",
+          "title": "Reduce a Fraction",
+          "id": "functions-reduce-fraction"
+        },
+        {
+          "number": "4.22",
+          "title": "Reduce Recipe Measures",
+          "id": "functions-reduce-measures"
+        },
+        {
+          "number": "4.23",
+          "title": "Magic Dates",
+          "id": "functions-is-magic-date"
+        }
+      ]
+    },
+    {
+      "id": "lists",
+      "number": 5,
+      "title": "Lists",
+      "problems": [
+        {
+          "number": "5.1",
+          "title": "Number Sorter",
+          "id": "lists-sorted-order"
+        },
+        {
+          "number": "5.2",
+          "title": "Reverse the Entries",
+          "id": "lists-reverse-order"
+        },
+        {
+          "number": "5.3",
+          "title": "Trim the Extremes",
+          "id": "lists-remove-outliers"
+        },
+        {
+          "number": "5.4",
+          "title": "Unique Word Stream",
+          "id": "lists-avoiding-duplicates"
+        },
+        {
+          "number": "5.5",
+          "title": "Group Numbers by Sign",
+          "id": "lists-group-by-sign"
+        },
+        {
+          "number": "5.6",
+          "title": "Proper Divisor Finder",
+          "id": "lists-proper-divisors"
+        },
+        {
+          "number": "5.7",
+          "title": "Perfect Number Check",
+          "id": "lists-perfect-number"
+        },
+        {
+          "number": "5.8",
+          "title": "Clean Word Extractor",
+          "id": "lists-clean-words"
+        },
+        {
+          "number": "5.9",
+          "title": "Around the Average",
+          "id": "lists-around-average"
+        },
+        {
+          "number": "5.10",
+          "title": "Natural-Language List",
+          "id": "lists-natural-language"
+        },
+        {
+          "number": "5.11",
+          "title": "Lottery Ticket Generator",
+          "id": "lists-lottery-ticket"
+        },
+        {
+          "number": "5.12",
+          "title": "Simple Pig Latin",
+          "id": "lists-pig-latin"
+        },
+        {
+          "number": "5.13",
+          "title": "Polished Pig Latin",
+          "id": "lists-polished-pig-latin"
+        },
+        {
+          "number": "5.14",
+          "title": "Trend Line Calculator",
+          "id": "lists-best-fit"
+        },
+        {
+          "number": "5.15",
+          "title": "Build and Shuffle a Deck",
+          "id": "lists-card-deck"
+        },
+        {
+          "number": "5.16",
+          "title": "Deal Cards Round-Robin",
+          "id": "lists-deal-cards"
+        },
+        {
+          "number": "5.17",
+          "title": "Monotonic List Check",
+          "id": "lists-monotonic"
+        },
+        {
+          "number": "5.18",
+          "title": "Count Values in an Interval",
+          "id": "lists-count-range"
+        },
+        {
+          "number": "5.19",
+          "title": "Math Expression Tokenizer",
+          "id": "lists-tokenize-expression"
+        },
+        {
+          "number": "5.20",
+          "title": "Infix to Postfix Converter",
+          "id": "lists-infix-postfix"
+        },
+        {
+          "number": "5.21",
+          "title": "Postfix Calculator",
+          "id": "lists-postfix-calculator"
+        },
+        {
+          "number": "5.22",
+          "title": "Contiguous Sublist Check",
+          "id": "lists-sublist-check"
+        },
+        {
+          "number": "5.23",
+          "title": "Generate Every Sublist",
+          "id": "lists-generate-sublists"
+        },
+        {
+          "number": "5.24",
+          "title": "Prime Sieve",
+          "id": "lists-prime-sieve"
+        }
+      ]
+    },
+    {
+      "id": "dictionaries",
+      "number": 6,
+      "title": "Dictionaries",
+      "problems": [
+        {
+          "number": "6.1",
+          "title": "Find Keys by Value",
+          "id": "dictionaries-reverse-lookup"
+        },
+        {
+          "number": "6.2",
+          "title": "Two-Dice Experiment",
+          "id": "dictionaries-dice-simulation"
+        },
+        {
+          "number": "6.3",
+          "title": "Old-School Keypad Encoder",
+          "id": "dictionaries-text-messaging"
+        },
+        {
+          "number": "6.4",
+          "title": "Morse Message Encoder",
+          "id": "dictionaries-morse-code"
+        },
+        {
+          "number": "6.5",
+          "title": "Canadian Postal Code Guide",
+          "id": "dictionaries-postal-codes"
+        },
+        {
+          "number": "6.6",
+          "title": "Numbers in English",
+          "id": "dictionaries-number-words"
+        },
+        {
+          "number": "6.7",
+          "title": "Count Distinct Characters",
+          "id": "dictionaries-unique-characters"
+        },
+        {
+          "number": "6.8",
+          "title": "Word Anagram Check",
+          "id": "dictionaries-anagrams"
+        },
+        {
+          "number": "6.9",
+          "title": "Phrase Anagram Check",
+          "id": "dictionaries-phrase-anagrams"
+        },
+        {
+          "number": "6.10",
+          "title": "Word Tile Score",
+          "id": "dictionaries-scrabble-score"
+        },
+        {
+          "number": "6.11",
+          "title": "Build a Bingo Card",
+          "id": "dictionaries-bingo-card"
+        },
+        {
+          "number": "6.12",
+          "title": "Detect a Bingo Win",
+          "id": "dictionaries-bingo-win"
+        },
+        {
+          "number": "6.13",
+          "title": "Bingo Simulation",
+          "id": "dictionaries-bingo-simulation"
+        }
+      ]
+    },
+    {
+      "id": "files",
+      "number": 7,
+      "title": "Files & Exceptions",
+      "problems": [
+        {
+          "number": "7.1",
+          "title": "File Preview",
+          "id": "files-head"
+        },
+        {
+          "number": "7.2",
+          "title": "Rolling File Tail",
+          "id": "files-tail"
+        },
+        {
+          "number": "7.3",
+          "title": "Concatenate Safely",
+          "id": "files-concatenate"
+        },
+        {
+          "number": "7.4",
+          "title": "Number Every Line",
+          "id": "files-number-lines"
+        },
+        {
+          "number": "7.5",
+          "title": "Longest Tokens",
+          "id": "files-longest-words"
+        },
+        {
+          "number": "7.6",
+          "title": "Letter Frequency Report",
+          "id": "files-letter-frequency"
+        },
+        {
+          "number": "7.7",
+          "title": "Most Common Words",
+          "id": "files-common-words"
+        },
+        {
+          "number": "7.8",
+          "title": "Resilient Running Total",
+          "id": "files-valid-number-sum"
+        },
+        {
+          "number": "7.9",
+          "title": "Grade Translator",
+          "id": "files-grade-converter"
+        },
+        {
+          "number": "7.10",
+          "title": "Strip Python Comments",
+          "id": "files-remove-comments"
+        },
+        {
+          "number": "7.11",
+          "title": "Memorable Two-Word Password",
+          "id": "files-random-password"
+        },
+        {
+          "number": "7.12",
+          "title": "Element Lookup",
+          "id": "files-element-lookup"
+        },
+        {
+          "number": "7.13",
+          "title": "Letter Coverage by Word",
+          "id": "files-letter-coverage"
+        },
+        {
+          "number": "7.14",
+          "title": "Annual Top Names",
+          "id": "files-top-names"
+        },
+        {
+          "number": "7.15",
+          "title": "Shared Baby Names",
+          "id": "files-neutral-names"
+        },
+        {
+          "number": "7.16",
+          "title": "Most Popular Across Years",
+          "id": "files-popular-range"
+        },
+        {
+          "number": "7.17",
+          "title": "Distinct Names Archive",
+          "id": "files-distinct-names"
+        },
+        {
+          "number": "7.18",
+          "title": "File Spell Checker",
+          "id": "files-spell-checker"
+        },
+        {
+          "number": "7.19",
+          "title": "Repeated Word Detector",
+          "id": "files-repeated-words"
+        },
+        {
+          "number": "7.20",
+          "title": "Case-Insensitive Redaction",
+          "id": "files-redaction"
+        },
+        {
+          "number": "7.21",
+          "title": "Missing Function Comments",
+          "id": "files-missing-comments"
+        },
+        {
+          "number": "7.22",
+          "title": "Paragraph Reflow",
+          "id": "files-reflow"
+        },
+        {
+          "number": "7.23",
+          "title": "Ordered Six Vowels",
+          "id": "files-six-vowels"
+        }
+      ]
+    },
+    {
+      "id": "recursion",
+      "number": 8,
+      "title": "Recursion",
+      "problems": [
+        {
+          "number": "8.1",
+          "title": "Recursive Total",
+          "id": "recursion-total"
+        },
+        {
+          "number": "8.2",
+          "title": "Euclid's GCD",
+          "id": "recursion-gcd"
+        },
+        {
+          "number": "8.3",
+          "title": "Binary by Recursion",
+          "id": "recursion-binary"
+        },
+        {
+          "number": "8.4",
+          "title": "Recursive Palindrome",
+          "id": "recursion-palindrome"
+        },
+        {
+          "number": "8.5",
+          "title": "Newton's Recursive Root",
+          "id": "recursion-square-root"
+        },
+        {
+          "number": "8.6",
+          "title": "String Edit Distance",
+          "id": "recursion-edit-distance"
+        },
+        {
+          "number": "8.7",
+          "title": "Exact Coin Count",
+          "id": "recursion-change"
+        },
+        {
+          "number": "8.8",
+          "title": "Spell with Element Symbols",
+          "id": "recursion-element-spelling"
+        },
+        {
+          "number": "8.9",
+          "title": "Longest Element Chain",
+          "id": "recursion-element-chain"
+        },
+        {
+          "number": "8.10",
+          "title": "Recursive Run Decoder",
+          "id": "recursion-run-decoder"
+        },
+        {
+          "number": "8.11",
+          "title": "Recursive Run Encoder",
+          "id": "recursion-run-encoder"
+        }
+      ]
+    }
+  ],
+  "problems": [
+    {
+      "id": "basics-mailing-address",
+      "number": "1.1",
+      "title": "Mailing Address",
+      "category": "Basics",
+      "difficulty": "Beginner",
+      "prompt": "Write a program that prints your name and complete mailing address in the format used on an envelope. Your output should contain at least three non-empty lines. This exercise does not require input.",
+      "signature": "A complete Python program",
+      "concepts": [
+        "print",
+        "strings",
+        "line breaks"
+      ],
+      "examples": [
+        {
+          "input": "No input",
+          "output": "Ada Lovelace\n12 Example Street\nSt. John's, NL A1A 1A1"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "\"\"\"Print a complete mailing address in envelope format.\n\nInput:\n    No input.\n\nOutput:\n    At least three non-empty address lines.\n\"\"\"\n\n# Print your name and mailing address below.\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "prints at least three lines",
+          "stdin": "",
+          "code": "lines = [line.strip() for line in output.splitlines() if line.strip()]\nassert len(lines) >= 3, 'Print your name, street address, and city/province/postal code on separate lines.'"
+        },
+        {
+          "name": "does not request input",
+          "stdin": "",
+          "code": "assert output.strip(), 'Your program did not print anything.'"
+        }
+      ]
+    },
+    {
+      "id": "basics-hello",
+      "number": "1.2",
+      "title": "Hello",
+      "category": "Basics",
+      "difficulty": "Beginner",
+      "prompt": "Write a small interactive program that asks the user to enter their name. After reading the complete line of text, print a friendly greeting that includes the name exactly as entered. The output must contain both greeting text and the supplied name so the user can tell that their input was received.",
+      "signature": "A complete Python program using input()",
+      "concepts": [
+        "input",
+        "print",
+        "strings"
+      ],
+      "examples": [
+        {
+          "input": "Ada",
+          "output": "Hello, Ada!"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "\"\"\"Read a person's name and print a personalized greeting.\n\nInput:\n    One name from standard input.\n\nOutput:\n    A friendly greeting containing the supplied name.\n\"\"\"\n\nname: str = input(\"What is your name? \" )\n# Print a greeting that includes name\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "greets Ada",
+          "stdin": "Ada\n",
+          "code": "assert 'ada' in output.lower(), 'The greeting should include the entered name.'\nassert 'hello' in output.lower() or 'hi' in output.lower(), 'Include a greeting such as Hello or Hi.'"
+        },
+        {
+          "name": "uses the supplied name",
+          "stdin": "Grace\n",
+          "code": "assert 'grace' in output.lower(), 'The program should greet any name, not a fixed example.'"
+        }
+      ]
+    },
+    {
+      "id": "basics-area-room",
+      "number": "1.3",
+      "title": "Area of a Room",
+      "category": "Basics",
+      "difficulty": "Beginner",
+      "prompt": "Write a program that reads a rectangular room's width followed by its length, both measured in metres and permitted to contain decimals. Calculate area by multiplying the two measurements. Display the numeric result with square metres clearly identified as the unit; do not silently convert to another unit.",
+      "signature": "area = width * length",
+      "concepts": [
+        "input",
+        "float",
+        "multiplication",
+        "formatted output"
+      ],
+      "examples": [
+        {
+          "input": "4.5\n3",
+          "output": "The room area is 13.5 square metres."
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "\"\"\"Calculate the area of a rectangular room in square metres.\n\nInput:\n    The room width followed by its length, both as decimal numbers.\n\nOutput:\n    The calculated area labelled in square metres.\n\"\"\"\n\nwidth: float = float(input(\"Width in metres: \"))\nlength: float = float(input(\"Length in metres: \"))\n# Calculate and print the area\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "whole-number dimensions",
+          "stdin": "5\n4\n",
+          "code": "assert '20' in output, 'A 5 by 4 room has an area of 20 square metres.'\nassert 'metre' in output.lower() or 'meter' in output.lower(), 'Include the unit in your output.'"
+        },
+        {
+          "name": "decimal dimensions",
+          "stdin": "4.5\n3\n",
+          "code": "assert '13.5' in output, 'A 4.5 by 3 room has an area of 13.5 square metres.'"
+        },
+        {
+          "name": "different dimensions",
+          "stdin": "2.25\n8\n",
+          "code": "assert '18' in output, 'Use the entered dimensions instead of fixed values.'"
+        }
+      ]
+    },
+    {
+      "id": "basics-area-field",
+      "number": "1.4",
+      "title": "Area of a Field",
+      "category": "Basics",
+      "difficulty": "Beginner",
+      "prompt": "Write a program that reads the length and width of a rectangular field in feet. Multiply them to obtain square feet, then convert that area to acres using exactly 43,560 square feet per acre. Read length first, width second, and display the resulting acreage with an appropriate label.",
+      "signature": "acres = length * width / 43560",
+      "concepts": [
+        "input",
+        "float",
+        "unit conversion",
+        "division"
+      ],
+      "examples": [
+        {
+          "input": "435.6\n100",
+          "output": "The field area is 1.0 acres."
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "\"\"\"Convert a rectangular field's area from square feet to acres.\n\nInput:\n    The field length followed by its width, both measured in feet.\n\nOutput:\n    The calculated area in acres using 43,560 square feet per acre.\n\"\"\"\n\nlength: float = float(input(\"Length in feet: \"))\nwidth: float = float(input(\"Width in feet: \"))\n# Convert the area to acres and print it\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "one acre",
+          "stdin": "435.6\n100\n",
+          "code": "assert '1.0' in output or '1 acre' in output.lower() or '1 acres' in output.lower(), '43,560 square feet is 1 acre.'\nassert 'acre' in output.lower(), 'Include acres as the unit.'"
+        },
+        {
+          "name": "half acre",
+          "stdin": "217.8\n100\n",
+          "code": "assert '0.5' in output, '21,780 square feet is 0.5 acres.'"
+        },
+        {
+          "name": "two acres",
+          "stdin": "871.2\n100\n",
+          "code": "assert '2.0' in output or '2 acre' in output.lower() or '2 acres' in output.lower(), 'Use the entered dimensions to calculate the area.'"
+        }
+      ]
+    },
+    {
+      "id": "lists-sorted-order",
+      "number": "5.1",
+      "title": "Number Sorter",
+      "category": "Lists",
+      "difficulty": "Beginner",
+      "prompt": "Read integers until the user enters 0. Store the non-zero values in a list, sort them from smallest to largest, and print each value on its own line. Do not include the sentinel 0 in the output.",
+      "signature": "A complete Python program using a list",
+      "concepts": [
+        "lists",
+        "sentinel values",
+        "sort",
+        "loops"
+      ],
+      "examples": [
+        {
+          "input": "8\n3\n5\n0",
+          "output": "3\n5\n8"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "\"\"\"Read integers until zero and print the entered values in ascending order.\n\nInput:\n    One integer per line, terminated by the sentinel 0.\n\nOutput:\n    Each non-sentinel value on its own line from smallest to largest.\n\"\"\"\n\nvalues: list[int] = []\n\n# Read integers until 0, then print them in sorted order.\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "sorts several values",
+          "stdin": "8\n3\n5\n0\n",
+          "code": "numbers = [int(line.strip()) for line in output.splitlines() if line.strip().lstrip('-').isdigit()]\nassert numbers == [3, 5, 8], f'Expected [3, 5, 8], but got {numbers}.'"
+        },
+        {
+          "name": "keeps repeated values",
+          "stdin": "4\n-2\n4\n1\n0\n",
+          "code": "numbers = [int(line.strip()) for line in output.splitlines() if line.strip().lstrip('-').isdigit()]\nassert numbers == [-2, 1, 4, 4], f'Expected [-2, 1, 4, 4], but got {numbers}.'"
+        },
+        {
+          "name": "handles no values",
+          "stdin": "0\n",
+          "code": "numbers = [int(line.strip()) for line in output.splitlines() if line.strip().lstrip('-').isdigit()]\nassert numbers == [], 'The sentinel 0 should not be printed.'"
+        }
+      ]
+    },
+    {
+      "id": "lists-reverse-order",
+      "number": "5.2",
+      "title": "Reverse the Entries",
+      "category": "Lists",
+      "difficulty": "Beginner",
+      "prompt": "Read integers until the user enters 0. Store the non-zero values, then print them in the reverse of the order they were entered, with one value on each line. Do not print the sentinel.",
+      "signature": "A complete Python program using a list",
+      "concepts": [
+        "lists",
+        "sentinel values",
+        "list reversal",
+        "loops"
+      ],
+      "examples": [
+        {
+          "input": "8\n3\n5\n0",
+          "output": "5\n3\n8"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "\"\"\"Read integers until zero and print them in reverse entry order.\n\nInput:\n    One integer per line, terminated by the sentinel 0.\n\nOutput:\n    Each non-sentinel value on its own line, last entered first.\n\"\"\"\n\nvalues: list[int] = []\n\n# Read integers until 0, then print them in reverse input order.\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "reverses entry order",
+          "stdin": "8\n3\n5\n0\n",
+          "code": "numbers = [int(line.strip()) for line in output.splitlines() if line.strip().lstrip('-').isdigit()]\nassert numbers == [5, 3, 8], f'Expected [5, 3, 8], but got {numbers}.'"
+        },
+        {
+          "name": "preserves negatives and repeats",
+          "stdin": "-1\n7\n7\n2\n0\n",
+          "code": "numbers = [int(line.strip()) for line in output.splitlines() if line.strip().lstrip('-').isdigit()]\nassert numbers == [2, 7, 7, -1], f'Expected [2, 7, 7, -1], but got {numbers}.'"
+        },
+        {
+          "name": "handles one value",
+          "stdin": "42\n0\n",
+          "code": "numbers = [int(line.strip()) for line in output.splitlines() if line.strip().lstrip('-').isdigit()]\nassert numbers == [42], f'Expected [42], but got {numbers}.'"
+        }
+      ]
+    },
+    {
+      "id": "lists-remove-outliers",
+      "number": "5.3",
+      "title": "Trim the Extremes",
+      "category": "Lists",
+      "difficulty": "Intermediate",
+      "prompt": "Write remove_outliers(values, n). Return a new list with the n smallest and n largest elements removed, without modifying the original. Raise ValueError when n is negative or fewer than 2n values are available. You may add a guarded main program demonstrating the common case n=2.",
+      "signature": "def remove_outliers(values: list[int | float], n: int) -> list[int | float]:",
+      "concepts": [
+        "functions",
+        "list copies",
+        "sorting",
+        "slicing"
+      ],
+      "examples": [
+        {
+          "input": "remove_outliers([1, 2, 3, 4, 5], 1)",
+          "output": "[2, 3, 4]"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def remove_outliers(values: list[int | float], n: int) -> list[int | float]:\n    \"\"\"Return a copy of a numeric list without its most extreme values.\n    \n    Args:\n        values (list[int | float]): The numeric values to copy and trim without mutation.\n        n (int): The number of values to remove from each extreme.\n    \n    Returns:\n        list[int | float]: A new list with the n smallest and n largest values removed.\n    \n    Raises:\n        ValueError: If n is negative or values contains fewer than 2 * n items.\n    \"\"\"\n    # Return a new list without the n smallest and n largest values.\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "removes one value from each end",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert sorted(remove_outliers([1, 2, 3, 4, 5], 1)) == [2, 3, 4]"
+        },
+        {
+          "name": "removes two values from each end",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert sorted(remove_outliers([10, -5, 7, 2, 99, 3, 4], 2)) == [3, 4, 7]"
+        },
+        {
+          "name": "preserves the original list",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "original = [5, 1, 4, 2, 3]\nresult = remove_outliers(original, 1)\nassert original == [5, 1, 4, 2, 3], 'Do not modify the input list.'\nassert result is not original, 'Return a new list.'"
+        },
+        {
+          "name": "supports removing zero outliers",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "original = [3, 1, 2]\nresult = remove_outliers(original, 0)\nassert sorted(result) == sorted(original) and result is not original"
+        },
+        {
+          "name": "rejects insufficient data",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "for values, n in [([1, 2, 3], 2), ([1], -1)]:\n    try:\n        remove_outliers(values, n)\n        assert False, 'Expected ValueError.'\n    except ValueError:\n        pass"
+        }
+      ]
+    },
+    {
+      "id": "lists-avoiding-duplicates",
+      "number": "5.4",
+      "title": "Unique Word Stream",
+      "category": "Lists",
+      "difficulty": "Beginner",
+      "prompt": "Read words until the user enters a blank line. Print each distinct word exactly once, preserving the order in which it first appeared. A repeated word must never be printed a second time.",
+      "signature": "A complete Python program using a list",
+      "concepts": [
+        "lists",
+        "membership",
+        "sentinel values",
+        "order preservation"
+      ],
+      "examples": [
+        {
+          "input": "first\nsecond\nfirst\nthird\nsecond\n",
+          "output": "first\nsecond\nthird"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "\"\"\"Print each entered word once in first-seen order.\n\nInput:\n    One word per line, terminated by a blank line.\n\nOutput:\n    Each distinct word on its own line without duplicates.\n\"\"\"\n\nwords: list[str] = []\n\n# Read words until a blank line, keeping only the first occurrence.\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "removes repeated words",
+          "stdin": "first\nsecond\nfirst\nthird\nsecond\n\n",
+          "code": "lines = [line.strip() for line in output.splitlines() if line.strip() in {'first', 'second', 'third'}]\nassert lines == ['first', 'second', 'third'], f'Expected first, second, third; got {lines}.'"
+        },
+        {
+          "name": "preserves first-seen order",
+          "stdin": "pear\napple\npear\nbanana\napple\n\n",
+          "code": "lines = [line.strip() for line in output.splitlines() if line.strip() in {'pear', 'apple', 'banana'}]\nassert lines == ['pear', 'apple', 'banana'], f'Expected first-seen order; got {lines}.'"
+        },
+        {
+          "name": "handles immediate blank input",
+          "stdin": "\n",
+          "code": "assert not output.strip(), 'A blank first entry should produce no words.'"
+        }
+      ]
+    },
+    {
+      "id": "lists-group-by-sign",
+      "number": "5.5",
+      "title": "Group Numbers by Sign",
+      "category": "Lists",
+      "difficulty": "Beginner",
+      "prompt": "Read integers until the user enters a blank line. Print all negative values first, then zeros, then positive values. Preserve the original order within each group and print one value per line.",
+      "signature": "A complete Python program using lists",
+      "concepts": [
+        "lists",
+        "classification",
+        "order preservation",
+        "loops"
+      ],
+      "examples": [
+        {
+          "input": "3\n-4\n1\n0\n-1\n0\n-2\n",
+          "output": "-4\n-1\n-2\n0\n0\n3\n1"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "\"\"\"Group entered integers as negative, zero, and positive values.\n\nInput:\n    One integer per line, terminated by a blank line.\n\nOutput:\n    Negative values, then zeros, then positive values, preserving order within each group.\n\"\"\"\n\nnegatives: list[int] = []\nzeros: list[int] = []\npositives: list[int] = []\n\n# Read integers until a blank line, then print the three groups.\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "groups mixed values",
+          "stdin": "3\n-4\n1\n0\n-1\n0\n-2\n\n",
+          "code": "numbers = [int(line.strip()) for line in output.splitlines() if line.strip().lstrip('-').isdigit()]\nassert numbers == [-4, -1, -2, 0, 0, 3, 1], f'Values are in the wrong order: {numbers}.'"
+        },
+        {
+          "name": "preserves order within groups",
+          "stdin": "5\n-2\n8\n-7\n0\n\n",
+          "code": "numbers = [int(line.strip()) for line in output.splitlines() if line.strip().lstrip('-').isdigit()]\nassert numbers == [-2, -7, 0, 5, 8], f'Expected [-2, -7, 0, 5, 8], but got {numbers}.'"
+        },
+        {
+          "name": "handles immediate blank input",
+          "stdin": "\n",
+          "code": "numbers = [int(line.strip()) for line in output.splitlines() if line.strip().lstrip('-').isdigit()]\nassert numbers == [], 'Blank input should produce no values.'"
+        }
+      ]
+    },
+    {
+      "id": "lists-proper-divisors",
+      "number": "5.6",
+      "title": "Proper Divisor Finder",
+      "category": "Lists",
+      "difficulty": "Beginner",
+      "prompt": "A proper divisor divides a number evenly but is smaller than the number itself. Implement proper_divisors(n) for a positive integer n. Examine the candidate values from 1 through n - 1, collect those for which n % candidate is zero, and return them in increasing order. The number n must never appear in its own result.",
+      "signature": "def proper_divisors(n: int) -> list[int]:",
+      "concepts": [
+        "lists",
+        "loops",
+        "modulo",
+        "functions"
+      ],
+      "examples": [
+        {
+          "input": "proper_divisors(12)",
+          "output": "[1, 2, 3, 4, 6]"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def proper_divisors(n: int) -> list[int]:\n    \"\"\"Find every positive proper divisor of an integer.\n    \n    Args:\n        n (int): The positive integer whose divisors are required.\n    \n    Returns:\n        list[int]: The proper divisors of n in increasing order.\n    \"\"\"\n    # Return all positive divisors smaller than n.\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "composite number",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert proper_divisors(12) == [1, 2, 3, 4, 6]"
+        },
+        {
+          "name": "prime number",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert proper_divisors(13) == [1]"
+        },
+        {
+          "name": "one has no proper divisors",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert proper_divisors(1) == []"
+        },
+        {
+          "name": "larger composite",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert proper_divisors(28) == [1, 2, 4, 7, 14]"
+        }
+      ]
+    },
+    {
+      "id": "lists-perfect-number",
+      "number": "5.7",
+      "title": "Perfect Number Check",
+      "category": "Lists",
+      "difficulty": "Beginner",
+      "prompt": "A positive integer is perfect when the sum of all positive divisors smaller than the number equals the number itself. Implement is_perfect(n) and return True or False. For example, 6 is perfect because its proper divisors are 1, 2, and 3, whose sum is 6. The value 1 is not perfect.",
+      "signature": "def is_perfect(n: int) -> bool:",
+      "concepts": [
+        "lists",
+        "divisors",
+        "sum",
+        "booleans"
+      ],
+      "examples": [
+        {
+          "input": "is_perfect(28)",
+          "output": "True"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def is_perfect(n: int) -> bool:\n    \"\"\"Determine whether an integer equals the sum of its proper divisors.\n    \n    Args:\n        n (int): The integer to test for perfection.\n    \n    Returns:\n        bool: True when n is a perfect number; otherwise False.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "six is perfect",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert is_perfect(6) is True"
+        },
+        {
+          "name": "twenty-eight is perfect",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert is_perfect(28) is True"
+        },
+        {
+          "name": "ordinary number",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert is_perfect(12) is False"
+        },
+        {
+          "name": "one is not perfect",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert is_perfect(1) is False"
+        }
+      ]
+    },
+    {
+      "id": "lists-clean-words",
+      "number": "5.8",
+      "title": "Clean Word Extractor",
+      "category": "Lists",
+      "difficulty": "Intermediate",
+      "prompt": "Write extract_words(text). Split text on whitespace and remove punctuation only from the beginning and end of each word. Strip commas, periods, question marks, hyphens, apostrophes, exclamation marks, colons, and semicolons, but preserve punctuation inside a word.",
+      "signature": "def extract_words(text: str) -> list[str]:",
+      "concepts": [
+        "strings",
+        "lists",
+        "strip",
+        "text processing"
+      ],
+      "examples": [
+        {
+          "input": "extract_words('Wait... this is fun!')",
+          "output": "['Wait', 'this', 'is', 'fun']"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def extract_words(text: str) -> list[str]:\n    \"\"\"Split text into words while removing punctuation from word boundaries.\n    \n    Args:\n        text (str): The text to split and clean at word boundaries.\n    \n    Returns:\n        list[str]: The cleaned words in their original order.\n    \"\"\"\n    edge_marks = \",.?-'!:;\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "removes edge punctuation",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert extract_words('Hello, world!') == ['Hello', 'world']"
+        },
+        {
+          "name": "handles several marks",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert extract_words('-ready- set; go!') == ['ready', 'set', 'go']"
+        },
+        {
+          "name": "preserves internal apostrophes",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert extract_words(\"rock'n'roll isn't dead.\") == [\"rock'n'roll\", \"isn't\", 'dead']"
+        },
+        {
+          "name": "handles empty text",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert extract_words('   ') == []"
+        }
+      ]
+    },
+    {
+      "id": "lists-around-average",
+      "number": "5.9",
+      "title": "Around the Average",
+      "category": "Lists",
+      "difficulty": "Beginner",
+      "prompt": "Write classify_by_average(values). Return a four-item tuple containing the arithmetic mean, a list of values below it, a list equal to it, and a list above it. Preserve the original order inside each group. The input list will not be empty.",
+      "signature": "def classify_by_average(values: list[int | float]) -> tuple[float, list[int | float], list[int | float], list[int | float]]:",
+      "concepts": [
+        "lists",
+        "average",
+        "classification",
+        "tuples"
+      ],
+      "examples": [
+        {
+          "input": "classify_by_average([1, 2, 3])",
+          "output": "(2.0, [1], [2], [3])"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def classify_by_average(values: list[int | float]) -> tuple[float, list[int | float], list[int | float], list[int | float]]:\n    \"\"\"Group numeric values according to their relationship to the mean.\n    \n    Args:\n        values (list[int | float]): The non-empty numeric values to classify in original\n                                    order.\n    \n    Returns:\n        tuple[float, list[int | float], list[int | float], list[int | float]]: The mean\n                                                                               followed by\n                                                                               below-average,\n                                                                               equal-to-average,\n                                                                               and\n                                                                               above-average\n                                                                               lists.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "three groups",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert classify_by_average([1, 2, 3]) == (2.0, [1], [2], [3])"
+        },
+        {
+          "name": "preserves order",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert classify_by_average([10, 0, 5, 10, 0]) == (5.0, [0, 0], [5], [10, 10])"
+        },
+        {
+          "name": "all values equal",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert classify_by_average([4, 4, 4]) == (4.0, [], [4, 4, 4], [])"
+        },
+        {
+          "name": "supports decimals",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "result = classify_by_average([1.5, 2.5])\nassert result == (2.0, [1.5], [], [2.5])"
+        }
+      ]
+    },
+    {
+      "id": "lists-natural-language",
+      "number": "5.10",
+      "title": "Natural-Language List",
+      "category": "Lists",
+      "difficulty": "Beginner",
+      "prompt": "Write format_items(items) to turn a list of strings into natural English. Separate early items with commas and place 'and' before the final item. Return an empty string for an empty list.",
+      "signature": "def format_items(items: list[str]) -> str:",
+      "concepts": [
+        "lists",
+        "slicing",
+        "join",
+        "conditionals"
+      ],
+      "examples": [
+        {
+          "input": "format_items(['red', 'green', 'blue'])",
+          "output": "'red, green and blue'"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def format_items(items: list[str]) -> str:\n    \"\"\"Format a sequence of strings as a natural-language list.\n    \n    Args:\n        items (list[str]): The strings to join in natural-language order.\n    \n    Returns:\n        str: A comma-separated phrase with 'and' before the final item.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "empty list",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert format_items([]) == ''"
+        },
+        {
+          "name": "one item",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert format_items(['apples']) == 'apples'"
+        },
+        {
+          "name": "two items",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert format_items(['apples', 'oranges']) == 'apples and oranges'"
+        },
+        {
+          "name": "several items",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert format_items(['a', 'b', 'c', 'd']) == 'a, b, c and d'"
+        }
+      ]
+    },
+    {
+      "id": "lists-lottery-ticket",
+      "number": "5.11",
+      "title": "Lottery Ticket Generator",
+      "category": "Lists",
+      "difficulty": "Beginner",
+      "prompt": "Write lottery_ticket() to generate six different integers from 1 through 49. Return them as an ascending list. Use Python's random module, but ensure duplicate numbers never appear on a ticket.",
+      "signature": "def lottery_ticket() -> list[int]:",
+      "concepts": [
+        "lists",
+        "random numbers",
+        "uniqueness",
+        "sorting"
+      ],
+      "examples": [
+        {
+          "input": "lottery_ticket()",
+          "output": "[4, 11, 19, 27, 36, 44]  # example"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "import random\n\ndef lottery_ticket() -> list[int]:\n    \"\"\"Generate a sorted lottery ticket containing six unique numbers.\n    \n    Returns:\n        list[int]: Six distinct integers from 1 through 49 in ascending order.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "returns six sorted values",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "ticket = lottery_ticket()\nassert isinstance(ticket, list)\nassert len(ticket) == 6\nassert ticket == sorted(ticket)"
+        },
+        {
+          "name": "numbers are unique and in range",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "for _ in range(20):\n    ticket = lottery_ticket()\n    assert len(set(ticket)) == 6\n    assert all(isinstance(n, int) and 1 <= n <= 49 for n in ticket)"
+        }
+      ]
+    },
+    {
+      "id": "lists-pig-latin",
+      "number": "5.12",
+      "title": "Simple Pig Latin",
+      "category": "Lists",
+      "difficulty": "Intermediate",
+      "prompt": "Pig Latin transforms English words according to where their first vowel appears. Write to_pig_latin(text), where text contains lowercase words separated by single spaces.\n\nUse these rules for each word:\n• If it begins with a, e, i, o, or u, leave the word in place and add 'way'. For example, 'algorithm' becomes 'algorithmway'.\n• If it begins with one or more consonants, move the entire leading consonant group to the end and add 'ay'. For example, 'computer' becomes 'omputercay' and 'think' becomes 'inkthay'.\n• Treat y as a consonant, not a vowel. If a word contains no a, e, i, o, or u, leave it in place and add 'ay'.\n\nTranslate every word, preserve their order, and return them joined by spaces.",
+      "signature": "def to_pig_latin(text: str) -> str:",
+      "concepts": [
+        "lists",
+        "strings",
+        "slicing",
+        "word transformation"
+      ],
+      "examples": [
+        {
+          "input": "to_pig_latin('computer algorithm')",
+          "output": "'omputercay algorithmway'"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def to_pig_latin(text: str) -> str:\n    \"\"\"Translate space-separated English words into Pig Latin.\n    \n    Args:\n        text (str): Space-separated text to translate while preserving word order.\n    \n    Returns:\n        str: The translated words joined in their original order.\n    \"\"\"\n    vowels = \"aeiou\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "consonant and vowel starts",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert to_pig_latin('computer algorithm') == 'omputercay algorithmway'"
+        },
+        {
+          "name": "moves a consonant cluster",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert to_pig_latin('think office') == 'inkthay officeway'"
+        },
+        {
+          "name": "treats y as a consonant",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert to_pig_latin('yellow') == 'ellowyay'"
+        },
+        {
+          "name": "handles empty text",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert to_pig_latin('') == ''"
+        }
+      ]
+    },
+    {
+      "id": "lists-polished-pig-latin",
+      "number": "5.13",
+      "title": "Polished Pig Latin",
+      "category": "Lists",
+      "difficulty": "Advanced",
+      "prompt": "Extend the previous Pig Latin translator so it works with ordinary sentences instead of lowercase words only. Write to_pig_latin(text) and apply the same vowel and leading-consonant rules to each word.\n\nIn addition, preserve sentence formatting:\n• A word that begins with a capital letter must still begin with a capital after translation, while the moved letters become lowercase. For example, 'Computer' becomes 'Omputercay'.\n• Keep trailing commas, periods, exclamation marks, question marks, semicolons, and colons at the end of the translated word. Punctuation does not participate in finding the first vowel.\n• Vowel matching is case-insensitive, and y remains a consonant.\n\nReturn the translated words in their original order with their spaces and trailing punctuation represented as shown.",
+      "signature": "def to_pig_latin(text: str) -> str:",
+      "concepts": [
+        "lists",
+        "capitalization",
+        "punctuation",
+        "string transformation"
+      ],
+      "examples": [
+        {
+          "input": "to_pig_latin('Computer Science!')",
+          "output": "'Omputercay Iencescay!'"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def to_pig_latin(text: str) -> str:\n    \"\"\"Translate space-separated English words into Pig Latin.\n    \n    Args:\n        text (str): Space-separated text to translate while preserving word order.\n    \n    Returns:\n        str: The translated words joined in their original order.\n    \"\"\"\n    vowels = \"aeiou\"\n    punctuation = \",.!?;:\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "preserves capitalization",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert to_pig_latin('Computer Science!') == 'Omputercay Iencescay!'"
+        },
+        {
+          "name": "preserves trailing punctuation",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert to_pig_latin('Hello, world.') == 'Ellohay, orldway.'"
+        },
+        {
+          "name": "handles vowel-starting words",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert to_pig_latin('Apple orange?') == 'Appleway orangeway?'"
+        },
+        {
+          "name": "handles mixed words",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert to_pig_latin('Python is fun!') == 'Onpythay isway unfay!'"
+        }
+      ]
+    },
+    {
+      "id": "lists-best-fit",
+      "number": "5.14",
+      "title": "Trend Line Calculator",
+      "category": "Lists",
+      "difficulty": "Advanced",
+      "prompt": "Write best_fit(points), where points is a list of (x, y) pairs. Return (slope, intercept) for the least-squares line y = slope*x + intercept. Assume there are at least two points and their x coordinates are not all identical.",
+      "signature": "def best_fit(points: list[tuple[float, float]]) -> tuple[float, float]:",
+      "concepts": [
+        "lists",
+        "tuples",
+        "averages",
+        "linear regression"
+      ],
+      "examples": [
+        {
+          "input": "best_fit([(1, 1), (2, 2.1), (3, 2.9)])",
+          "output": "(0.95, 0.1)"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def best_fit(points: list[tuple[float, float]]) -> tuple[float, float]:\n    \"\"\"Calculate the least-squares line for a collection of points.\n    \n    Args:\n        points (list[tuple[float, float]]): At least two (x, y) pairs whose x-values are not\n                                            all equal.\n    \n    Returns:\n        tuple[float, float]: The slope and y-intercept of the best-fit line.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "sample trend",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "m, b = best_fit([(1, 1), (2, 2.1), (3, 2.9)])\nassert abs(m - 0.95) < 1e-9\nassert abs(b - 0.1) < 1e-9"
+        },
+        {
+          "name": "exact positive line",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "m, b = best_fit([(0, 1), (1, 3), (2, 5)])\nassert abs(m - 2) < 1e-9 and abs(b - 1) < 1e-9"
+        },
+        {
+          "name": "negative slope",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "m, b = best_fit([(1, 5), (2, 3), (3, 1)])\nassert abs(m + 2) < 1e-9 and abs(b - 7) < 1e-9"
+        },
+        {
+          "name": "decimal coordinates",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "m, b = best_fit([(0.5, 2), (1.5, 4), (2.5, 6)])\nassert abs(m - 2) < 1e-9 and abs(b - 1) < 1e-9"
+        }
+      ]
+    },
+    {
+      "id": "lists-card-deck",
+      "number": "5.15",
+      "title": "Build and Shuffle a Deck",
+      "category": "Lists",
+      "difficulty": "Intermediate",
+      "prompt": "Create create_deck() to return all 52 two-character card codes using ranks 2-9, T, J, Q, K, A and suits s, h, d, c. Also write shuffle_deck(deck), which rearranges the supplied list in place using your own swapping loop instead of random.shuffle.",
+      "signature": "def create_deck() -> list[str]:\n\ndef shuffle_deck(deck: list[str]) -> None:",
+      "concepts": [
+        "nested loops",
+        "lists",
+        "random swaps",
+        "in-place mutation"
+      ],
+      "examples": [
+        {
+          "input": "create_deck()[:4]",
+          "output": "['2s', '2h', '2d', '2c']"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "import random\n\ndef create_deck() -> list[str]:\n    \"\"\"Create a standard 52-card deck using two-character card codes.\n    \n    Returns:\n        list[str]: A new list containing each valid card code exactly once.\n    \"\"\"\n    pass\n\ndef shuffle_deck(deck: list[str]) -> None:\n    \"\"\"Randomize a deck in place using swaps.\n    \n    Args:\n        deck (list[str]): The mutable list of card codes used by the operation.\n    \n    Returns:\n        None: The supplied deck is modified in place.\n    \"\"\"\n    # Rearrange deck in place without random.shuffle.\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "creates every card",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "deck = create_deck()\nexpected = {rank + suit for rank in '23456789TJQKA' for suit in 'shdc'}\nassert len(deck) == 52\nassert len(set(deck)) == 52\nassert set(deck) == expected"
+        },
+        {
+          "name": "uses two-character codes",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "deck = create_deck()\nassert all(isinstance(card, str) and len(card) == 2 for card in deck)"
+        },
+        {
+          "name": "shuffle preserves the deck",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "import random\nrandom.seed(7)\ndeck = create_deck()\nbefore = deck.copy()\nresult = shuffle_deck(deck)\nassert set(deck) == set(before) and len(deck) == 52\nassert deck != before, 'The deck order did not change.'\nassert result is None or result is deck"
+        }
+      ]
+    },
+    {
+      "id": "lists-deal-cards",
+      "number": "5.16",
+      "title": "Deal Cards Round-Robin",
+      "category": "Lists",
+      "difficulty": "Intermediate",
+      "prompt": "Write deal_hands(deck, hand_count, cards_each). Remove cards from the front of deck and distribute them one at a time so every hand receives one card before any hand receives its next card. Return a list of hands and leave undealt cards in deck. Raise ValueError when there are not enough cards.",
+      "signature": "def deal_hands(deck: list[str], hand_count: int, cards_each: int) -> list[list[str]]:",
+      "concepts": [
+        "nested lists",
+        "round-robin distribution",
+        "mutation",
+        "exceptions"
+      ],
+      "examples": [
+        {
+          "input": "deal_hands(['A', 'B', 'C', 'D', 'E'], 2, 2)",
+          "output": "[['A', 'C'], ['B', 'D']]"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def deal_hands(deck: list[str], hand_count: int, cards_each: int) -> list[list[str]]:\n    \"\"\"Deal cards from a deck into hands in round-robin order.\n    \n    Args:\n        deck (list[str]): The card list to consume from the front while dealing.\n        hand_count (int): The number of separate hands to deal.\n        cards_each (int): The number of cards that each hand must receive.\n    \n    Returns:\n        list[list[str]]: A list of hands; dealt cards are removed from deck.\n    \n    Raises:\n        ValueError: If deck does not contain enough cards for all requested hands.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "deals round-robin",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "deck = ['A', 'B', 'C', 'D', 'E']\nhands = deal_hands(deck, 2, 2)\nassert hands == [['A', 'C'], ['B', 'D']]\nassert deck == ['E']"
+        },
+        {
+          "name": "supports several hands",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "deck = list(range(10))\nhands = deal_hands(deck, 3, 2)\nassert hands == [[0, 3], [1, 4], [2, 5]]\nassert deck == [6, 7, 8, 9]"
+        },
+        {
+          "name": "handles zero cards",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "deck = [1, 2]\nassert deal_hands(deck, 3, 0) == [[], [], []]\nassert deck == [1, 2]"
+        },
+        {
+          "name": "rejects an undersized deck",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "deck = [1, 2, 3]\ntry:\n    deal_hands(deck, 2, 2)\n    assert False, 'Expected ValueError.'\nexcept ValueError:\n    pass\nassert deck == [1, 2, 3], 'Do not partially deal an invalid request.'"
+        }
+      ]
+    },
+    {
+      "id": "lists-monotonic",
+      "number": "5.17",
+      "title": "Monotonic List Check",
+      "category": "Lists",
+      "difficulty": "Beginner",
+      "prompt": "Write is_monotonic(values). Return True when the list is ordered entirely from low to high or entirely from high to low. Equal neighboring values are allowed. Empty and one-item lists count as ordered.",
+      "signature": "def is_monotonic(values: list[int | float]) -> bool:",
+      "concepts": [
+        "lists",
+        "comparisons",
+        "all",
+        "edge cases"
+      ],
+      "examples": [
+        {
+          "input": "is_monotonic([9, 7, 7, 2])",
+          "output": "True"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def is_monotonic(values: list[int | float]) -> bool:\n    \"\"\"Check whether a sequence is entirely nondecreasing or nonincreasing.\n    \n    Args:\n        values (list[int | float]): The numeric sequence to check in both ordering\n                                    directions.\n    \n    Returns:\n        bool: True when values are monotonic in either direction.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "ascending values",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert is_monotonic([1, 2, 2, 5]) is True"
+        },
+        {
+          "name": "descending values",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert is_monotonic([9, 7, 7, 2]) is True"
+        },
+        {
+          "name": "unordered values",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert is_monotonic([1, 3, 2]) is False"
+        },
+        {
+          "name": "short lists",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert is_monotonic([]) is True\nassert is_monotonic([4]) is True"
+        }
+      ]
+    },
+    {
+      "id": "lists-count-range",
+      "number": "5.18",
+      "title": "Count Values in an Interval",
+      "category": "Lists",
+      "difficulty": "Beginner",
+      "prompt": "Implement count_in_range(values, minimum, maximum) to count how many numeric elements fall inside a half-open interval. Include a value when minimum <= value < maximum: the lower boundary counts, while the upper boundary does not. Preserve the input list and support any mixture of integer and floating-point values.",
+      "signature": "def count_in_range(values: list[int | float], minimum: float, maximum: float) -> int:",
+      "concepts": [
+        "lists",
+        "range boundaries",
+        "counting",
+        "functions"
+      ],
+      "examples": [
+        {
+          "input": "count_in_range([1, 4, 7, 10], 4, 10)",
+          "output": "2"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def count_in_range(values: list[int | float], minimum: float, maximum: float) -> int:\n    \"\"\"Count values that fall inside an inclusive numeric interval.\n    \n    Args:\n        values (list[int | float]): The numeric values to compare with the interval bounds.\n        minimum (float): The inclusive lower bound of the interval.\n        maximum (float): The inclusive upper bound of the interval.\n    \n    Returns:\n        int: The number of values between minimum and maximum, inclusive.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "uses inclusive lower bound",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert count_in_range([1, 4, 7, 10], 4, 10) == 2"
+        },
+        {
+          "name": "excludes upper bound",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert count_in_range([0, 5, 10], 0, 10) == 2"
+        },
+        {
+          "name": "supports decimals",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert count_in_range([1.2, 1.5, 2.0, 2.5], 1.5, 2.5) == 2"
+        },
+        {
+          "name": "can return zero",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert count_in_range([], -1, 1) == 0\nassert count_in_range([5, 6], 0, 5) == 0"
+        }
+      ]
+    },
+    {
+      "id": "lists-tokenize-expression",
+      "number": "5.19",
+      "title": "Math Expression Tokenizer",
+      "category": "Lists",
+      "difficulty": "Advanced",
+      "prompt": "Write tokenize(expression) for valid arithmetic expressions containing integers, whitespace, parentheses, and +, -, *, /, or ^. Return a list of token strings. A leading + or - belongs to a number when it appears at the start or follows another operator or an opening parenthesis; otherwise it is an operator.",
+      "signature": "def tokenize(expression: str) -> list[str]:",
+      "concepts": [
+        "lists",
+        "tokenization",
+        "parsing",
+        "unary signs"
+      ],
+      "examples": [
+        {
+          "input": "tokenize('-12 * (3 + 4)')",
+          "output": "['-12', '*', '(', '3', '+', '4', ')']"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def tokenize(expression: str) -> list[str]:\n    \"\"\"Split a mathematical expression into numbers, operators, and parentheses.\n    \n    Args:\n        expression (str): An infix arithmetic expression containing supported syntax.\n    \n    Returns:\n        list[str]: Expression tokens in their original order.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "basic expression",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert tokenize('2 + 3 * 4') == ['2', '+', '3', '*', '4']"
+        },
+        {
+          "name": "parentheses and signed value",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert tokenize('-12 * (3 + 4)') == ['-12', '*', '(', '3', '+', '4', ')']"
+        },
+        {
+          "name": "operator followed by negative",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert tokenize('8--2') == ['8', '-', '-2']"
+        },
+        {
+          "name": "variable whitespace",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert tokenize('( -5 + 2 ) / +3') == ['(', '-5', '+', '2', ')', '/', '+3']"
+        }
+      ]
+    },
+    {
+      "id": "lists-infix-postfix",
+      "number": "5.20",
+      "title": "Infix to Postfix Converter",
+      "category": "Lists",
+      "difficulty": "Advanced",
+      "prompt": "Write infix_to_postfix(tokens), converting a tokenized infix expression to postfix notation. Use standard precedence: ^ highest, then * and /, then + and -. Treat ^ as right-associative and the other operators as left-associative. Parentheses do not appear in the result.",
+      "signature": "def infix_to_postfix(tokens: list[str]) -> list[str]:",
+      "concepts": [
+        "lists as stacks",
+        "operator precedence",
+        "associativity",
+        "parsing"
+      ],
+      "examples": [
+        {
+          "input": "infix_to_postfix(['3', '+', '4', '*', '2'])",
+          "output": "['3', '4', '2', '*', '+']"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def infix_to_postfix(tokens: list[str]) -> list[str]:\n    \"\"\"Convert an infix token sequence to postfix notation.\n    \n    Args:\n        tokens (list[str]): Valid infix tokens in source order.\n    \n    Returns:\n        list[str]: A new list containing the equivalent postfix tokens.\n    \"\"\"\n    precedence = {'+': 1, '-': 1, '*': 2, '/': 2, '^': 3}\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "honors precedence",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert infix_to_postfix(['3', '+', '4', '*', '2']) == ['3', '4', '2', '*', '+']"
+        },
+        {
+          "name": "honors parentheses",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert infix_to_postfix(['(', '3', '+', '4', ')', '*', '2']) == ['3', '4', '+', '2', '*']"
+        },
+        {
+          "name": "left associative subtraction",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert infix_to_postfix(['8', '-', '3', '-', '2']) == ['8', '3', '-', '2', '-']"
+        },
+        {
+          "name": "right associative powers",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert infix_to_postfix(['2', '^', '3', '^', '2']) == ['2', '3', '2', '^', '^']"
+        }
+      ]
+    },
+    {
+      "id": "lists-postfix-calculator",
+      "number": "5.21",
+      "title": "Postfix Calculator",
+      "category": "Lists",
+      "difficulty": "Advanced",
+      "prompt": "Write evaluate_postfix(tokens). Process number tokens with a value stack and support +, -, *, /, and ^. Preserve left-to-right operand order for subtraction and division. Input expressions are valid; / performs ordinary Python division.",
+      "signature": "def evaluate_postfix(tokens: list[str]) -> float:",
+      "concepts": [
+        "lists as stacks",
+        "postfix notation",
+        "arithmetic",
+        "operand order"
+      ],
+      "examples": [
+        {
+          "input": "evaluate_postfix(['3', '4', '2', '*', '+'])",
+          "output": "11"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def evaluate_postfix(tokens: list[str]) -> float:\n    \"\"\"Evaluate a valid postfix arithmetic expression.\n    \n    Args:\n        tokens (list[str]): Valid postfix number and operator tokens.\n    \n    Returns:\n        float: The numeric result of evaluating the token sequence.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "mixed operations",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert evaluate_postfix(['3', '4', '2', '*', '+']) == 11"
+        },
+        {
+          "name": "operand order",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert evaluate_postfix(['10', '3', '-']) == 7\nassert evaluate_postfix(['20', '5', '/']) == 4"
+        },
+        {
+          "name": "power operation",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert evaluate_postfix(['2', '3', '2', '^', '^']) == 512"
+        },
+        {
+          "name": "negative numbers",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert evaluate_postfix(['-4', '6', '+', '2', '*']) == 4"
+        }
+      ]
+    },
+    {
+      "id": "lists-sublist-check",
+      "number": "5.22",
+      "title": "Contiguous Sublist Check",
+      "category": "Lists",
+      "difficulty": "Intermediate",
+      "prompt": "Write contains_sublist(larger, smaller). Return True only when every element of smaller appears consecutively inside larger. The empty list is contained in every list, and a list contains itself.",
+      "signature": "def contains_sublist(larger: list[object], smaller: list[object]) -> bool:",
+      "concepts": [
+        "lists",
+        "slicing",
+        "contiguous sequences",
+        "edge cases"
+      ],
+      "examples": [
+        {
+          "input": "contains_sublist([1, 2, 3, 4], [2, 3])",
+          "output": "True"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def contains_sublist(larger: list[object], smaller: list[object]) -> bool:\n    \"\"\"Check whether one list occurs contiguously inside another.\n    \n    Args:\n        larger (list[object]): The list that may contain the candidate sublist.\n        smaller (list[object]): The candidate contiguous sublist.\n    \n    Returns:\n        bool: True when smaller is a contiguous sublist of larger.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "finds a contiguous match",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert contains_sublist([1, 2, 3, 4], [2, 3]) is True"
+        },
+        {
+          "name": "rejects a non-contiguous match",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert contains_sublist([1, 2, 3, 4], [2, 4]) is False"
+        },
+        {
+          "name": "empty list rule",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert contains_sublist([1, 2], []) is True\nassert contains_sublist([], []) is True"
+        },
+        {
+          "name": "supports repeated values",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert contains_sublist([1, 1, 2, 1], [1, 2]) is True\nassert contains_sublist([1, 1], [1, 1, 1]) is False"
+        }
+      ]
+    },
+    {
+      "id": "lists-generate-sublists",
+      "number": "5.23",
+      "title": "Generate Every Sublist",
+      "category": "Lists",
+      "difficulty": "Intermediate",
+      "prompt": "Write all_sublists(values) to return every contiguous sublist. Put the empty list first, then generate non-empty sublists by increasing length and from left to right within each length.",
+      "signature": "def all_sublists(values: list[object]) -> list[list[object]]:",
+      "concepts": [
+        "nested loops",
+        "slicing",
+        "lists of lists",
+        "combinatorial generation"
+      ],
+      "examples": [
+        {
+          "input": "all_sublists([1, 2, 3])",
+          "output": "[[], [1], [2], [3], [1, 2], [2, 3], [1, 2, 3]]"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def all_sublists(values: list[object]) -> list[list[object]]:\n    \"\"\"Generate every contiguous sublist of a list.\n    \n    Args:\n        values (list[object]): The source list whose contiguous sublists are required.\n    \n    Returns:\n        list[list[object]]: All contiguous sublists, including the empty list.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "three values",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert all_sublists([1, 2, 3]) == [[], [1], [2], [3], [1, 2], [2, 3], [1, 2, 3]]"
+        },
+        {
+          "name": "empty input",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert all_sublists([]) == [[]]"
+        },
+        {
+          "name": "two values",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert all_sublists(['a', 'b']) == [[], ['a'], ['b'], ['a', 'b']]"
+        },
+        {
+          "name": "returns independent lists",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "result = all_sublists([1, 2])\nresult[1].append(99)\nassert result[2] == [2] and result[3] == [1, 2]"
+        }
+      ]
+    },
+    {
+      "id": "lists-prime-sieve",
+      "number": "5.24",
+      "title": "Prime Sieve",
+      "category": "Lists",
+      "difficulty": "Intermediate",
+      "prompt": "Write primes_up_to(limit) using the Sieve of Eratosthenes. Return every prime from 2 through limit, including limit when it is prime. Represent candidate numbers in a list and mark multiples as composite rather than testing each number independently for divisors.",
+      "signature": "def primes_up_to(limit: int) -> list[int]:",
+      "concepts": [
+        "lists",
+        "sieve algorithm",
+        "range steps",
+        "prime numbers"
+      ],
+      "examples": [
+        {
+          "input": "primes_up_to(10)",
+          "output": "[2, 3, 5, 7]"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def primes_up_to(limit: int) -> list[int]:\n    \"\"\"Generate prime numbers with the Sieve of Eratosthenes.\n    \n    Args:\n        limit (int): The inclusive upper bound of the requested calculation.\n    \n    Returns:\n        list[int]: Every prime integer from 2 through limit.\n    \"\"\"\n    # Use a list to mark composite numbers.\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "limit below two",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert primes_up_to(0) == []\nassert primes_up_to(1) == []"
+        },
+        {
+          "name": "includes prime limit",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert primes_up_to(2) == [2]\nassert primes_up_to(3) == [2, 3]"
+        },
+        {
+          "name": "primes through ten",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert primes_up_to(10) == [2, 3, 5, 7]"
+        },
+        {
+          "name": "larger limit",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert primes_up_to(30) == [2, 3, 5, 7, 11, 13, 17, 19, 23, 29]"
+        }
+      ]
+    },
+    {
+      "id": "recursion-total",
+      "number": "8.1",
+      "title": "Recursive Total",
+      "category": "Recursion",
+      "difficulty": "Beginner",
+      "prompt": "Write recursive_sum(values) to return the total of a list of numbers without using a loop or Python's sum function. The empty list totals 0. Solve the smaller subproblem by recursively processing the list after its first element.",
+      "signature": "def recursive_sum(values: list[int | float]) -> int | float:",
+      "concepts": [
+        "recursion",
+        "base cases",
+        "list slicing",
+        "accumulation"
+      ],
+      "examples": [
+        {
+          "input": "recursive_sum([2.5, 4, -1])",
+          "output": "5.5"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def recursive_sum(values: list[int | float]) -> int | float:\n    \"\"\"Recursively total a list of numbers.\n    \n    Args:\n        values (list[int | float]): The numeric values to total recursively.\n    \n    Returns:\n        int | float: The arithmetic sum of values, or zero for an empty list.\n    \"\"\"\n    # No loops and no built-in sum().\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "empty list base case",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert recursive_sum([]) == 0"
+        },
+        {
+          "name": "integers and signs",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert recursive_sum([4, -2, 7, -3]) == 6"
+        },
+        {
+          "name": "decimal values",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert abs(recursive_sum([2.5, 4, -1]) - 5.5) < 1e-12"
+        },
+        {
+          "name": "makes recursive calls",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "original = recursive_sum\ncalls = [0]\ndef tracked(values):\n    calls[0] += 1\n    return original(values)\nrecursive_sum = tracked\nassert tracked([1, 2, 3, 4]) == 10\nassert calls[0] >= 5, 'The function must call itself recursively.'"
+        }
+      ]
+    },
+    {
+      "id": "recursion-gcd",
+      "number": "8.2",
+      "title": "Euclid's GCD",
+      "category": "Recursion",
+      "difficulty": "Beginner",
+      "prompt": "Implement recursive_gcd(a, b) with Euclid's algorithm. If b is zero, return the absolute value of a. Otherwise recurse using b and a % b. Inputs are integers and may include zero or negative values.",
+      "signature": "def recursive_gcd(a: int, b: int) -> int:",
+      "concepts": [
+        "recursion",
+        "Euclid's algorithm",
+        "modulo",
+        "base cases"
+      ],
+      "examples": [
+        {
+          "input": "recursive_gcd(48, 18)",
+          "output": "6"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def recursive_gcd(a: int, b: int) -> int:\n    \"\"\"Compute the greatest common divisor with recursive Euclid's algorithm.\n    \n    Args:\n        a (int): The first integer in Euclid's algorithm.\n        b (int): The second integer in Euclid's algorithm.\n    \n    Returns:\n        int: The non-negative greatest common divisor of a and b.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "common divisor",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert recursive_gcd(48, 18) == 6"
+        },
+        {
+          "name": "coprime values",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert recursive_gcd(35, 64) == 1"
+        },
+        {
+          "name": "zero and negative inputs",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert recursive_gcd(21, 0) == 21\nassert recursive_gcd(-48, 18) == 6"
+        },
+        {
+          "name": "uses Euclid recursively",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "original = recursive_gcd\ncalls = [0]\ndef tracked(a, b):\n    calls[0] += 1\n    return original(a, b)\nrecursive_gcd = tracked\nassert tracked(1071, 462) == 21\nassert calls[0] > 1, 'The function must recurse.'"
+        }
+      ]
+    },
+    {
+      "id": "recursion-binary",
+      "number": "8.3",
+      "title": "Binary by Recursion",
+      "category": "Recursion",
+      "difficulty": "Beginner",
+      "prompt": "Write to_binary(n) for a non-negative integer. Return '0' and '1' directly as base cases. For larger values, recursively convert n // 2 and append the final bit n % 2. Return a string and do not use bin().",
+      "signature": "def to_binary(n: int) -> str:",
+      "concepts": [
+        "recursion",
+        "integer division",
+        "modulo",
+        "string construction"
+      ],
+      "examples": [
+        {
+          "input": "to_binary(42)",
+          "output": "'101010'"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def to_binary(n: int) -> str:\n    \"\"\"Recursively convert a non-negative integer to binary text.\n    \n    Args:\n        n (int): The non-negative integer to convert.\n    \n    Returns:\n        str: The base-2 representation of n without a prefix.\n    \"\"\"\n    # n is a non-negative integer. Do not use bin().\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "base cases",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert to_binary(0) == '0'\nassert to_binary(1) == '1'"
+        },
+        {
+          "name": "powers and mixed bits",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert to_binary(8) == '1000'\nassert to_binary(42) == '101010'"
+        },
+        {
+          "name": "larger value",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert to_binary(255) == '11111111'"
+        },
+        {
+          "name": "recurses through quotients",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "original = to_binary\ncalls = [0]\ndef tracked(n):\n    calls[0] += 1\n    return original(n)\nto_binary = tracked\nassert tracked(42) == '101010'\nassert calls[0] > 1, 'The function must recurse.'"
+        }
+      ]
+    },
+    {
+      "id": "recursion-palindrome",
+      "number": "8.4",
+      "title": "Recursive Palindrome",
+      "category": "Recursion",
+      "difficulty": "Beginner",
+      "prompt": "Write is_recursive_palindrome(text). Empty and one-character strings are palindromes. Longer strings qualify only when their first and last characters match and the interior substring is also a palindrome. Comparisons are case-sensitive.",
+      "signature": "def is_recursive_palindrome(text: str) -> bool:",
+      "concepts": [
+        "recursion",
+        "strings",
+        "base cases",
+        "slicing"
+      ],
+      "examples": [
+        {
+          "input": "is_recursive_palindrome('racecar')",
+          "output": "True"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def is_recursive_palindrome(text: str) -> bool:\n    \"\"\"Recursively check whether text reads the same in both directions.\n    \n    Args:\n        text (str): The case-sensitive string to examine recursively.\n    \n    Returns:\n        bool: True when text is a case-sensitive palindrome.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "short base cases",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert is_recursive_palindrome('') is True\nassert is_recursive_palindrome('x') is True"
+        },
+        {
+          "name": "palindromes",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert is_recursive_palindrome('racecar') is True\nassert is_recursive_palindrome('abba') is True"
+        },
+        {
+          "name": "non-palindromes and case",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert is_recursive_palindrome('python') is False\nassert is_recursive_palindrome('Racecar') is False"
+        },
+        {
+          "name": "checks the interior recursively",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "original = is_recursive_palindrome\ncalls = [0]\ndef tracked(text):\n    calls[0] += 1\n    return original(text)\nis_recursive_palindrome = tracked\nassert tracked('amanaplanacanalpanama') is True\nassert calls[0] > 1, 'The function must recurse.'"
+        }
+      ]
+    },
+    {
+      "id": "recursion-square-root",
+      "number": "8.5",
+      "title": "Newton's Recursive Root",
+      "category": "Recursion",
+      "difficulty": "Intermediate",
+      "prompt": "Write recursive_sqrt(n, guess=1.0) for n >= 0 using Newton's method. Return guess when abs(guess*guess - n) is below 1e-12; otherwise recurse with the improved guess (guess + n/guess) / 2. Callers should normally omit guess.",
+      "signature": "def recursive_sqrt(n: float, guess: float = 1.0) -> float:",
+      "concepts": [
+        "recursion",
+        "Newton's method",
+        "default arguments",
+        "numerical tolerance"
+      ],
+      "examples": [
+        {
+          "input": "recursive_sqrt(2)",
+          "output": "approximately 1.41421356237"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def recursive_sqrt(n: float, guess: float = 1.0) -> float:\n    \"\"\"Approximate a non-negative square root with recursive Newton iteration.\n    \n    Args:\n        n (float): The non-negative value whose square root is required.\n        guess (float): The current positive approximation; callers normally omit it.\n    \n    Returns:\n        float: An approximation of the principal square root of n.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "perfect squares",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert abs(recursive_sqrt(9) - 3) < 1e-9\nassert abs(recursive_sqrt(100) - 10) < 1e-9"
+        },
+        {
+          "name": "irrational root",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert abs(recursive_sqrt(2) ** 2 - 2) < 1e-12"
+        },
+        {
+          "name": "zero",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert abs(recursive_sqrt(0)) < 1e-5"
+        },
+        {
+          "name": "improves the guess recursively",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "original = recursive_sqrt\ncalls = [0]\ndef tracked(n, guess=1.0):\n    calls[0] += 1\n    return original(n, guess)\nrecursive_sqrt = tracked\nassert abs(tracked(2) ** 2 - 2) < 1e-12\nassert calls[0] > 1, 'The function must recurse.'"
+        }
+      ]
+    },
+    {
+      "id": "recursion-edit-distance",
+      "number": "8.6",
+      "title": "String Edit Distance",
+      "category": "Recursion",
+      "difficulty": "Advanced",
+      "prompt": "Write edit_distance(source, target), returning the minimum number of single-character insertions, deletions, or substitutions needed to transform source into target. If either string is empty, return the other's length. Otherwise recursively compare deleting from source, inserting into source, and matching or replacing the final characters.",
+      "signature": "def edit_distance(source: str, target: str) -> int:",
+      "concepts": [
+        "recursion",
+        "minimum subproblems",
+        "strings",
+        "dynamic programming foundation"
+      ],
+      "examples": [
+        {
+          "input": "edit_distance('kitten', 'sitting')",
+          "output": "3"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def edit_distance(source: str, target: str) -> int:\n    \"\"\"Compute the minimum edit distance between two strings.\n    \n    Args:\n        source (str): The original string to transform.\n        target (str): The destination string that source should become.\n    \n    Returns:\n        int: The fewest single-character insertions, deletions, or substitutions required.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "empty string base cases",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert edit_distance('', 'abc') == 3\nassert edit_distance('abc', '') == 3"
+        },
+        {
+          "name": "classic example",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert edit_distance('kitten', 'sitting') == 3"
+        },
+        {
+          "name": "matches and substitutions",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert edit_distance('book', 'back') == 2\nassert edit_distance('same', 'same') == 0"
+        },
+        {
+          "name": "explores recursively",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "original = edit_distance\ncalls = [0]\ndef tracked(source, target):\n    calls[0] += 1\n    return original(source, target)\nedit_distance = tracked\nassert tracked('cat', 'cut') == 1\nassert calls[0] > 1, 'The function must recurse.'"
+        }
+      ]
+    },
+    {
+      "id": "recursion-change",
+      "number": "8.7",
+      "title": "Exact Coin Count",
+      "category": "Recursion",
+      "difficulty": "Advanced",
+      "prompt": "Write can_make_change(total_cents, coin_count, denominations=(25, 10, 5, 1)). Return whether the exact total can be formed with exactly coin_count coins. Use recursion and no loops. A state succeeds only when both the remaining total and remaining coin count reach zero together; negative states fail.",
+      "signature": "def can_make_change(total_cents: int, coin_count: int, denominations: tuple[int, ...] = (25, 10, 5, 1)) -> bool:",
+      "concepts": [
+        "recursion",
+        "backtracking",
+        "base cases",
+        "exact constraints"
+      ],
+      "examples": [
+        {
+          "input": "can_make_change(100, 6)",
+          "output": "True  # 25+25+25+10+10+5"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def can_make_change(total_cents: int, coin_count: int, denominations: tuple[int, ...] = (25, 10, 5, 1)) -> bool:\n    \"\"\"Check whether an exact value can be formed with an exact coin count.\n    \n    Args:\n        total_cents (int): The exact monetary total, expressed in cents.\n        coin_count (int): The exact number of coins that may be used.\n        denominations (tuple[int, ...]): Positive coin values available to the recursive\n                                         search.\n    \n    Returns:\n        bool: True when the requested total and coin count can both be satisfied.\n    \"\"\"\n    # Use recursion without loops.\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "one dollar combinations",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert can_make_change(100, 4) is True\nassert can_make_change(100, 5) is False\nassert can_make_change(100, 6) is True"
+        },
+        {
+          "name": "one twenty-five combinations",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert can_make_change(125, 5) is True\nassert can_make_change(125, 4) is False\nassert can_make_change(125, 8) is True"
+        },
+        {
+          "name": "base and impossible states",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert can_make_change(0, 0) is True\nassert can_make_change(1, 0) is False\nassert can_make_change(0, 1) is False\nassert can_make_change(-1, 2) is False"
+        },
+        {
+          "name": "searches recursively",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "original = can_make_change\ncalls = [0]\ndef tracked(total_cents, coin_count, denominations=(25, 10, 5, 1)):\n    calls[0] += 1\n    return original(total_cents, coin_count, denominations)\ncan_make_change = tracked\nassert tracked(30, 3) is True\nassert calls[0] > 1, 'The function must recurse.'"
+        }
+      ]
+    },
+    {
+      "id": "recursion-element-spelling",
+      "number": "8.8",
+      "title": "Spell with Element Symbols",
+      "category": "Recursion",
+      "difficulty": "Advanced",
+      "prompt": "Write spell_with_symbols(word, symbols). Recursively determine whether word can be split into the supplied one-, two-, or three-letter chemical symbols, ignoring capitalization. Return (True, spelling) using the original symbol capitalization, or (False, '') when no split exists. The empty word returns (True, '').",
+      "signature": "def spell_with_symbols(word: str, symbols: list[str]) -> tuple[bool, str]:",
+      "concepts": [
+        "recursion",
+        "prefix matching",
+        "backtracking",
+        "multiple return values"
+      ],
+      "examples": [
+        {
+          "input": "spell_with_symbols('silicon', ['Si', 'Li', 'C', 'O', 'N'])",
+          "output": "(True, 'SiLiCON')"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def spell_with_symbols(word: str, symbols: list[str]) -> tuple[bool, str]:\n    \"\"\"Spell a word by recursively combining chemical-element symbols.\n    \n    Args:\n        word (str): The word to analyze or represent with symbols.\n        symbols (list[str]): Allowed one-, two-, or three-letter element symbols.\n    \n    Returns:\n        tuple[bool, str]: A success flag and the symbol spelling, or False and an empty\n                          string.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "spells silicon",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "found, spelling = spell_with_symbols('silicon', ['Si', 'Li', 'C', 'O', 'N'])\nassert found is True and spelling == 'SiLiCON'"
+        },
+        {
+          "name": "ignores input capitalization",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert spell_with_symbols('BaCoN', ['Ba', 'C', 'O', 'N']) == (True, 'BaCON')"
+        },
+        {
+          "name": "failure and empty base case",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert spell_with_symbols('cat', ['Ca', 'C']) == (False, '')\nassert spell_with_symbols('', ['H']) == (True, '')"
+        },
+        {
+          "name": "tries prefixes recursively",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "original = spell_with_symbols\ncalls = [0]\ndef tracked(word, symbols):\n    calls[0] += 1\n    return original(word, symbols)\nspell_with_symbols = tracked\nassert tracked('silicon', ['Si', 'Li', 'C', 'O', 'N'])[0] is True\nassert calls[0] > 1, 'The function must recurse.'"
+        }
+      ]
+    },
+    {
+      "id": "recursion-element-chain",
+      "number": "8.9",
+      "title": "Longest Element Chain",
+      "category": "Recursion",
+      "difficulty": "Advanced",
+      "prompt": "Write longest_chain(start, elements). Return the longest duplicate-free sequence beginning with start where each next name begins with the final letter of the previous name, ignoring case. Explore every legal continuation recursively. Return [] when start is not in elements; if several longest chains tie, any one is acceptable.",
+      "signature": "def longest_chain(start: str, elements: list[str]) -> list[str]:",
+      "concepts": [
+        "recursion",
+        "backtracking",
+        "longest path",
+        "duplicate prevention"
+      ],
+      "examples": [
+        {
+          "input": "longest_chain('Hydrogen', ['Hydrogen', 'Neon', 'Nickel', 'Lithium', 'Magnesium'])",
+          "output": "['Hydrogen', 'Neon', 'Nickel', 'Lithium', 'Magnesium']"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def longest_chain(start: str, elements: list[str]) -> list[str]:\n    \"\"\"Find the longest valid duplicate-free chain of element names.\n    \n    Args:\n        start (str): The element name that must begin the returned chain.\n        elements (list[str]): The available element names, matched case-insensitively.\n    \n    Returns:\n        list[str]: A longest chain beginning with start, or an empty list when start is\n                   unavailable.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "finds the longest branch",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "elements = ['Hydrogen', 'Neon', 'Nickel', 'Lithium', 'Magnesium']\nassert longest_chain('Hydrogen', elements) == ['Hydrogen', 'Neon', 'Nickel', 'Lithium', 'Magnesium']"
+        },
+        {
+          "name": "explores alternate continuations",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "elements = ['Alpha', 'Atom', 'Moon', 'Nova', 'Ark']\nassert longest_chain('Alpha', elements) == ['Alpha', 'Atom', 'Moon', 'Nova', 'Ark']"
+        },
+        {
+          "name": "invalid start and no duplicates",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert longest_chain('Unknown', ['Hydrogen']) == []\nchain = longest_chain('Neon', ['Neon', 'Nickel', 'Lithium'])\nassert len(chain) == len(set(name.lower() for name in chain))"
+        },
+        {
+          "name": "searches recursively",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "original = longest_chain\ncalls = [0]\ndef tracked(start, elements):\n    calls[0] += 1\n    return original(start, elements)\nlongest_chain = tracked\nassert tracked('Alpha', ['Alpha', 'Atom', 'Moon']) == ['Alpha', 'Atom', 'Moon']\nassert calls[0] > 1, 'The function must recurse.'"
+        }
+      ]
+    },
+    {
+      "id": "recursion-run-decoder",
+      "number": "8.10",
+      "title": "Recursive Run Decoder",
+      "category": "Recursion",
+      "difficulty": "Intermediate",
+      "prompt": "Write decode_runs(encoded), where encoded alternates between a value and its positive repetition count. Recursively expand the first pair and decode the remaining pairs. Return a new list; the empty encoded list decodes to an empty list.",
+      "signature": "def decode_runs(encoded: list[object]) -> list[object]:",
+      "concepts": [
+        "recursion",
+        "run-length encoding",
+        "lists",
+        "base cases"
+      ],
+      "examples": [
+        {
+          "input": "decode_runs(['A', 3, 'B', 2])",
+          "output": "['A', 'A', 'A', 'B', 'B']"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def decode_runs(encoded: list[object]) -> list[object]:\n    \"\"\"Recursively expand run-length encoded values.\n    \n    Args:\n        encoded (list[object]): A flat list alternating values with positive repetition\n                                counts.\n    \n    Returns:\n        list[object]: A new list containing each value repeated by its encoded count.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "empty base case",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert decode_runs([]) == []"
+        },
+        {
+          "name": "several runs",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert decode_runs(['A', 3, 'B', 2, 'A', 1]) == ['A', 'A', 'A', 'B', 'B', 'A']"
+        },
+        {
+          "name": "supports non-string values",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert decode_runs([7, 2, 0, 3]) == [7, 7, 0, 0, 0]"
+        },
+        {
+          "name": "decodes remaining pairs recursively",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "original = decode_runs\ncalls = [0]\ndef tracked(encoded):\n    calls[0] += 1\n    return original(encoded)\ndecode_runs = tracked\nassert tracked(['x', 2, 'y', 1]) == ['x', 'x', 'y']\nassert calls[0] >= 3, 'The function must recurse once per run.'"
+        }
+      ]
+    },
+    {
+      "id": "recursion-run-encoder",
+      "number": "8.11",
+      "title": "Recursive Run Encoder",
+      "category": "Recursion",
+      "difficulty": "Intermediate",
+      "prompt": "Write encode_runs(data) for either a string or a list. Replace each adjacent run with the value followed by its count, returning one flat list. Determine the first run, then recursively encode the unprocessed remainder. Empty input returns [].",
+      "signature": "def encode_runs(data: str | list[object]) -> list[object]:",
+      "concepts": [
+        "recursion",
+        "run-length encoding",
+        "adjacent groups",
+        "lists and strings"
+      ],
+      "examples": [
+        {
+          "input": "encode_runs('AAABBA')",
+          "output": "['A', 3, 'B', 2, 'A', 1]"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def encode_runs(data: str | list[object]) -> list[object]:\n    \"\"\"Recursively run-length encode adjacent equal values.\n    \n    Args:\n        data (str | list[object]): A string or list whose adjacent runs should be encoded.\n    \n    Returns:\n        list[object]: A flat list alternating each run value with its count.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "empty base cases",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert encode_runs('') == []\nassert encode_runs([]) == []"
+        },
+        {
+          "name": "encodes a string",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert encode_runs('AAABBA') == ['A', 3, 'B', 2, 'A', 1]"
+        },
+        {
+          "name": "encodes a list",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert encode_runs([1, 1, 2, 3, 3, 3]) == [1, 2, 2, 1, 3, 3]"
+        },
+        {
+          "name": "encodes remaining runs recursively",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "original = encode_runs\ncalls = [0]\ndef tracked(data):\n    calls[0] += 1\n    return original(data)\nencode_runs = tracked\nassert tracked('AABB') == ['A', 2, 'B', 2]\nassert calls[0] >= 3, 'The function must recurse once per run, including the base case.'"
+        }
+      ]
+    }
+  ]
+}

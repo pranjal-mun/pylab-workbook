@@ -1,0 +1,1339 @@
+{
+  "version": 1,
+  "problems": [
+    {
+      "id": "basics-deposit-refund",
+      "number": "1.5",
+      "title": "Container Deposit Refund",
+      "category": "Basics",
+      "difficulty": "Beginner",
+      "prompt": "A recycling depot pays 10 cents for containers holding at most one litre and 25 cents for larger containers.\n\nBackground and required method:\nBoth counts must be non-negative integers. Calculate the refund in dollars and round it to two decimal places.\n\nImplement this interface:\ndef deposit_refund(small: int, large: int) -> float:\n\nParameters:\n• small (int): Number of containers holding one litre or less.\n• large (int): Number of containers holding more than one litre.\n\nExpected result:\nThe refund amount in dollars, rounded to two decimals.",
+      "signature": "def deposit_refund(small: int, large: int) -> float:",
+      "concepts": [
+        "arithmetic",
+        "currency",
+        "rounding"
+      ],
+      "examples": [
+        {
+          "input": "deposit_refund(8, 3)",
+          "output": "1.55"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def deposit_refund(small: int, large: int) -> float:\n    \"\"\"Calculate the refund for returned drink containers.\n\n    Args:\n        small (int): Number of containers holding one litre or less.\n        large (int): Number of containers holding more than one litre.\n\n    Returns:\n        float: The refund amount in dollars, rounded to two decimals.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "mixed containers",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert deposit_refund(8, 3) == 1.55"
+        },
+        {
+          "name": "only small containers",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert deposit_refund(10, 0) == 1.0"
+        },
+        {
+          "name": "empty return",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert deposit_refund(0, 0) == 0.0"
+        }
+      ]
+    },
+    {
+      "id": "basics-restaurant-total",
+      "number": "1.6",
+      "title": "Tax and Tip",
+      "category": "Basics",
+      "difficulty": "Beginner",
+      "prompt": "A restaurant calculates both sales tax and a tip from the meal's original price.\n\nBackground and required method:\nUse the supplied decimal rates, not percentages. Round each monetary result to two decimal places before returning it.\n\nImplement this interface:\ndef restaurant_total(meal_cost: float, tax_rate: float = 0.05, tip_rate: float = 0.18) -> tuple[float, float, float]:\n\nParameters:\n• meal_cost (float): Pre-tax cost of the meal in dollars.\n• tax_rate (float): Sales-tax rate as a decimal.\n• tip_rate (float): Tip rate as a decimal.\n\nExpected result:\nThe tax, tip, and final total in dollars.",
+      "signature": "def restaurant_total(meal_cost: float, tax_rate: float = 0.05, tip_rate: float = 0.18) -> tuple[float, float, float]:",
+      "concepts": [
+        "arithmetic",
+        "percentages",
+        "currency"
+      ],
+      "examples": [
+        {
+          "input": "restaurant_total(50.0)",
+          "output": "(2.5, 9.0, 61.5)"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def restaurant_total(meal_cost: float, tax_rate: float = 0.05, tip_rate: float = 0.18) -> tuple[float, float, float]:\n    \"\"\"Calculate tax, tip, and the final restaurant bill.\n\n    Args:\n        meal_cost (float): Pre-tax cost of the meal in dollars.\n        tax_rate (float): Sales-tax rate as a decimal.\n        tip_rate (float): Tip rate as a decimal.\n\n    Returns:\n        tuple[float, float, float]: The tax, tip, and final total in dollars.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "standard meal",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert restaurant_total(50.0) == (2.5, 9.0, 61.5)"
+        },
+        {
+          "name": "small meal",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert restaurant_total(10.0) == (0.5, 1.8, 12.3)"
+        },
+        {
+          "name": "custom rates",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert restaurant_total(100.0, 0.15, 0.2) == (15.0, 20.0, 135.0)"
+        }
+      ]
+    },
+    {
+      "id": "basics-sum-to-n",
+      "number": "1.7",
+      "title": "Sum the First n Integers",
+      "category": "Basics",
+      "difficulty": "Beginner",
+      "prompt": "The sequence 1 + 2 + ... + n has a direct arithmetic formula.\n\nBackground and required method:\nUse n * (n + 1) // 2 rather than a loop. n is a non-negative integer.\n\nImplement this interface:\ndef sum_to_n(n: int) -> int:\n\nParameters:\n• n (int): Inclusive upper bound of the sequence.\n\nExpected result:\nThe sum from 1 through n; zero when n is zero.",
+      "signature": "def sum_to_n(n: int) -> int:",
+      "concepts": [
+        "integer arithmetic",
+        "formula"
+      ],
+      "examples": [
+        {
+          "input": "sum_to_n(100)",
+          "output": "5050"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def sum_to_n(n: int) -> int:\n    \"\"\"Calculate the sum of the positive integers from 1 through n.\n\n    Args:\n        n (int): Inclusive upper bound of the sequence.\n\n    Returns:\n        int: The sum from 1 through n; zero when n is zero.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "first hundred",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert sum_to_n(100) == 5050"
+        },
+        {
+          "name": "single value",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert sum_to_n(1) == 1"
+        },
+        {
+          "name": "zero",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert sum_to_n(0) == 0"
+        }
+      ]
+    },
+    {
+      "id": "basics-shipment-weight",
+      "number": "1.8",
+      "title": "Widget Shipment Weight",
+      "category": "Basics",
+      "difficulty": "Beginner",
+      "prompt": "Each widget weighs 75 grams and each gizmo weighs 112 grams.\n\nBackground and required method:\nMultiply each non-negative item count by its unit weight and add the results.\n\nImplement this interface:\ndef shipment_weight(widgets: int, gizmos: int) -> int:\n\nParameters:\n• widgets (int): Number of 75-gram widgets.\n• gizmos (int): Number of 112-gram gizmos.\n\nExpected result:\nTotal shipment weight in grams.",
+      "signature": "def shipment_weight(widgets: int, gizmos: int) -> int:",
+      "concepts": [
+        "multiplication",
+        "units"
+      ],
+      "examples": [
+        {
+          "input": "shipment_weight(3, 2)",
+          "output": "449"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def shipment_weight(widgets: int, gizmos: int) -> int:\n    \"\"\"Calculate the total weight of a widget and gizmo shipment.\n\n    Args:\n        widgets (int): Number of 75-gram widgets.\n        gizmos (int): Number of 112-gram gizmos.\n\n    Returns:\n        int: Total shipment weight in grams.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "mixed shipment",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert shipment_weight(3, 2) == 449"
+        },
+        {
+          "name": "widgets only",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert shipment_weight(4, 0) == 300"
+        },
+        {
+          "name": "empty shipment",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert shipment_weight(0, 0) == 0"
+        }
+      ]
+    },
+    {
+      "id": "basics-account-balances",
+      "number": "1.9",
+      "title": "Compound Interest Forecast",
+      "category": "Basics",
+      "difficulty": "Beginner",
+      "prompt": "Interest is added to the account once per year, and the next year's interest is calculated from the new balance.\n\nBackground and required method:\nReturn one rounded balance for each year. The default annual rate is 4 percent and years must be non-negative.\n\nImplement this interface:\ndef account_balances(principal: float, years: int = 3, rate: float = 0.04) -> list[float]:\n\nParameters:\n• principal (float): Initial account balance.\n• years (int): Number of annual balances to calculate.\n• rate (float): Annual interest rate as a decimal.\n\nExpected result:\nYear-end balances rounded to two decimal places.",
+      "signature": "def account_balances(principal: float, years: int = 3, rate: float = 0.04) -> list[float]:",
+      "concepts": [
+        "compound interest",
+        "lists",
+        "rounding"
+      ],
+      "examples": [
+        {
+          "input": "account_balances(1000.0)",
+          "output": "[1040.0, 1081.6, 1124.86]"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def account_balances(principal: float, years: int = 3, rate: float = 0.04) -> list[float]:\n    \"\"\"Project an account balance over several years of annual compounding.\n\n    Args:\n        principal (float): Initial account balance.\n        years (int): Number of annual balances to calculate.\n        rate (float): Annual interest rate as a decimal.\n\n    Returns:\n        list[float]: Year-end balances rounded to two decimal places.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "three years",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert account_balances(1000.0) == [1040.0, 1081.6, 1124.86]"
+        },
+        {
+          "name": "one year",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert account_balances(250.0, 1) == [260.0]"
+        },
+        {
+          "name": "no years",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert account_balances(500.0, 0) == []"
+        }
+      ]
+    },
+    {
+      "id": "basics-arithmetic-report",
+      "number": "1.10",
+      "title": "Arithmetic Report",
+      "category": "Basics",
+      "difficulty": "Intermediate",
+      "prompt": "A compact arithmetic report is useful for practising Python's basic numeric operators.\n\nBackground and required method:\nReturn sum, first-minus-second, product, quotient, remainder, log10 of the first value, and first raised to the second. The first value must be positive and the second non-zero.\n\nImplement this interface:\ndef arithmetic_report(first: int, second: int) -> tuple[float, ...]:\n\nParameters:\n• first (int): Positive first integer.\n• second (int): Non-zero second integer.\n\nExpected result:\nSeven results in the order stated in the task.",
+      "signature": "def arithmetic_report(first: int, second: int) -> tuple[float, ...]:",
+      "concepts": [
+        "operators",
+        "logarithms",
+        "tuples"
+      ],
+      "examples": [
+        {
+          "input": "arithmetic_report(10, 3)",
+          "output": "(13, 7, 30, 3.333..., 1, 1.0, 1000)"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "import math\n\ndef arithmetic_report(first: int, second: int) -> tuple[float, ...]:\n    \"\"\"Calculate a collection of arithmetic results for two integers.\n\n    Args:\n        first (int): Positive first integer.\n        second (int): Non-zero second integer.\n\n    Returns:\n        tuple[float, ...]: Seven results in the order stated in the task.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "integer operations",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert arithmetic_report(10, 2) == (12, 8, 20, 5.0, 0, 1.0, 100)"
+        },
+        {
+          "name": "different values",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert arithmetic_report(8, 3)[:3] == (11, 5, 24)"
+        },
+        {
+          "name": "remainder",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert arithmetic_report(17, 5)[4] == 2"
+        }
+      ]
+    },
+    {
+      "id": "basics-mpg-to-l-per-100km",
+      "number": "1.11",
+      "title": "Fuel Efficiency Converter",
+      "category": "Basics",
+      "difficulty": "Beginner",
+      "prompt": "Canada commonly reports fuel consumption in L/100 km while the United States often uses miles per gallon.\n\nBackground and required method:\nUse the conversion 235.215 / mpg. mpg must be positive.\n\nImplement this interface:\ndef mpg_to_l_per_100km(mpg: float) -> float:\n\nParameters:\n• mpg (float): Fuel efficiency in US miles per gallon.\n\nExpected result:\nEquivalent litres consumed per 100 kilometres.",
+      "signature": "def mpg_to_l_per_100km(mpg: float) -> float:",
+      "concepts": [
+        "unit conversion",
+        "division"
+      ],
+      "examples": [
+        {
+          "input": "mpg_to_l_per_100km(30)",
+          "output": "7.8405"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def mpg_to_l_per_100km(mpg: float) -> float:\n    \"\"\"Convert miles per gallon to litres per 100 kilometres.\n\n    Args:\n        mpg (float): Fuel efficiency in US miles per gallon.\n\n    Returns:\n        float: Equivalent litres consumed per 100 kilometres.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "thirty mpg",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "actual = mpg_to_l_per_100km(30)\nexpected = 7.8405\nassert abs(actual - expected) < 1e-9, f'Expected {expected}, got {actual}.'"
+        },
+        {
+          "name": "efficient vehicle",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "actual = mpg_to_l_per_100km(50)\nexpected = 4.7043\nassert abs(actual - expected) < 1e-9, f'Expected {expected}, got {actual}.'"
+        },
+        {
+          "name": "one mpg",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "actual = mpg_to_l_per_100km(1)\nexpected = 235.215\nassert abs(actual - expected) < 1e-9, f'Expected {expected}, got {actual}.'"
+        }
+      ]
+    },
+    {
+      "id": "basics-earth-distance",
+      "number": "1.12",
+      "title": "Distance Across Earth",
+      "category": "Basics",
+      "difficulty": "Advanced",
+      "prompt": "Locations on Earth lie on a sphere, so straight Cartesian distance is not appropriate.\n\nBackground and required method:\nConvert all angles from degrees to radians and use the spherical law of cosines with Earth radius 6371.01 km.\n\nImplement this interface:\ndef earth_distance(lat1: float, lon1: float, lat2: float, lon2: float) -> float:\n\nParameters:\n• lat1 (float): First latitude in degrees.\n• lon1 (float): First longitude in degrees.\n• lat2 (float): Second latitude in degrees.\n• lon2 (float): Second longitude in degrees.\n\nExpected result:\nGreat-circle distance in kilometres.",
+      "signature": "def earth_distance(lat1: float, lon1: float, lat2: float, lon2: float) -> float:",
+      "concepts": [
+        "trigonometry",
+        "radians",
+        "geography"
+      ],
+      "examples": [
+        {
+          "input": "earth_distance(0, 0, 0, 1)",
+          "output": "approximately 111.195"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "import math\n\ndef earth_distance(lat1: float, lon1: float, lat2: float, lon2: float) -> float:\n    \"\"\"Calculate great-circle distance between two latitude-longitude points.\n\n    Args:\n        lat1 (float): First latitude in degrees.\n        lon1 (float): First longitude in degrees.\n        lat2 (float): Second latitude in degrees.\n        lon2 (float): Second longitude in degrees.\n\n    Returns:\n        float: Great-circle distance in kilometres.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "same point",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "actual = earth_distance(10, 20, 10, 20)\nexpected = 0.0\nassert abs(actual - expected) < 1e-9, f'Expected {expected}, got {actual}.'"
+        },
+        {
+          "name": "one degree longitude",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "actual = earth_distance(0, 0, 0, 1)\nexpected = 111.19492664455873\nassert abs(actual - expected) < 1e-9, f'Expected {expected}, got {actual}.'"
+        },
+        {
+          "name": "quarter circumference",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "actual = earth_distance(0, 0, 0, 90)\nexpected = 10007.558398010286\nassert abs(actual - expected) < 1e-9, f'Expected {expected}, got {actual}.'"
+        },
+        {
+          "name": "handles antipodal points",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "actual = earth_distance(0, 0, 0, 180)\nassert abs(actual - 20015.116796020572) < 1e-9"
+        }
+      ]
+    },
+    {
+      "id": "basics-make-change",
+      "number": "1.13",
+      "title": "Make Change",
+      "category": "Basics",
+      "difficulty": "Beginner",
+      "prompt": "A greedy change calculation repeatedly uses the largest coin that does not exceed the remaining amount.\n\nBackground and required method:\nUse denominations 200, 100, 25, 10, 5, and 1 cents, in that order. Return every denomination as a dictionary key, including zero counts.\n\nImplement this interface:\ndef make_change(cents: int) -> dict[int, int]:\n\nParameters:\n• cents (int): Non-negative amount to decompose.\n\nExpected result:\nCoin counts keyed by denomination in descending order.",
+      "signature": "def make_change(cents: int) -> dict[int, int]:",
+      "concepts": [
+        "integer division",
+        "remainder",
+        "dictionaries"
+      ],
+      "examples": [
+        {
+          "input": "make_change(289)",
+          "output": "{200: 1, 100: 0, 25: 3, 10: 1, 5: 0, 1: 4}"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def make_change(cents: int) -> dict[int, int]:\n    \"\"\"Break an amount of cents into Canadian coin denominations.\n\n    Args:\n        cents (int): Non-negative amount to decompose.\n\n    Returns:\n        dict[int, int]: Coin counts keyed by denomination in descending order.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "mixed change",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert make_change(289) == {200: 1, 100: 0, 25: 3, 10: 1, 5: 0, 1: 4}"
+        },
+        {
+          "name": "exact dollar",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert make_change(100) == {200: 0, 100: 1, 25: 0, 10: 0, 5: 0, 1: 0}"
+        },
+        {
+          "name": "zero",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert make_change(0) == {200: 0, 100: 0, 25: 0, 10: 0, 5: 0, 1: 0}"
+        }
+      ]
+    },
+    {
+      "id": "basics-height-in-cm",
+      "number": "1.14",
+      "title": "Height Unit Converter",
+      "category": "Basics",
+      "difficulty": "Beginner",
+      "prompt": "A foot contains 12 inches and one inch is exactly 2.54 centimetres.\n\nBackground and required method:\nCombine the two measurements before converting. Both inputs must be non-negative.\n\nImplement this interface:\ndef height_in_cm(feet: int, inches: float) -> float:\n\nParameters:\n• feet (int): Whole feet in the height.\n• inches (float): Additional inches in the height.\n\nExpected result:\nTotal height in centimetres.",
+      "signature": "def height_in_cm(feet: int, inches: float) -> float:",
+      "concepts": [
+        "unit conversion",
+        "arithmetic"
+      ],
+      "examples": [
+        {
+          "input": "height_in_cm(5, 8)",
+          "output": "172.72"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def height_in_cm(feet: int, inches: float) -> float:\n    \"\"\"Convert a height in feet and inches to centimetres.\n\n    Args:\n        feet (int): Whole feet in the height.\n        inches (float): Additional inches in the height.\n\n    Returns:\n        float: Total height in centimetres.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "five foot eight",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "actual = height_in_cm(5, 8)\nexpected = 172.72\nassert abs(actual - expected) < 1e-9, f'Expected {expected}, got {actual}.'"
+        },
+        {
+          "name": "one foot",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "actual = height_in_cm(1, 0)\nexpected = 30.48\nassert abs(actual - expected) < 1e-9, f'Expected {expected}, got {actual}.'"
+        },
+        {
+          "name": "inches only",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "actual = height_in_cm(0, 10)\nexpected = 25.4\nassert abs(actual - expected) < 1e-9, f'Expected {expected}, got {actual}.'"
+        }
+      ]
+    },
+    {
+      "id": "basics-distance-conversions",
+      "number": "1.15",
+      "title": "Distance Unit Converter",
+      "category": "Basics",
+      "difficulty": "Beginner",
+      "prompt": "One foot is 12 inches, one yard is 3 feet, and one mile is 5,280 feet.\n\nBackground and required method:\nCalculate all three conversions from the original feet value.\n\nImplement this interface:\ndef distance_conversions(feet: float) -> tuple[float, float, float]:\n\nParameters:\n• feet (float): Distance measured in feet.\n\nExpected result:\nEquivalent inches, yards, and miles.",
+      "signature": "def distance_conversions(feet: float) -> tuple[float, float, float]:",
+      "concepts": [
+        "unit conversion",
+        "tuples"
+      ],
+      "examples": [
+        {
+          "input": "distance_conversions(5280)",
+          "output": "(63360, 1760, 1.0)"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def distance_conversions(feet: float) -> tuple[float, float, float]:\n    \"\"\"Convert a distance in feet to several related imperial units.\n\n    Args:\n        feet (float): Distance measured in feet.\n\n    Returns:\n        tuple[float, float, float]: Equivalent inches, yards, and miles.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "one mile",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert distance_conversions(5280) == (63360, 1760.0, 1.0)"
+        },
+        {
+          "name": "three feet",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert distance_conversions(3) == (36, 1.0, 0.0005681818181818182)"
+        },
+        {
+          "name": "zero",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert distance_conversions(0) == (0, 0.0, 0.0)"
+        }
+      ]
+    },
+    {
+      "id": "basics-circle-and-sphere",
+      "number": "1.16",
+      "title": "Circle Area and Sphere Volume",
+      "category": "Basics",
+      "difficulty": "Beginner",
+      "prompt": "The area of a circle is pi*r^2 and the volume of a sphere is 4*pi*r^3/3.\n\nBackground and required method:\nUse math.pi and a non-negative radius.\n\nImplement this interface:\ndef circle_and_sphere(radius: float) -> tuple[float, float]:\n\nParameters:\n• radius (float): Radius of both shapes.\n\nExpected result:\nCircle area followed by sphere volume.",
+      "signature": "def circle_and_sphere(radius: float) -> tuple[float, float]:",
+      "concepts": [
+        "geometry",
+        "pi",
+        "powers"
+      ],
+      "examples": [
+        {
+          "input": "circle_and_sphere(2)",
+          "output": "(12.566..., 33.510...)"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "import math\n\ndef circle_and_sphere(radius: float) -> tuple[float, float]:\n    \"\"\"Calculate measurements associated with a radius.\n\n    Args:\n        radius (float): Radius of both shapes.\n\n    Returns:\n        tuple[float, float]: Circle area followed by sphere volume.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "radius one area",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "actual = circle_and_sphere(1)[0]\nexpected = 3.141592653589793\nassert abs(actual - expected) < 1e-9, f'Expected {expected}, got {actual}.'"
+        },
+        {
+          "name": "radius one volume",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "actual = circle_and_sphere(1)[1]\nexpected = 4.1887902047863905\nassert abs(actual - expected) < 1e-9, f'Expected {expected}, got {actual}.'"
+        },
+        {
+          "name": "zero radius",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert circle_and_sphere(0) == (0.0, 0.0)"
+        }
+      ]
+    },
+    {
+      "id": "basics-heating-energy",
+      "number": "1.17",
+      "title": "Heating Water",
+      "category": "Basics",
+      "difficulty": "Intermediate",
+      "prompt": "Water has a specific heat capacity of 4.186 joules per gram per degree Celsius. One kilowatt-hour is 3,600,000 joules.\n\nBackground and required method:\nCompute q = mass * 4.186 * temperature_change and then price the energy using cents_per_kwh.\n\nImplement this interface:\ndef heating_energy(mass_grams: float, temperature_change: float, cents_per_kwh: float = 8.9) -> tuple[float, float]:\n\nParameters:\n• mass_grams (float): Mass of water in grams.\n• temperature_change (float): Increase in degrees Celsius.\n• cents_per_kwh (float): Electricity price in cents per kilowatt-hour.\n\nExpected result:\nRequired energy in joules and cost in cents.",
+      "signature": "def heating_energy(mass_grams: float, temperature_change: float, cents_per_kwh: float = 8.9) -> tuple[float, float]:",
+      "concepts": [
+        "physics",
+        "energy",
+        "unit conversion"
+      ],
+      "examples": [
+        {
+          "input": "heating_energy(1000, 10)",
+          "output": "(41860.0, approximately 0.1035)"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def heating_energy(mass_grams: float, temperature_change: float, cents_per_kwh: float = 8.9) -> tuple[float, float]:\n    \"\"\"Calculate energy and electricity cost for heating water.\n\n    Args:\n        mass_grams (float): Mass of water in grams.\n        temperature_change (float): Increase in degrees Celsius.\n        cents_per_kwh (float): Electricity price in cents per kilowatt-hour.\n\n    Returns:\n        tuple[float, float]: Required energy in joules and cost in cents.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "energy",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "actual = heating_energy(1000, 10)[0]\nexpected = 41860.0\nassert abs(actual - expected) < 1e-9, f'Expected {expected}, got {actual}.'"
+        },
+        {
+          "name": "cost",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "actual = heating_energy(1000, 10)[1]\nexpected = 0.10348166666666667\nassert abs(actual - expected) < 1e-9, f'Expected {expected}, got {actual}.'"
+        },
+        {
+          "name": "no change",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert heating_energy(500, 0) == (0.0, 0.0)"
+        }
+      ]
+    },
+    {
+      "id": "basics-cylinder-volume",
+      "number": "1.18",
+      "title": "Cylinder Volume",
+      "category": "Basics",
+      "difficulty": "Beginner",
+      "prompt": "A cylinder's volume is pi times radius squared times height.\n\nBackground and required method:\nUse math.pi and round the result to one decimal place as required by the exercise.\n\nImplement this interface:\ndef cylinder_volume(radius: float, height: float) -> float:\n\nParameters:\n• radius (float): Non-negative cylinder radius.\n• height (float): Non-negative cylinder height.\n\nExpected result:\nCylinder volume rounded to one decimal place.",
+      "signature": "def cylinder_volume(radius: float, height: float) -> float:",
+      "concepts": [
+        "geometry",
+        "rounding"
+      ],
+      "examples": [
+        {
+          "input": "cylinder_volume(2, 5)",
+          "output": "62.8"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "import math\n\ndef cylinder_volume(radius: float, height: float) -> float:\n    \"\"\"Calculate the volume of a cylinder.\n\n    Args:\n        radius (float): Non-negative cylinder radius.\n        height (float): Non-negative cylinder height.\n\n    Returns:\n        float: Cylinder volume rounded to one decimal place.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "sample cylinder",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert cylinder_volume(2, 5) == 62.8"
+        },
+        {
+          "name": "unit cylinder",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert cylinder_volume(1, 1) == 3.1"
+        },
+        {
+          "name": "flat cylinder",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert cylinder_volume(4, 0) == 0.0"
+        }
+      ]
+    },
+    {
+      "id": "basics-impact-speed",
+      "number": "1.19",
+      "title": "Free-Fall Speed",
+      "category": "Basics",
+      "difficulty": "Beginner",
+      "prompt": "Ignoring air resistance, final speed follows v = sqrt(2*g*d), where g is gravitational acceleration.\n\nBackground and required method:\nUse g = 9.8 m/s^2 by default and require non-negative distance.\n\nImplement this interface:\ndef impact_speed(distance: float, gravity: float = 9.8) -> float:\n\nParameters:\n• distance (float): Falling distance in metres.\n• gravity (float): Gravitational acceleration in m/s^2.\n\nExpected result:\nImpact speed in metres per second.",
+      "signature": "def impact_speed(distance: float, gravity: float = 9.8) -> float:",
+      "concepts": [
+        "physics",
+        "square roots"
+      ],
+      "examples": [
+        {
+          "input": "impact_speed(20)",
+          "output": "approximately 19.799"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "import math\n\ndef impact_speed(distance: float, gravity: float = 9.8) -> float:\n    \"\"\"Calculate impact speed for an object dropped from rest.\n\n    Args:\n        distance (float): Falling distance in metres.\n        gravity (float): Gravitational acceleration in m/s^2.\n\n    Returns:\n        float: Impact speed in metres per second.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "twenty metres",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "actual = impact_speed(20)\nexpected = 19.79898987322333\nassert abs(actual - expected) < 1e-9, f'Expected {expected}, got {actual}.'"
+        },
+        {
+          "name": "zero distance",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "actual = impact_speed(0)\nexpected = 0.0\nassert abs(actual - expected) < 1e-9, f'Expected {expected}, got {actual}.'"
+        },
+        {
+          "name": "custom gravity",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "actual = impact_speed(8, 10)\nexpected = 12.649110640673518\nassert abs(actual - expected) < 1e-9, f'Expected {expected}, got {actual}.'"
+        }
+      ]
+    },
+    {
+      "id": "basics-gas-moles",
+      "number": "1.20",
+      "title": "Ideal Gas Amount",
+      "category": "Basics",
+      "difficulty": "Advanced",
+      "prompt": "The ideal gas law is PV = nRT. Pressure is provided in pascals and volume in litres, which must be converted to cubic metres.\n\nBackground and required method:\nRearrange to n = P*V/(R*T), use R = 8.314 J/(mol*K), and require positive temperature.\n\nImplement this interface:\ndef gas_moles(pressure_pa: float, volume_litres: float, temperature_k: float) -> float:\n\nParameters:\n• pressure_pa (float): Gas pressure in pascals.\n• volume_litres (float): Gas volume in litres.\n• temperature_k (float): Absolute temperature in kelvin.\n\nExpected result:\nAmount of gas in moles.",
+      "signature": "def gas_moles(pressure_pa: float, volume_litres: float, temperature_k: float) -> float:",
+      "concepts": [
+        "physics",
+        "algebra",
+        "unit conversion"
+      ],
+      "examples": [
+        {
+          "input": "gas_moles(101325, 22.4, 273.15)",
+          "output": "approximately 0.999"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def gas_moles(pressure_pa: float, volume_litres: float, temperature_k: float) -> float:\n    \"\"\"Calculate the amount of gas using the ideal gas law.\n\n    Args:\n        pressure_pa (float): Gas pressure in pascals.\n        volume_litres (float): Gas volume in litres.\n        temperature_k (float): Absolute temperature in kelvin.\n\n    Returns:\n        float: Amount of gas in moles.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "standard conditions",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "actual = gas_moles(101325, 22.4, 273.15)\nexpected = 0.9993767399537038\nassert abs(actual - expected) < 1e-9, f'Expected {expected}, got {actual}.'"
+        },
+        {
+          "name": "scaled volume",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "actual = gas_moles(101325, 44.8, 273.15)\nexpected = 1.9987534799074076\nassert abs(actual - expected) < 1e-9, f'Expected {expected}, got {actual}.'"
+        },
+        {
+          "name": "simple values",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "actual = gas_moles(8314, 1, 1)\nexpected = 1.0\nassert abs(actual - expected) < 1e-9, f'Expected {expected}, got {actual}.'"
+        },
+        {
+          "name": "scales linearly with pressure",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "base = gas_moles(100000, 10, 300)\ndoubled = gas_moles(200000, 10, 300)\nassert abs(doubled - 2 * base) < 1e-12"
+        }
+      ]
+    },
+    {
+      "id": "basics-triangle-area",
+      "number": "1.21",
+      "title": "Triangle Area",
+      "category": "Basics",
+      "difficulty": "Beginner",
+      "prompt": "A triangle occupies half of the rectangle with the same base and perpendicular height.\n\nBackground and required method:\nUse area = base * height / 2 with non-negative measurements.\n\nImplement this interface:\ndef triangle_area(base: float, height: float) -> float:\n\nParameters:\n• base (float): Triangle base length.\n• height (float): Perpendicular triangle height.\n\nExpected result:\nArea in square units.",
+      "signature": "def triangle_area(base: float, height: float) -> float:",
+      "concepts": [
+        "geometry",
+        "arithmetic"
+      ],
+      "examples": [
+        {
+          "input": "triangle_area(10, 5)",
+          "output": "25.0"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def triangle_area(base: float, height: float) -> float:\n    \"\"\"Calculate a triangle's area from its base and height.\n\n    Args:\n        base (float): Triangle base length.\n        height (float): Perpendicular triangle height.\n\n    Returns:\n        float: Area in square units.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "sample triangle",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert triangle_area(10, 5) == 25.0"
+        },
+        {
+          "name": "unit triangle",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert triangle_area(1, 1) == 0.5"
+        },
+        {
+          "name": "zero height",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert triangle_area(8, 0) == 0.0"
+        }
+      ]
+    },
+    {
+      "id": "basics-heron-area",
+      "number": "1.22",
+      "title": "Triangle Area from Three Sides",
+      "category": "Basics",
+      "difficulty": "Intermediate",
+      "prompt": "When all three side lengths are known, let s be half their sum and calculate sqrt(s*(s-a)*(s-b)*(s-c)).\n\nBackground and required method:\nThe supplied sides form a valid non-degenerate triangle.\n\nImplement this interface:\ndef heron_area(a: float, b: float, c: float) -> float:\n\nParameters:\n• a (float): First side length.\n• b (float): Second side length.\n• c (float): Third side length.\n\nExpected result:\nTriangle area in square units.",
+      "signature": "def heron_area(a: float, b: float, c: float) -> float:",
+      "concepts": [
+        "geometry",
+        "Heron's formula",
+        "square roots"
+      ],
+      "examples": [
+        {
+          "input": "heron_area(3, 4, 5)",
+          "output": "6.0"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "import math\n\ndef heron_area(a: float, b: float, c: float) -> float:\n    \"\"\"Calculate a triangle's area with Heron's formula.\n\n    Args:\n        a (float): First side length.\n        b (float): Second side length.\n        c (float): Third side length.\n\n    Returns:\n        float: Triangle area in square units.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "right triangle",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "actual = heron_area(3, 4, 5)\nexpected = 6.0\nassert abs(actual - expected) < 1e-9, f'Expected {expected}, got {actual}.'"
+        },
+        {
+          "name": "equilateral",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "actual = heron_area(2, 2, 2)\nexpected = 1.7320508075688772\nassert abs(actual - expected) < 1e-9, f'Expected {expected}, got {actual}.'"
+        },
+        {
+          "name": "larger triangle",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "actual = heron_area(5, 5, 6)\nexpected = 12.0\nassert abs(actual - expected) < 1e-9, f'Expected {expected}, got {actual}.'"
+        }
+      ]
+    },
+    {
+      "id": "basics-regular-polygon-area",
+      "number": "1.23",
+      "title": "Regular Polygon Area",
+      "category": "Basics",
+      "difficulty": "Intermediate",
+      "prompt": "A regular polygon has n equal sides of length s and area n*s^2 / (4*tan(pi/n)).\n\nBackground and required method:\nUse math.pi and math.tan. n is at least 3 and side_length is positive.\n\nImplement this interface:\ndef regular_polygon_area(sides: int, side_length: float) -> float:\n\nParameters:\n• sides (int): Number of equal polygon sides.\n• side_length (float): Length of each side.\n\nExpected result:\nPolygon area in square units.",
+      "signature": "def regular_polygon_area(sides: int, side_length: float) -> float:",
+      "concepts": [
+        "geometry",
+        "trigonometry"
+      ],
+      "examples": [
+        {
+          "input": "regular_polygon_area(4, 2)",
+          "output": "4.0"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "import math\n\ndef regular_polygon_area(sides: int, side_length: float) -> float:\n    \"\"\"Calculate the area of a regular polygon.\n\n    Args:\n        sides (int): Number of equal polygon sides.\n        side_length (float): Length of each side.\n\n    Returns:\n        float: Polygon area in square units.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "square",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "actual = regular_polygon_area(4, 2)\nexpected = 4.000000000000001\nassert abs(actual - expected) < 1e-9, f'Expected {expected}, got {actual}.'"
+        },
+        {
+          "name": "equilateral triangle",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "actual = regular_polygon_area(3, 2)\nexpected = 1.7320508075688776\nassert abs(actual - expected) < 1e-9, f'Expected {expected}, got {actual}.'"
+        },
+        {
+          "name": "regular hexagon",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "actual = regular_polygon_area(6, 1)\nexpected = 2.598076211353316\nassert abs(actual - expected) < 1e-9, f'Expected {expected}, got {actual}.'"
+        }
+      ]
+    },
+    {
+      "id": "basics-duration-seconds",
+      "number": "1.24",
+      "title": "Duration to Seconds",
+      "category": "Basics",
+      "difficulty": "Beginner",
+      "prompt": "Larger time units can be converted using 24 hours per day, 60 minutes per hour, and 60 seconds per minute.\n\nBackground and required method:\nAll components are non-negative integers.\n\nImplement this interface:\ndef duration_seconds(days: int, hours: int, minutes: int, seconds: int) -> int:\n\nParameters:\n• days (int): Whole days.\n• hours (int): Additional hours.\n• minutes (int): Additional minutes.\n• seconds (int): Additional seconds.\n\nExpected result:\nTotal duration in seconds.",
+      "signature": "def duration_seconds(days: int, hours: int, minutes: int, seconds: int) -> int:",
+      "concepts": [
+        "time",
+        "unit conversion"
+      ],
+      "examples": [
+        {
+          "input": "duration_seconds(1, 2, 3, 4)",
+          "output": "93784"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def duration_seconds(days: int, hours: int, minutes: int, seconds: int) -> int:\n    \"\"\"Convert a duration into a total number of seconds.\n\n    Args:\n        days (int): Whole days.\n        hours (int): Additional hours.\n        minutes (int): Additional minutes.\n        seconds (int): Additional seconds.\n\n    Returns:\n        int: Total duration in seconds.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "mixed duration",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert duration_seconds(1, 2, 3, 4) == 93784"
+        },
+        {
+          "name": "one hour",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert duration_seconds(0, 1, 0, 0) == 3600"
+        },
+        {
+          "name": "zero",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert duration_seconds(0, 0, 0, 0) == 0"
+        }
+      ]
+    },
+    {
+      "id": "basics-split-seconds",
+      "number": "1.25",
+      "title": "Seconds to Duration",
+      "category": "Basics",
+      "difficulty": "Beginner",
+      "prompt": "Use integer division and remainder, taking the largest time unit first.\n\nBackground and required method:\ntotal_seconds is non-negative. Hours, minutes, and seconds in the result must be within their normal ranges.\n\nImplement this interface:\ndef split_seconds(total_seconds: int) -> tuple[int, int, int, int]:\n\nParameters:\n• total_seconds (int): Non-negative duration in seconds.\n\nExpected result:\nDays, hours, minutes, and seconds.",
+      "signature": "def split_seconds(total_seconds: int) -> tuple[int, int, int, int]:",
+      "concepts": [
+        "time",
+        "integer division",
+        "remainder"
+      ],
+      "examples": [
+        {
+          "input": "split_seconds(93784)",
+          "output": "(1, 2, 3, 4)"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def split_seconds(total_seconds: int) -> tuple[int, int, int, int]:\n    \"\"\"Split a number of seconds into days, hours, minutes, and seconds.\n\n    Args:\n        total_seconds (int): Non-negative duration in seconds.\n\n    Returns:\n        tuple[int, int, int, int]: Days, hours, minutes, and seconds.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "mixed duration",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert split_seconds(93784) == (1, 2, 3, 4)"
+        },
+        {
+          "name": "one minute",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert split_seconds(60) == (0, 0, 1, 0)"
+        },
+        {
+          "name": "zero",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert split_seconds(0) == (0, 0, 0, 0)"
+        }
+      ]
+    },
+    {
+      "id": "basics-format-unix-time",
+      "number": "1.26",
+      "title": "Format a Unix Timestamp",
+      "category": "Basics",
+      "difficulty": "Intermediate",
+      "prompt": "Unix timestamps count seconds from 1970-01-01 00:00:00 UTC. Accepting the timestamp as an argument keeps the function deterministic and testable.\n\nBackground and required method:\nUse datetime.fromtimestamp with timezone.utc and return ISO-like YYYY-MM-DD HH:MM:SS UTC text.\n\nImplement this interface:\ndef format_unix_time(timestamp: int | float) -> str:\n\nParameters:\n• timestamp (int | float): Seconds since the Unix epoch.\n\nExpected result:\nUTC date and time in YYYY-MM-DD HH:MM:SS UTC format.",
+      "signature": "def format_unix_time(timestamp: int | float) -> str:",
+      "concepts": [
+        "datetime",
+        "timestamps",
+        "formatting"
+      ],
+      "examples": [
+        {
+          "input": "format_unix_time(0)",
+          "output": "'1970-01-01 00:00:00 UTC'"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "from datetime import datetime, timezone\n\ndef format_unix_time(timestamp: int | float) -> str:\n    \"\"\"Format an absolute Unix timestamp as local date and time text.\n\n    Args:\n        timestamp (int | float): Seconds since the Unix epoch.\n\n    Returns:\n        str: UTC date and time in YYYY-MM-DD HH:MM:SS UTC format.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "epoch",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert format_unix_time(0) == '1970-01-01 00:00:00 UTC'"
+        },
+        {
+          "name": "one day later",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert format_unix_time(86400) == '1970-01-02 00:00:00 UTC'"
+        },
+        {
+          "name": "known date",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert format_unix_time(946684800) == '2000-01-01 00:00:00 UTC'"
+        }
+      ]
+    },
+    {
+      "id": "basics-body-mass-index",
+      "number": "1.27",
+      "title": "Body Mass Index",
+      "category": "Basics",
+      "difficulty": "Beginner",
+      "prompt": "BMI is mass in kilograms divided by height in metres squared.\n\nBackground and required method:\nheight_m must be positive. Return the raw numeric BMI without classifying it.\n\nImplement this interface:\ndef body_mass_index(weight_kg: float, height_m: float) -> float:\n\nParameters:\n• weight_kg (float): Body mass in kilograms.\n• height_m (float): Height in metres.\n\nExpected result:\nBody mass index in kg/m^2.",
+      "signature": "def body_mass_index(weight_kg: float, height_m: float) -> float:",
+      "concepts": [
+        "health calculation",
+        "division",
+        "powers"
+      ],
+      "examples": [
+        {
+          "input": "body_mass_index(70, 1.75)",
+          "output": "approximately 22.857"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def body_mass_index(weight_kg: float, height_m: float) -> float:\n    \"\"\"Calculate body mass index from metric measurements.\n\n    Args:\n        weight_kg (float): Body mass in kilograms.\n        height_m (float): Height in metres.\n\n    Returns:\n        float: Body mass index in kg/m^2.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "sample adult",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "actual = body_mass_index(70, 1.75)\nexpected = 22.857142857142858\nassert abs(actual - expected) < 1e-9, f'Expected {expected}, got {actual}.'"
+        },
+        {
+          "name": "unit values",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "actual = body_mass_index(1, 1)\nexpected = 1.0\nassert abs(actual - expected) < 1e-9, f'Expected {expected}, got {actual}.'"
+        },
+        {
+          "name": "different height",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "actual = body_mass_index(80, 2)\nexpected = 20.0\nassert abs(actual - expected) < 1e-9, f'Expected {expected}, got {actual}.'"
+        }
+      ]
+    },
+    {
+      "id": "basics-wind-chill",
+      "number": "1.28",
+      "title": "Wind Chill Index",
+      "category": "Basics",
+      "difficulty": "Intermediate",
+      "prompt": "The Canadian formula is 13.12 + 0.6215*T - 11.37*V^0.16 + 0.3965*T*V^0.16, with T in Celsius and V in km/h.\n\nBackground and required method:\nThe formula is intended for temperatures at or below 10 C and wind speeds above 4.8 km/h. Round to the nearest integer.\n\nImplement this interface:\ndef wind_chill(temperature_c: float, wind_kph: float) -> int:\n\nParameters:\n• temperature_c (float): Air temperature in degrees Celsius.\n• wind_kph (float): Wind speed in kilometres per hour.\n\nExpected result:\nRounded wind chill index.",
+      "signature": "def wind_chill(temperature_c: float, wind_kph: float) -> int:",
+      "concepts": [
+        "weather",
+        "formula",
+        "rounding"
+      ],
+      "examples": [
+        {
+          "input": "wind_chill(-10, 20)",
+          "output": "-18"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def wind_chill(temperature_c: float, wind_kph: float) -> int:\n    \"\"\"Calculate the Canadian wind chill index.\n\n    Args:\n        temperature_c (float): Air temperature in degrees Celsius.\n        wind_kph (float): Wind speed in kilometres per hour.\n\n    Returns:\n        int: Rounded wind chill index.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "cold day",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert wind_chill(-10, 20) == -18"
+        },
+        {
+          "name": "milder day",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert wind_chill(0, 10) == -4"
+        },
+        {
+          "name": "very cold",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert wind_chill(-20, 30) == -33"
+        }
+      ]
+    },
+    {
+      "id": "basics-temperature-conversions",
+      "number": "1.29",
+      "title": "Temperature Converter",
+      "category": "Basics",
+      "difficulty": "Beginner",
+      "prompt": "Fahrenheit is C*9/5+32 and kelvin is C+273.15.\n\nBackground and required method:\nReturn both conversions without rounding.\n\nImplement this interface:\ndef temperature_conversions(celsius: float) -> tuple[float, float]:\n\nParameters:\n• celsius (float): Temperature in degrees Celsius.\n\nExpected result:\nFahrenheit temperature followed by kelvin temperature.",
+      "signature": "def temperature_conversions(celsius: float) -> tuple[float, float]:",
+      "concepts": [
+        "temperature",
+        "unit conversion"
+      ],
+      "examples": [
+        {
+          "input": "temperature_conversions(0)",
+          "output": "(32.0, 273.15)"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def temperature_conversions(celsius: float) -> tuple[float, float]:\n    \"\"\"Convert Celsius to Fahrenheit and kelvin.\n\n    Args:\n        celsius (float): Temperature in degrees Celsius.\n\n    Returns:\n        tuple[float, float]: Fahrenheit temperature followed by kelvin temperature.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "freezing",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert temperature_conversions(0) == (32.0, 273.15)"
+        },
+        {
+          "name": "boiling",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert temperature_conversions(100) == (212.0, 373.15)"
+        },
+        {
+          "name": "equal scales",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert temperature_conversions(-40) == (-40.0, 233.14999999999998)"
+        }
+      ]
+    },
+    {
+      "id": "basics-pressure-conversions",
+      "number": "1.30",
+      "title": "Pressure Unit Converter",
+      "category": "Basics",
+      "difficulty": "Beginner",
+      "prompt": "One kilopascal equals approximately 0.145037738 psi, 7.50061683 mmHg, and 0.00986923267 atmospheres.\n\nBackground and required method:\nMultiply the supplied kPa value by each conversion factor.\n\nImplement this interface:\ndef pressure_conversions(kilopascals: float) -> tuple[float, float, float]:\n\nParameters:\n• kilopascals (float): Pressure measured in kilopascals.\n\nExpected result:\nEquivalent psi, mmHg, and atmospheres.",
+      "signature": "def pressure_conversions(kilopascals: float) -> tuple[float, float, float]:",
+      "concepts": [
+        "pressure",
+        "unit conversion"
+      ],
+      "examples": [
+        {
+          "input": "pressure_conversions(101.325)",
+          "output": "approximately (14.696, 760, 1)"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def pressure_conversions(kilopascals: float) -> tuple[float, float, float]:\n    \"\"\"Convert kilopascals to common pressure units.\n\n    Args:\n        kilopascals (float): Pressure measured in kilopascals.\n\n    Returns:\n        tuple[float, float, float]: Equivalent psi, mmHg, and atmospheres.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "standard atmosphere psi",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "actual = pressure_conversions(101.325)[0]\nexpected = 14.69594880135\nassert abs(actual - expected) < 1e-9, f'Expected {expected}, got {actual}.'"
+        },
+        {
+          "name": "standard atmosphere mmHg",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "actual = pressure_conversions(101.325)[1]\nexpected = 760.00000029975\nassert abs(actual - expected) < 1e-9, f'Expected {expected}, got {actual}.'"
+        },
+        {
+          "name": "zero",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert pressure_conversions(0) == (0.0, 0.0, 0.0)"
+        }
+      ]
+    },
+    {
+      "id": "basics-digit-sum",
+      "number": "1.31",
+      "title": "Sum an Integer's Digits",
+      "category": "Basics",
+      "difficulty": "Beginner",
+      "prompt": "Integer division and remainder can isolate digits without converting the value to text.\n\nBackground and required method:\nSupport any non-negative integer, including zero.\n\nImplement this interface:\ndef digit_sum(number: int) -> int:\n\nParameters:\n• number (int): Non-negative integer whose digits should be added.\n\nExpected result:\nSum of the decimal digits.",
+      "signature": "def digit_sum(number: int) -> int:",
+      "concepts": [
+        "digits",
+        "integer division",
+        "remainder"
+      ],
+      "examples": [
+        {
+          "input": "digit_sum(3141)",
+          "output": "9"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def digit_sum(number: int) -> int:\n    \"\"\"Add the decimal digits of a non-negative integer.\n\n    Args:\n        number (int): Non-negative integer whose digits should be added.\n\n    Returns:\n        int: Sum of the decimal digits.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "four digits",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert digit_sum(3141) == 9"
+        },
+        {
+          "name": "contains zeros",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert digit_sum(1002) == 3"
+        },
+        {
+          "name": "zero",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert digit_sum(0) == 0"
+        }
+      ]
+    },
+    {
+      "id": "basics-sort-three",
+      "number": "1.32",
+      "title": "Sort Three Values",
+      "category": "Basics",
+      "difficulty": "Beginner",
+      "prompt": "Three values can be ordered using min, max, and their total without a general sorting algorithm.\n\nBackground and required method:\nReturn a tuple in ascending order and preserve duplicate values.\n\nImplement this interface:\ndef sort_three(a: int, b: int, c: int) -> tuple[int, int, int]:\n\nParameters:\n• a (int): First integer.\n• b (int): Second integer.\n• c (int): Third integer.\n\nExpected result:\nThe three values in nondecreasing order.",
+      "signature": "def sort_three(a: int, b: int, c: int) -> tuple[int, int, int]:",
+      "concepts": [
+        "min",
+        "max",
+        "tuples"
+      ],
+      "examples": [
+        {
+          "input": "sort_three(9, 2, 5)",
+          "output": "(2, 5, 9)"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def sort_three(a: int, b: int, c: int) -> tuple[int, int, int]:\n    \"\"\"Order three integers from smallest to largest.\n\n    Args:\n        a (int): First integer.\n        b (int): Second integer.\n        c (int): Third integer.\n\n    Returns:\n        tuple[int, int, int]: The three values in nondecreasing order.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "mixed order",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert sort_three(9, 2, 5) == (2, 5, 9)"
+        },
+        {
+          "name": "duplicates",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert sort_three(4, 4, 1) == (1, 4, 4)"
+        },
+        {
+          "name": "negative values",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert sort_three(-1, -5, 3) == (-5, -1, 3)"
+        }
+      ]
+    },
+    {
+      "id": "basics-bread-order",
+      "number": "1.33",
+      "title": "Day-Old Bread Discount",
+      "category": "Basics",
+      "difficulty": "Beginner",
+      "prompt": "A fresh loaf costs $3.49 and day-old bread is discounted by 60 percent.\n\nBackground and required method:\nReturn the regular price, discount amount, and final total, each rounded to two decimal places.\n\nImplement this interface:\ndef bread_order(loaves: int, price: float = 3.49, discount_rate: float = 0.60) -> tuple[float, float, float]:\n\nParameters:\n• loaves (int): Non-negative number of day-old loaves.\n• price (float): Regular price per loaf.\n• discount_rate (float): Discount rate as a decimal.\n\nExpected result:\nRegular total, discount, and final price.",
+      "signature": "def bread_order(loaves: int, price: float = 3.49, discount_rate: float = 0.60) -> tuple[float, float, float]:",
+      "concepts": [
+        "currency",
+        "discounts",
+        "rounding"
+      ],
+      "examples": [
+        {
+          "input": "bread_order(3)",
+          "output": "(10.47, 6.28, 4.19)"
+        }
+      ],
+      "starterFiles": [
+        {
+          "name": "main.py",
+          "content": "def bread_order(loaves: int, price: float = 3.49, discount_rate: float = 0.60) -> tuple[float, float, float]:\n    \"\"\"Calculate pricing for a day-old bread order.\n\n    Args:\n        loaves (int): Non-negative number of day-old loaves.\n        price (float): Regular price per loaf.\n        discount_rate (float): Discount rate as a decimal.\n\n    Returns:\n        tuple[float, float, float]: Regular total, discount, and final price.\n    \"\"\"\n    pass\n"
+        }
+      ],
+      "tests": [
+        {
+          "name": "three loaves",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert bread_order(3) == (10.47, 6.28, 4.19)"
+        },
+        {
+          "name": "one loaf",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert bread_order(1) == (3.49, 2.09, 1.4)"
+        },
+        {
+          "name": "no loaves",
+          "stdin": "",
+          "moduleMode": true,
+          "code": "assert bread_order(0) == (0.0, 0.0, 0.0)"
+        }
+      ]
+    }
+  ]
+}

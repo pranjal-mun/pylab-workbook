@@ -1,2 +1,5 @@
 plan.md
+Python Workbook.pdf
 .DS_Store
+__pycache__/
+*.pyc
