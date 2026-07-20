@@ -26,6 +26,7 @@ const elements = {
   progressBar: document.querySelector("#progress-bar"),
   xpCount: document.querySelector("#xp-count"),
   streakCount: document.querySelector("#streak-count"),
+  themeToggle: document.querySelector("#theme-toggle"),
   sectionNav: document.querySelector("#section-nav"),
   exportWork: document.querySelector("#export-work"),
   importWork: document.querySelector("#import-work"),
@@ -71,7 +72,7 @@ const elements = {
 
 const editor = CodeMirror.fromTextArea(document.querySelector("#code-editor"), {
   mode: "python",
-  theme: "material-darker",
+  theme: document.documentElement.dataset.theme === "dark" ? "material-darker" : "default",
   lineNumbers: true,
   indentUnit: 4,
   tabSize: 4,
@@ -146,6 +147,8 @@ async function initializeWorkbook() {
 }
 
 function bindEvents() {
+  updateThemeToggle();
+  elements.themeToggle.addEventListener("click", toggleTheme);
   editor.on("change", () => {
     if (suppressEditorChange || !solution) return;
     const file = activeFile();
@@ -198,6 +201,28 @@ function bindEvents() {
   window.addEventListener("beforeunload", () => {
     if (saveTimer && solution) saveSolutionNow();
   });
+}
+
+function toggleTheme() {
+  const theme = document.documentElement.dataset.theme === "dark" ? "light" : "dark";
+  document.documentElement.dataset.theme = theme;
+  try {
+    localStorage.setItem("pylab-theme", theme);
+  } catch {
+    // The selected theme still applies for this tab when storage is unavailable.
+  }
+  editor.setOption("theme", theme === "dark" ? "material-darker" : "default");
+  updateThemeToggle();
+  window.setTimeout(() => editor.refresh(), 0);
+}
+
+function updateThemeToggle() {
+  const dark = document.documentElement.dataset.theme === "dark";
+  elements.themeToggle.setAttribute("aria-pressed", String(dark));
+  elements.themeToggle.setAttribute("aria-label", `Switch to ${dark ? "light" : "dark"} mode`);
+  elements.themeToggle.title = `Switch to ${dark ? "light" : "dark"} mode`;
+  elements.themeToggle.querySelector(".theme-icon").textContent = dark ? "☀" : "☾";
+  elements.themeToggle.querySelector(".theme-label").textContent = dark ? "Light" : "Dark";
 }
 
 function renderProblemList() {

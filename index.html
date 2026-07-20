@@ -1,14 +1,21 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="PyLab Workbook is a browser-based collection of Python practice problems with instant tests.">
     <title>PyLab Workbook</title>
+    <script>
+      try {
+        document.documentElement.dataset.theme = localStorage.getItem("pylab-theme") === "dark" ? "dark" : "light";
+      } catch {
+        document.documentElement.dataset.theme = "light";
+      }
+    </script>
     <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.65.16/lib/codemirror.css" onerror="this.onerror=null;this.href='./vendor/codemirror/lib/codemirror.css'">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/codemirror@5.65.16/theme/material-darker.css" onerror="this.onerror=null;this.href='./vendor/codemirror/theme/material-darker.css'">
-    <link rel="stylesheet" href="./styles.css?v=2">
+    <link rel="stylesheet" href="./styles.css?v=3">
   </head>
   <body>
     <header class="topbar">
@@ -20,6 +27,10 @@
       <nav id="section-nav" class="section-nav" aria-label="Workbook sections"></nav>
 
       <div class="topbar-tools">
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-pressed="false" aria-label="Switch to dark mode" title="Switch to dark mode">
+          <span class="theme-icon" aria-hidden="true">☾</span>
+          <span class="theme-label">Dark</span>
+        </button>
         <div class="reward-stats" aria-label="Workbook rewards">
           <span class="stat-chip" title="Available experience points"><span aria-hidden="true">⚡</span><strong id="xp-count">0 XP</strong></span>
           <span class="stat-chip" title="Daily solving streak"><span aria-hidden="true">🔥</span><strong id="streak-count">0</strong></span>
